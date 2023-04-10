@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186 48" width="186" height="48">
+	<title>logo-svg</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 30px;fill: #ffffff;font-weight: 400;font-family: "DelaGothicOne-Regular", "Dela Gothic One" } 
+	</style>
+	<text id="RecyTech." style="transform: matrix(1,0,0,1,-1,9)" >
+		<tspan x="2.1" y="23.4" class="t0">R</tspan><tspan  y="23.4" class="t0">e</tspan><tspan  y="23.4" class="t0">c</tspan><tspan  y="23.4" class="t0">y</tspan><tspan  y="23.4" class="t0">T</tspan><tspan  y="23.4" class="t0">e</tspan><tspan  y="23.4" class="t0">c</tspan><tspan  y="23.4" class="t0">h</tspan><tspan  y="23.4" class="t0">.
+</tspan>
+	</text>
+</svg>
