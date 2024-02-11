@@ -13,15 +13,25 @@ public class Main {
         MyDatabase db =  MyDatabase.getInstance();
         System.out.println(db);
 
-
-       /* ProduitService ps = new ProduitService();
+/*
+       ProduitService ps = new ProduitService();
         try {
-            ps.ajouter(new Produit("chicken", "chicken poule", 20.0f));
+            ps.ajouter(new Produit("cafe", "express", 2.0f));
             System.out.println("produit ajouté avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-        */
+*/
+/*
+        ProduitService ps = new ProduitService();
+        try {
+            System.out.println("le liste de produits");
+            System.out.println(ps.recuperer());
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+*/
 
         /*
         ProduitService ps = new ProduitService();
@@ -32,6 +42,7 @@ public class Main {
             System.err.println(e.getMessage());
         }
         */
+        /*
         ProduitService ps = new ProduitService();
         try {
             ps.supprimer(4);
@@ -39,7 +50,7 @@ public class Main {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
+*/
     }
 
 

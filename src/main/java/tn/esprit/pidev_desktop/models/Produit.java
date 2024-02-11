@@ -6,6 +6,10 @@ public class Produit {
     private String description;
     private float prix;
 
+    // constructeur par defaut
+    public Produit() {
+
+    }
     // constructeur parametrique
 
     public Produit(int id, String nom, String description, float prix) {
@@ -69,4 +73,6 @@ public class Produit {
                 ", prix=" + prix +
                 '}';
     }
+
+
 }

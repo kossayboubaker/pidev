@@ -3,16 +3,14 @@ package tn.esprit.pidev_desktop.services;
 import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProduitService implements ProService<Produit> {
 
-// variable de type Connection
-private Connection connection;
+    // variable de type Connection
+    private Connection connection;
 
 // initialisation de la variable et elabore a la basse de donne
 
@@ -22,8 +20,8 @@ private Connection connection;
 
     @Override
     public void ajouter(Produit produit) throws SQLException {
-String req = "INSERT INTO produit (nom, description, prix) VALUES ('" + produit.getNom() + "', '" + produit.getDescription() + "', " + produit.getPrix() + ")";
-  //objet de type statement pour execution de la requete
+        String req = "INSERT INTO produit (nom, description, prix) VALUES ('" + produit.getNom() + "', '" + produit.getDescription() + "', " + produit.getPrix() + ")";
+        //objet de type statement pour execution de la requete
         Statement st = connection.createStatement();
         st.executeUpdate(req);
 
@@ -51,7 +49,22 @@ String req = "INSERT INTO produit (nom, description, prix) VALUES ('" + produit.
     }
 
     @Override
-    public List<Produit> recuperer() {
-        return null;
+    public List<Produit> recuperer() throws SQLException {
+        List<Produit> produits = new ArrayList<>();
+        String req = "SELECT * FROM produit";
+        Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(req);
+        while (rs.next()) {
+            Produit produit = new Produit();
+            produit.setId(rs.getInt("id"));
+            produit.setNom(rs.getString("nom"));
+            produit.setPrix(rs.getFloat("prix"));
+            produit.setDescription(rs.getString("description"));
+
+            produits.add(produit);
+        }
+        return produits;
     }
+
+
 }
