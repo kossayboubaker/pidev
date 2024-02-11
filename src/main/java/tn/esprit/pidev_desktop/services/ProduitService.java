@@ -42,7 +42,11 @@ String req = "INSERT INTO produit (nom, description, prix) VALUES ('" + produit.
     }
 
     @Override
-    public void supprimer(int id) {
+    public void supprimer(int id) throws SQLException {
+        String req = "DELETE FROM produit WHERE id = ?";
+        PreparedStatement ps = connection.prepareStatement(req);
+        ps.setInt(1, id);
+        ps.executeUpdate();
 
     }
 

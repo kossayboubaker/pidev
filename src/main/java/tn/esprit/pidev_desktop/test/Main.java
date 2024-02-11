@@ -22,10 +22,20 @@ public class Main {
             System.err.println(e.getMessage());
         }
         */
+
+        /*
         ProduitService ps = new ProduitService();
         try {
             ps.modifier(new Produit( 4,"chicken wings", "chicken wings", 10.0f));
             System.out.println("produit modifie avec succès");
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        */
+        ProduitService ps = new ProduitService();
+        try {
+            ps.supprimer(4);
+            System.out.println("produit supprime avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

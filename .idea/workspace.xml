@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1b667f2-3654-4112-926d-588f3e2807e0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ProService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ProService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ProduitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ProduitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/test/Main.java" afterDir="false" />
@@ -78,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707614740462</updated>
       <workItem from="1707614741488" duration="3687000" />
-      <workItem from="1707652247003" duration="6964000" />
+      <workItem from="1707652247003" duration="7413000" />
     </task>
     <servers />
   </component>
