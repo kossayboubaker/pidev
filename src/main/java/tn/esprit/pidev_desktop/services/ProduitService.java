@@ -4,6 +4,7 @@ import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -29,8 +30,15 @@ String req = "INSERT INTO produit (nom, description, prix) VALUES ('" + produit.
     }
 
     @Override
-    public void modifier(Produit produit) {
+    public void modifier(Produit produit) throws SQLException {
 
+        String req = "UPDATE produit SET nom = ?, description = ?, prix = ? WHERE id = ?";
+        PreparedStatement ps = connection.prepareStatement(req);
+        ps.setString(1, produit.getNom());
+        ps.setString(2, produit.getDescription());
+        ps.setFloat(3, produit.getPrix());
+        ps.setInt(4, produit.getId());
+        ps.executeUpdate();
     }
 
     @Override

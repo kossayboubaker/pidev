@@ -14,10 +14,18 @@ public class Main {
         System.out.println(db);
 
 
-        ProduitService ps = new ProduitService();
+       /* ProduitService ps = new ProduitService();
         try {
             ps.ajouter(new Produit("chicken", "chicken poule", 20.0f));
             System.out.println("produit ajouté avec succès");
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        */
+        ProduitService ps = new ProduitService();
+        try {
+            ps.modifier(new Produit( 4,"chicken wings", "chicken wings", 10.0f));
+            System.out.println("produit modifie avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
