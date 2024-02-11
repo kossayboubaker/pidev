@@ -1,4 +1,4 @@
-package tn.esprit.pidev_desktop;
+package tn.esprit.pidev_desktop.test;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
