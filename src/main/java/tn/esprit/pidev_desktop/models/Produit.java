@@ -19,7 +19,7 @@ public class Produit {
         this.prix = prix;
     }
 
-    // constructeur parametrique sauf id pour l
+    // constructeur parametrique sauf id l'insertion
 
     public Produit(String nom, String description, float prix) {
         this.nom = nom;
