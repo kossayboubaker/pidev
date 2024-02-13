@@ -44,7 +44,8 @@ public class Main {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
+*/
+        /*
         CommandeService Cs = new CommandeService();
         try {
             System.out.println("le liste de Commande");
@@ -55,7 +56,39 @@ public class Main {
 
 */
 
+/*
 
+        ProduitService Cs = new ProduitService();
+        try {
+            System.out.println("le liste de Commande");
+            System.out.println(Cs.recupererById(3));
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+*/
+
+
+        ProduitService Cs = new ProduitService();
+        try {
+            System.out.println("le liste de Commande");
+            System.out.println(Cs.recupererByPrix(9));
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+/*
+        ProduitService Cs = new ProduitService();
+        try {
+            System.out.println("le liste de Commande");
+            System.out.println(Cs.recupererByNom("chips"));
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+*/
+
+/*
         CommandeService cs = new CommandeService();
         try {
             cs.modifier(new Commande( 5,"2023-01-01" , 4, 5,5.5f));
@@ -63,7 +96,7 @@ public class Main {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
+*/
         /*
         ProduitService ps = new ProduitService();
         try {
