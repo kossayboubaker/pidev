@@ -82,15 +82,22 @@ public class CommandeService implements ComdService<Commande> {
     @Override
     public List<Commande> joiner() throws SQLException {
         List<Commande> commandes = new ArrayList<>();
-        String req = "SELECT u.nom, u.prenom, p.nom AS product_name, p.prix AS product_price, c.quantite AS quantite FROM commande c INNER JOIN user u ON c.user_id = u.id INNER JOIN produit p ON c.pro_id = p.id;";
+        String req = "SELECT u.nom, u.prenom, c.id AS id, c.date_comd, p.nom AS product_name, p.prix AS product_price, c.quantite AS quantite, c.montantTotal AS montantTotal FROM commande c INNER JOIN user u ON c.user_id = u.id INNER JOIN produit p ON c.nom_user = u.nom AND c.prenom_user = u.prenom;";
         Statement st = connection.createStatement();
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
             Commande commande = new Commande();
 
             commande.setNom_user(rs.getString("nom"));
+            commande.setPrenom_user(rs.getString("prenom"));
+
+
+            commande.setDate_comd(rs.getString("date_comd"));
+
             commande.setQauntite(rs.getInt("quantite"));
             commande.setMontantTotal(rs.getFloat("montantTotal"));
+
+
 
 
 
@@ -99,6 +106,7 @@ public class CommandeService implements ComdService<Commande> {
         }
         return commandes;
     }
+
 
 
 }

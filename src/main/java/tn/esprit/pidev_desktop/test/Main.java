@@ -95,7 +95,7 @@ public class Main {
         }
 
 */
-
+/*
         CommandeService cs = new CommandeService();
         try {
             cs.modifier(new Commande(36,12, "2024-05-12", 4, 5, 8.0f, "ali", "bougbaker"));
@@ -103,7 +103,7 @@ public class Main {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
+*/
         /*
         ProduitService ps = new ProduitService();
         try {
@@ -116,7 +116,7 @@ public class Main {
 /*
          CommandeService cs = new CommandeService();
         try {
-            cs.supprimer(3);
+            cs.supprimer(10);
             System.out.println("commande supprime avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -131,6 +131,8 @@ public class Main {
             System.err.println(e.getMessage());
         }
 */
+
+
     }
 
 
