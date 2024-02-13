@@ -1,5 +1,6 @@
 package tn.esprit.pidev_desktop.services;
 
+import tn.esprit.pidev_desktop.models.Commande;
 import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
 
@@ -66,5 +67,24 @@ public class ProduitService implements ProService<Produit> {
         return produits;
     }
 
+    @Override
+    public List<Produit> recupererById(int id) throws SQLException {
 
-}
+            List<Produit> produits = new ArrayList<>();
+            String req = "SELECT * FROM produit where id="+id;
+            Statement st = connection.createStatement();
+            ResultSet rs = st.executeQuery(req);
+        while (rs.next()) {
+            Produit produit = new Produit();
+            produit.setId(rs.getInt("id"));
+            produit.setNom(rs.getString("nom"));
+            produit.setPrix(rs.getFloat("prix"));
+            produit.setDescription(rs.getString("description"));
+
+            produits.add(produit);
+            }
+            return produits;
+        }
+    }
+
+

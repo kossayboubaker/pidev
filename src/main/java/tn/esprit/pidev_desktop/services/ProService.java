@@ -10,6 +10,7 @@ public interface ProService <T> {
     void supprimer(int id) throws SQLException;
 
     List<T> recuperer() throws SQLException;
+    List<T> recupererById(int id) throws SQLException;
 
 
 
