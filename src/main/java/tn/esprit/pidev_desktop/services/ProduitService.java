@@ -85,6 +85,42 @@ public class ProduitService implements ProService<Produit> {
             }
             return produits;
         }
+
+    @Override
+    public List<Produit> recupererByNom(String nom) throws SQLException {
+        List<Produit> produits = new ArrayList<>();
+        String req = "SELECT * FROM produit where nom='"+nom+"'";
+        Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(req);
+        while (rs.next()) {
+            Produit produit = new Produit();
+            produit.setId(rs.getInt("id"));
+            produit.setNom(rs.getString("nom"));
+            produit.setPrix(rs.getFloat("prix"));
+            produit.setDescription(rs.getString("description"));
+
+            produits.add(produit);
+        }
+
+        return produits;
     }
 
+    @Override
+    public List<Produit> recupererByPrix(float prix) throws SQLException {
+        List<Produit> produits = new ArrayList<>();
+        String req = "SELECT * FROM produit where prix="+prix;
+        Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(req);
+        while (rs.next()) {
+            Produit produit = new Produit();
+            produit.setId(rs.getInt("id"));
+            produit.setNom(rs.getString("nom"));
+            produit.setPrix(rs.getFloat("prix"));
+            produit.setDescription(rs.getString("description"));
 
+            produits.add(produit);
+        }
+
+        return produits;
+    }
+}

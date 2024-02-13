@@ -56,16 +56,37 @@ public class Main {
 
 */
 
+/*
 
         ProduitService Cs = new ProduitService();
         try {
             System.out.println("le liste de Commande");
-            System.out.println(Cs.recupererById(5));
+            System.out.println(Cs.recupererById(3));
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 
+*/
 
+
+        ProduitService Cs = new ProduitService();
+        try {
+            System.out.println("le liste de Commande");
+            System.out.println(Cs.recupererByPrix(9));
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+/*
+        ProduitService Cs = new ProduitService();
+        try {
+            System.out.println("le liste de Commande");
+            System.out.println(Cs.recupererByNom("chips"));
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+*/
 
 /*
         CommandeService cs = new CommandeService();
