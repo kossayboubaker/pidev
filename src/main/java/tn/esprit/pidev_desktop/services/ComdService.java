@@ -10,6 +10,7 @@ public interface ComdService <T>{
     void supprimer(int id) throws SQLException;
 
     List<T> recuperer() throws SQLException;
+    List<T> joiner() throws SQLException;
 
 
 }
