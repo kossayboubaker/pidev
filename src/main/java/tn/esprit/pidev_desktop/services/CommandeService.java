@@ -2,7 +2,7 @@ package tn.esprit.pidev_desktop.services;
 
 import tn.esprit.pidev_desktop.models.Commande;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
-
+import java.util.Date;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,18 +19,18 @@ public class CommandeService implements ComdService<Commande> {
 
     @Override
     public void ajouter(Commande commande) throws SQLException {
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        java.sql.Timestamp timestamp = new java.sql.Timestamp(utilDate.getTime());
 
-
-    String req = "INSERT INTO commande (quantite, user_id, pro_id,montantTotal,nom_user,prenom_user) VALUES ("+commande.getQauntite()+","+commande.getUser_id()+","+commande.getPro_id()+","+commande.getMontantTotal()+",'"+commande.getNom_user()+"','"+commande.getPrenom_user()+"')";
+    String req = "INSERT INTO commande (quantite, date_comd, user_id, pro_id,montantTotal) VALUES ("+commande.getQauntite()+","+sqlDate.toString()+","+commande.getUser_id()+","+commande.getPro_id()+","+commande.getMontantTotal()+")";
         //objet de type statement pour execution de la requete
-        req = "INSERT INTO commande (user_id,pro_id,quantite,montantTotal,nom_user,prenom_user) VALUES ("+"(SELECT id from user WHERE id="+commande.getUser_id()+")"+","+"(SELECT id from produit WHERE id="+commande.getPro_id()+")"+","+commande.getQauntite()+","+commande.getMontantTotal()+",'"+commande.getNom_user()+"','"+commande.getPrenom_user()+"')";
-
+        System.out.println(timestamp);
         Statement st = connection.createStatement();
         st.executeUpdate(req);
 
 
     }
-
 
     @Override
     public void modifier(Commande commande) throws SQLException {
@@ -41,7 +41,6 @@ public class CommandeService implements ComdService<Commande> {
         ps.setInt(3, commande.getUser_id());
         ps.setInt(4, commande.getPro_id());
         ps.setFloat(5, commande.getMontantTotal());
-        ps.setString(6, commande.getNom_user());
         ps.setInt(6, commande.getId());
         ps.executeUpdate();
     }
@@ -71,35 +70,12 @@ public class CommandeService implements ComdService<Commande> {
         commande.setUser_id(rs.getInt("user_id"));
         commande.setPro_id(rs.getInt("pro_id"));
         commande.setMontantTotal(rs.getFloat("montantTotal"));
-        commande.setNom_user(rs.getString("nom_user"));
-        commande.setPrenom_user(rs.getString("prenom_user"));
 
         commandes.add(commande);
     }
         return commandes;
 }
 
-    @Override
-    public List<Commande> joiner() throws SQLException {
-        List<Commande> commandes = new ArrayList<>();
-        String req = "SELECT u.nom, u.prenom, p.nom AS product_name, p.prix AS product_price, c.quantite AS quantite FROM commande c INNER JOIN user u ON c.user_id = u.id INNER JOIN produit p ON c.pro_id = p.id;";
-        Statement st = connection.createStatement();
-        ResultSet rs = st.executeQuery(req);
-        while (rs.next()) {
-            Commande commande = new Commande();
 
-            commande.setNom_user(rs.getString("nom"));
-            commande.setQauntite(rs.getInt("quantite"));
-            commande.setMontantTotal(rs.getFloat("montantTotal"));
-
-
-
-
-            commandes.add(commande);
-        }
-        return commandes;
     }
-
-
-}
 

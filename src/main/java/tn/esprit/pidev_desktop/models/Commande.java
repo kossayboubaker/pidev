@@ -7,8 +7,6 @@ public class Commande {
     private int user_id;
     private int pro_id;
     private float montantTotal;
-    private String nom_user;
-    private String prenom_user;
 
     // constructeur par defaut
     public Commande() {
@@ -17,28 +15,24 @@ public class Commande {
 
     // constructeur parametrique
 
-    public Commande(int id, int quantite, String date_comd, int user_id, int pro_id, float montantTotal, String nom_user, String prenom_user) {
+    public Commande(int id, int quantite, String date_comd, int user_id, int pro_id, float montantTotal) {
         this.id = id;
         this.quantite = quantite;
         this.date_comd = date_comd;
         this.user_id = user_id;
         this.pro_id = pro_id;
         this.montantTotal = montantTotal;
-        this.nom_user = nom_user;
-        this.prenom_user = prenom_user;
     }
 
 
     // constructeur parametrique sauf id pour l'insertion
 
-    public Commande(int quantite, String date_comd, int user_id, int pro_id, float montantTotal, String nom_user, String prenom_user) {
+    public Commande(int quantite, String date_comd, int user_id, int pro_id, float montantTotal) {
         this.quantite = quantite;
         this.date_comd = date_comd;
         this.user_id = user_id;
         this.pro_id = pro_id;
         this.montantTotal = montantTotal;
-        this.nom_user = nom_user;
-        this.prenom_user = prenom_user;
     }
 
 
@@ -52,13 +46,17 @@ public class Commande {
         this.id = id;
     }
 
+    public int getQauntite() {
+        return quantite;
+    }
 
-    public void setQauntite(int quantite) {
-        this.quantite = quantite;
+    public void setQauntite(int qauntite) {
+        this.quantite = qauntite;
     }
 
     public String getDate_comd() {
-        return date_comd;
+        this.date_comd = date_comd;
+        return null;
     }
 
     public void setDate_comd(String date_comd) {
@@ -88,25 +86,7 @@ public class Commande {
     public void setMontantTotal(float montantTotal) {
         this.montantTotal = montantTotal;
     }
-
-    public String getNom_user() {
-        return nom_user;
-    }
-
-    public void setNom_user(String nom_user) {
-        this.nom_user = nom_user;
-    }
-
-    public String getPrenom_user() {
-        return prenom_user;
-    }
-
-    public void setPrenom_user(String prenom_user) {
-        this.prenom_user = prenom_user;
-    }
-
-
-    // methode toString
+// methode toString
 
 
     @Override
@@ -114,19 +94,10 @@ public class Commande {
         return "Commande{" +
                 "id=" + id +
                 ", quantite=" + quantite +
-                ", date_comd='" + date_comd + '\'' +
+                ", date_comd=" + date_comd +
                 ", user_id=" + user_id +
                 ", pro_id=" + pro_id +
                 ", montantTotal=" + montantTotal +
-                ", nom_user='" + nom_user + '\'' +
-                ", prenom_user='" + prenom_user + '\'' +
                 '}';
     }
-
-
-    public int getQauntite() {
-        return quantite;
-    }
-
-
 }
