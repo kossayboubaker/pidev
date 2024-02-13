@@ -45,7 +45,7 @@ public class Main {
         }
 
 */
-        /*
+       /*
         CommandeService Cs = new CommandeService();
         try {
             System.out.println("le liste de Commande");
@@ -62,8 +62,8 @@ public class Main {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
 */
+
 /*
 
         ProduitService Cs = new ProduitService();
@@ -96,15 +96,14 @@ public class Main {
 
 */
 
-/*
         CommandeService cs = new CommandeService();
         try {
-            cs.modifier(new Commande( 5,"2023-01-01" , 4, 5,5.5f));
+            cs.modifier(new Commande(36,8, "2024-05-12", 4, 5, 8.0f, "ali", "bougbaker"));
             System.out.println("produit modifie avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-*/
+
         /*
         ProduitService ps = new ProduitService();
         try {
@@ -114,15 +113,24 @@ public class Main {
             System.err.println(e.getMessage());
         }
 */
-        /*
+/*
          CommandeService cs = new CommandeService();
         try {
-            cs.supprimer(4);
-            System.out.println("produit supprime avec succès");
+            cs.supprimer(3);
+            System.out.println("commande supprime avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
-        }*/
-
+        }
+*/
+        /*
+        ProduitService cs = new ProduitService();
+        try {
+            cs.modifier(new Produit(3, "chips", "chhhhh", 2.0f));
+            System.out.println("produit modifie avec succès");
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+*/
     }
 
 

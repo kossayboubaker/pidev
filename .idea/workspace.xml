@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e1b667f2-3654-4112-926d-588f3e2807e0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/models/Commande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/models/Commande.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ComdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ComdService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/CommandeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/CommandeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/test/Main.java" afterDir="false" />
     </list>
@@ -88,7 +86,7 @@
       <workItem from="1707678163697" duration="6893000" />
       <workItem from="1707773223200" duration="11070000" />
       <workItem from="1707817647787" duration="129000" />
-      <workItem from="1707822470633" duration="10383000" />
+      <workItem from="1707822470633" duration="16870000" />
     </task>
     <servers />
   </component>

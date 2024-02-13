@@ -31,6 +31,7 @@ public class CommandeService implements ComdService<Commande> {
 
     }
 
+
     @Override
     public void modifier(Commande commande) throws SQLException {
         String req = "UPDATE commande SET quantite = ?, date_comd = ?, user_id = ?, pro_id = ?, montantTotal = ? WHERE id = ?";
@@ -40,6 +41,7 @@ public class CommandeService implements ComdService<Commande> {
         ps.setInt(3, commande.getUser_id());
         ps.setInt(4, commande.getPro_id());
         ps.setFloat(5, commande.getMontantTotal());
+        ps.setString(6, commande.getNom_user());
         ps.setInt(6, commande.getId());
         ps.executeUpdate();
     }
