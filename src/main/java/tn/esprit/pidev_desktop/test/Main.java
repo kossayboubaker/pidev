@@ -98,7 +98,7 @@ public class Main {
 
         CommandeService cs = new CommandeService();
         try {
-            cs.modifier(new Commande(36,8, "2024-05-12", 4, 5, 8.0f, "ali", "bougbaker"));
+            cs.modifier(new Commande(36,12, "2024-05-12", 4, 5, 8.0f, "ali", "bougbaker"));
             System.out.println("produit modifie avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
