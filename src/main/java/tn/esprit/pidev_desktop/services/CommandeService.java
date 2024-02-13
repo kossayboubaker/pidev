@@ -41,7 +41,7 @@ public class CommandeService implements ComdService<Commande> {
         ps.setInt(3, commande.getUser_id());
         ps.setInt(4, commande.getPro_id());
         ps.setFloat(5, commande.getMontantTotal());
-        ps.setString(6, commande.getNom_user());
+
         ps.setInt(6, commande.getId());
         ps.executeUpdate();
     }
