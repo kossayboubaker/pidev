@@ -45,7 +45,7 @@ public class Main {
         }
 
 */
-       /*
+/*
         CommandeService Cs = new CommandeService();
         try {
             System.out.println("le liste de Commande");
@@ -57,7 +57,7 @@ public class Main {
 /*
         CommandeService Cs = new CommandeService();
         try {
-            System.out.println("le liste de Commande");
+            System.out.println("le recherche de Commande");
             System.out.println(Cs.joiner());
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -68,33 +68,35 @@ public class Main {
 
         ProduitService Cs = new ProduitService();
         try {
-            System.out.println("le liste de Commande");
+            System.out.println("le liste de Commande par id");
             System.out.println(Cs.recupererById(3));
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
 */
-/*
 
+
+/*
         ProduitService Cs = new ProduitService();
         try {
-            System.out.println("le liste de Commande");
+            System.out.println("le liste de produits par prix");
             System.out.println(Cs.recupererByPrix(9));
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 */
+
 /*
         ProduitService Cs = new ProduitService();
         try {
-            System.out.println("le liste de Commande");
+            System.out.println("le liste de Commande par nom");
             System.out.println(Cs.recupererByNom("chips"));
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 
 */
+
 /*
         CommandeService cs = new CommandeService();
         try {
