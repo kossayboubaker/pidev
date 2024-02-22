@@ -19,7 +19,6 @@ public class cinema {
         this.nom = nom;
     }
 
-
     public int getId() {
         return id;
     }

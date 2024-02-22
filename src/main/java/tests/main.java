@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class main {
     public static void main(String[] args) throws SQLException {
-         cinemaservice cs = new cinemaservice();
-        evenementservice ps = new evenementservice();
+        // cinemaservice cs = new cinemaservice();
+       // evenementservice ps = new evenementservice();
 
      //cs.ajouter(new cinema(5,"tunis","complet","pathe"));
        // cs.modifer(new cinema(1,1144,"fs","fds","eskf"));
