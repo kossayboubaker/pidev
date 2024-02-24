@@ -6,25 +6,33 @@ public class Produit {
     private String description;
     private float prix;
 
+    private int stock;
+
+    private String image;
+
     // constructeur par defaut
     public Produit() {
 
     }
     // constructeur parametrique
 
-    public Produit(int id, String nom, String description, float prix) {
+    public Produit(int id, String nom, String description, float prix, int stock, String image) {
         this.id = id;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
+        this.stock = stock;
+        this.image = image;
     }
 
     // constructeur parametrique sauf id l'insertion
 
-    public Produit(String nom, String description, float prix) {
+    public Produit(String nom, String description, float prix, int stock, String image) {
         this.nom = nom;
         this.description = description;
         this.prix = prix;
+        this.stock = stock;
+        this.image = image;
     }
 
     // getters et setters
@@ -61,18 +69,35 @@ public class Produit {
         this.prix = prix;
     }
 
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+
     // methode toString
 
 
     @Override
     public String toString() {
-        return "Produits{" +
+        return "Produit{" +
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", description='" + description + '\'' +
                 ", prix=" + prix +
+                ", stock=" + stock +
+                ", image='" + image + '\'' +
                 '}';
     }
-
-
 }

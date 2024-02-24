@@ -1,9 +1,12 @@
 package tn.esprit.pidev_desktop.models;
 
+
+import java.sql.Date;
+
 public class Commande {
     private int id;
     private int quantite;
-    private String date_comd;
+    private Date date_comd;
     private int user_id;
     private int pro_id;
     private float montantTotal;
@@ -17,7 +20,7 @@ public class Commande {
 
     // constructeur parametrique
 
-    public Commande(int id, int quantite, String date_comd, int user_id, int pro_id, float montantTotal, String nom_user, String prenom_user) {
+    public Commande(int id, int quantite, Date date_comd, int user_id, int pro_id, float montantTotal, String nom_user, String prenom_user) {
         this.id = id;
         this.quantite = quantite;
         this.date_comd = date_comd;
@@ -31,7 +34,7 @@ public class Commande {
 
     // constructeur parametrique sauf id pour l'insertion
 
-    public Commande(int quantite, String date_comd, int user_id, int pro_id, float montantTotal, String nom_user, String prenom_user) {
+    public Commande(int quantite, Date date_comd, int user_id, int pro_id, float montantTotal, String nom_user, String prenom_user) {
         this.quantite = quantite;
         this.date_comd = date_comd;
         this.user_id = user_id;
@@ -40,6 +43,8 @@ public class Commande {
         this.nom_user = nom_user;
         this.prenom_user = prenom_user;
     }
+
+
 
 
     // getters et setters
@@ -57,11 +62,11 @@ public class Commande {
         this.quantite = quantite;
     }
 
-    public String getDate_comd() {
+    public Date getDate_comd() {
         return date_comd;
     }
 
-    public void setDate_comd(String date_comd) {
+    public void setDate_comd(Date date_comd) {
         this.date_comd = date_comd;
     }
 

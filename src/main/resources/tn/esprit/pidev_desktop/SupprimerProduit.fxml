@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="604.0" prefWidth="769.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.pidev_desktop.controllers.SupprimerProduit">
+   <children>
+      <Label layoutX="253.0" layoutY="210.0" prefHeight="27.0" prefWidth="20.0" text="ID" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="supprimeTF" layoutX="312.0" layoutY="205.0" prefHeight="27.0" prefWidth="146.0" promptText="id">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <Button layoutX="259.0" layoutY="309.0" mnemonicParsing="false" onAction="#supprimerProduit" style="-fx-background-color: #dee12b;" text="Supprimer">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="385.0" layoutY="308.0" mnemonicParsing="false" onAction="#returnToAfficher" style="-fx-background-color: #dee12b;" text="retourer a la liste">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <VBox layoutX="-1.0" prefHeight="613.0" prefWidth="74.0" style="-fx-background-color: #dee12b;" />
+      <Text fill="WHITE" layoutX="283.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supprimer un produit">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <Text fill="#f4f4f4" layoutX="300.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Film">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="370.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="501.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MarketPlace">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="202.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accueille">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="56.0" fitWidth="75.0" layoutX="74.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

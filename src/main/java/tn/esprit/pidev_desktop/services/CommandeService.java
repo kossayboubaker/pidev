@@ -34,15 +34,16 @@ public class CommandeService implements ComdService<Commande> {
 
     @Override
     public void modifier(Commande commande) throws SQLException {
-        String req = "UPDATE commande SET quantite = ?, date_comd = ?, user_id = ?, pro_id = ?, montantTotal = ? WHERE id = ?";
+        String req = "UPDATE commande SET  quantite = ?, date_comd = ?, user_id = ?, pro_id = ?, montantTotal = ?,nom_user = ?,prenom_user =?  WHERE id = ?";
         PreparedStatement ps = connection.prepareStatement(req);
         ps.setInt(1, commande.getQauntite());
-        ps.setString(2, commande.getDate_comd());
+        ps.setDate(2, commande.getDate_comd());
         ps.setInt(3, commande.getUser_id());
         ps.setInt(4, commande.getPro_id());
         ps.setFloat(5, commande.getMontantTotal());
-
-        ps.setInt(6, commande.getId());
+        ps.setString(6, commande.getNom_user());
+        ps.setString(7, commande.getPrenom_user());
+        ps.setInt(8, commande.getId());
         ps.executeUpdate();
     }
 
@@ -67,7 +68,7 @@ public class CommandeService implements ComdService<Commande> {
         Commande commande = new Commande();
         commande.setId(rs.getInt("id"));
         commande.setQauntite(rs.getInt("quantite"));
-        commande.setDate_comd(rs.getString("date_comd"));
+        commande.setDate_comd(rs.getDate("date_comd"));
         commande.setUser_id(rs.getInt("user_id"));
         commande.setPro_id(rs.getInt("pro_id"));
         commande.setMontantTotal(rs.getFloat("montantTotal"));
@@ -92,7 +93,7 @@ public class CommandeService implements ComdService<Commande> {
             commande.setPrenom_user(rs.getString("prenom"));
 
 
-            commande.setDate_comd(rs.getString("date_comd"));
+            commande.setDate_comd(rs.getDate("date_comd"));
 
             commande.setQauntite(rs.getInt("quantite"));
             commande.setMontantTotal(rs.getFloat("montantTotal"));
@@ -108,6 +109,49 @@ public class CommandeService implements ComdService<Commande> {
     }
 
 
+    public boolean checkUserExistence(String text) {
+        try {
+            int id = Integer.parseInt(text);
+            String req = "SELECT id FROM user WHERE id = ?";
+            PreparedStatement ps = connection.prepareStatement(req);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (NumberFormatException e) {
+            return false;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
 
+    public boolean checkProductExistence(String text) {
+        try {
+            int id = Integer.parseInt(text);
+            String req = "SELECT id FROM produit WHERE id = ?";
+            PreparedStatement ps = connection.prepareStatement(req);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (NumberFormatException e) {
+            return false;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean verifierExistenceCommande(int idCommande) {
+        try {
+            String req = "SELECT id FROM commande WHERE id = ?";
+            PreparedStatement ps = connection.prepareStatement(req);
+            ps.setInt(1, idCommande);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
+    }
 }
 

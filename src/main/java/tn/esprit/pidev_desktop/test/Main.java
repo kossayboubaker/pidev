@@ -19,7 +19,7 @@ public class Main {
 /*
        ProduitService ps = new ProduitService();
         try {
-            ps.ajouter(new Produit("cafe", "express", 2.0f));
+            ps.ajouter(new Produit("express", "express jgkjkjgkjkgkgk", 6.0f, 5, "express.jpg"));
             System.out.println("produit ajouté avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -43,8 +43,8 @@ public class Main {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
 */
+
 /*
         CommandeService Cs = new CommandeService();
         try {
@@ -62,10 +62,11 @@ public class Main {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-*/
+
 
 /*
-
+*/
+        /*
         ProduitService Cs = new ProduitService();
         try {
             System.out.println("le liste de Commande par id");
@@ -80,13 +81,14 @@ public class Main {
         ProduitService Cs = new ProduitService();
         try {
             System.out.println("le liste de produits par prix");
-            System.out.println(Cs.recupererByPrix(9));
+            System.out.println(Cs.recupererByPrix(7));
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-*/
 
+*/
 /*
+
         ProduitService Cs = new ProduitService();
         try {
             System.out.println("le liste de Commande par nom");
@@ -100,34 +102,35 @@ public class Main {
 /*
         CommandeService cs = new CommandeService();
         try {
-            cs.modifier(new Commande(36,12, "2024-05-12", 4, 5, 8.0f, "ali", "bougbaker"));
+            cs.modifier(new Commande(38,12, "2024-05-12", 4, 6, 8.0f, "ali", "bougbaker"));
             System.out.println("produit modifie avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 */
-        /*
+/*
         ProduitService ps = new ProduitService();
         try {
-            ps.supprimer(4);
+            ps.supprimer(6);
             System.out.println("produit supprime avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 */
-/*
+        /*
+
          CommandeService cs = new CommandeService();
         try {
-            cs.supprimer(10);
+            cs.supprimer(31);
             System.out.println("commande supprime avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 */
-        /*
+/*
         ProduitService cs = new ProduitService();
         try {
-            cs.modifier(new Produit(3, "chips", "chhhhh", 2.0f));
+            cs.modifier(new Produit(5, "chips", "chhhhh", 2.0f, 5, "chips.jpg"));
             System.out.println("produit modifie avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());

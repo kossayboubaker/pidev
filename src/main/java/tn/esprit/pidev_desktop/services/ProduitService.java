@@ -1,5 +1,6 @@
 package tn.esprit.pidev_desktop.services;
 
+import tn.esprit.pidev_desktop.controllers.Data;
 import tn.esprit.pidev_desktop.models.Commande;
 import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
@@ -19,11 +20,20 @@ public class ProduitService implements ProService<Produit> {
         connection = MyDatabase.getInstance().getConnection();
     }
 
+
+
+
+
     @Override
     public void ajouter(Produit produit) throws SQLException {
-        String req = "INSERT INTO produit (nom, description, prix) VALUES ('" + produit.getNom() + "', '" + produit.getDescription() + "', " + produit.getPrix() + ")";
+        String req = "INSERT INTO produit (nom, description, prix, stock, image) VALUES ('" + produit.getNom() + "', '" + produit.getDescription() + "', " + produit.getPrix() + ", " + produit.getStock() + ", '" + produit.getImage() + "')";
         //objet de type statement pour execution de la requete
         Statement st = connection.createStatement();
+
+        String path = Data.path;
+        path = path.replace("\\", "\\\\");
+
+
         st.executeUpdate(req);
 
     }
@@ -31,12 +41,14 @@ public class ProduitService implements ProService<Produit> {
     @Override
     public void modifier(Produit produit) throws SQLException {
 
-        String req = "UPDATE produit SET nom = ?, description = ?, prix = ? WHERE id = ?";
+        String req = "UPDATE produit SET nom = ?, description = ?, prix = ?, stock = ?, image = ? WHERE id = ?";
         PreparedStatement ps = connection.prepareStatement(req);
         ps.setString(1, produit.getNom());
         ps.setString(2, produit.getDescription());
         ps.setFloat(3, produit.getPrix());
-        ps.setInt(4, produit.getId());
+        ps.setInt(4, produit.getStock());
+        ps.setString(5, produit.getImage());
+        ps.setInt(6, produit.getId());
         ps.executeUpdate();
     }
 
@@ -61,6 +73,8 @@ public class ProduitService implements ProService<Produit> {
             produit.setNom(rs.getString("nom"));
             produit.setPrix(rs.getFloat("prix"));
             produit.setDescription(rs.getString("description"));
+            produit.setStock(rs.getInt("stock"));
+            produit.setImage(rs.getString("image"));
 
             produits.add(produit);
         }
@@ -80,6 +94,8 @@ public class ProduitService implements ProService<Produit> {
             produit.setNom(rs.getString("nom"));
             produit.setPrix(rs.getFloat("prix"));
             produit.setDescription(rs.getString("description"));
+            produit.setStock(rs.getInt("stock"));
+            produit.setImage(rs.getString("image"));
 
             produits.add(produit);
             }
@@ -98,6 +114,8 @@ public class ProduitService implements ProService<Produit> {
             produit.setNom(rs.getString("nom"));
             produit.setPrix(rs.getFloat("prix"));
             produit.setDescription(rs.getString("description"));
+            produit.setStock(rs.getInt("stock"));
+            produit.setImage(rs.getString("image"));
 
             produits.add(produit);
         }
@@ -117,10 +135,30 @@ public class ProduitService implements ProService<Produit> {
             produit.setNom(rs.getString("nom"));
             produit.setPrix(rs.getFloat("prix"));
             produit.setDescription(rs.getString("description"));
+            produit.setStock(rs.getInt("stock"));
+            produit.setImage(rs.getString("image"));
 
             produits.add(produit);
         }
 
         return produits;
+    }
+
+
+    public boolean checkProductExistence(String string) {
+        // check if the product exists in the database
+        try {
+            int id = Integer.parseInt(string);
+            String req = "SELECT id FROM produit WHERE id = ?";
+            PreparedStatement ps = connection.prepareStatement(req);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (NumberFormatException e) {
+            return false;
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return false;
+        }
     }
 }
