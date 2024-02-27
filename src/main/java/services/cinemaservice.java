@@ -71,6 +71,5 @@ public class cinemaservice implements Iservice<cinema>{
         return list;
     }
 
-    public void ajouter(String nn, int i, String ss, String rr) {
-    }
+
 }

@@ -1,10 +1,9 @@
 package services;
-import models.cinema;
+
 import models.evenement;
 import utils.mydb;
+
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class evenementservice implements Ievenement<evenement> {
 
     @Override
     public void ajouter(evenement evenement) throws SQLException {
-        String sql = "insert into evenement (id_cinema,nom_ev,description,date,periode) " +
+        String sql = "insert into evenement (idc,nom,description,date,periode) " +
                 "values('" + evenement.getId_cinema() + "','" + evenement.getNom_ev()
                 + "' ,'" + evenement.getDescription() +"','" +evenement.getDate() +"','"+evenement.getPeriode() + "')";
 
@@ -34,7 +33,7 @@ public class evenementservice implements Ievenement<evenement> {
         preparedStatement.setInt(1, evenement.getId_cinema());
         preparedStatement.setString(2, evenement.getNom_ev());
         preparedStatement.setString(3,evenement.getDescription());
-        preparedStatement.setString(4, evenement.getDate());
+        preparedStatement.setDate(4, evenement.getDate());
         preparedStatement.setString(5, evenement.getPeriode());
         preparedStatement.setInt(6, evenement.getId());
         preparedStatement.executeUpdate();
@@ -66,7 +65,7 @@ public class evenementservice implements Ievenement<evenement> {
             p.setId_cinema(rs.getInt("id_cinema"));
             p.setNom_ev(rs.getString("nom_ev"));
             p.setDescription(rs.getString("description"));
-            p.setDate(rs.getString("date"));
+            p.setDate(rs.getDate("date"));
             p.setPeriode(rs.getString("periode"));
             list.add(p);
 
@@ -74,12 +73,10 @@ public class evenementservice implements Ievenement<evenement> {
         return list;
     }
 
-    public void ajouter(String nn, int i, String ss, String rr) {
-    }
 
     public List<evenement> joiner() throws SQLException {
         List<evenement> evenement = new ArrayList<>();
-        String req = "SELECT * FROM evenement e INNER JOIN cinema c ON e.id_cinema = c.id ;";
+        String req = "SELECT * FROM evenement e INNER JOIN cinema c ON e.idc = c.id ;";
         Statement st = connection.createStatement();
         ResultSet rs = st.executeQuery(req);
         while (rs.next()) {
@@ -91,7 +88,7 @@ public class evenementservice implements Ievenement<evenement> {
 
             ev.setNom_ev(rs.getString("nom_ev"));
             ev.setDescription(rs.getString("description"));
-            ev.setDate(rs.getString("date"));
+            ev.setDate(rs.getDate("date"));
             ev.setPeriode(rs.getString("periode"));
 
 

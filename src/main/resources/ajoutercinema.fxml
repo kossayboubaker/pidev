@@ -2,36 +2,22 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="664.0" prefWidth="731.0" styleClass="body" stylesheets="@css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ajoutercinema">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ajoutercinema">
    <children>
-      <TextField fx:id="nom" layoutX="83.0" layoutY="133.0" prefWidth="150.0" promptText="nom" stylesheets="@css.css" />
-      <TextField fx:id="place" layoutX="84.0" layoutY="167.0" promptText="place" />
-      <TextField fx:id="nbsalle" layoutX="84.0" layoutY="200.0" promptText="nombre de salle " />
-      <TextField fx:id="etat" layoutX="84.0" layoutY="235.0" promptText="etat" />
-      <Button layoutX="85.0" layoutY="272.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="62.0" styleClass="Button" stylesheets="@css.css" text="Ajouter" />
-      <ListView fx:id="listcinema" layoutX="45.0" layoutY="332.0" prefHeight="255.0" prefWidth="650.0">
+      <AnchorPane layoutY="-7.0" prefHeight="587.0" prefWidth="760.0" style="-fx-background-color: #02030A;" styleClass="body" stylesheets="@style.css">
+         <children>
+            <TextField fx:id="nom" layoutX="83.0" layoutY="134.0" prefWidth="150.0" promptText="nom" stylesheets="@style.css" />
+            <TextField fx:id="place" layoutX="84.0" layoutY="167.0" promptText="place" />
+            <TextField fx:id="nbsalle" layoutX="84.0" layoutY="200.0" promptText="nombre de salle " />
+            <TextField fx:id="etat" layoutX="84.0" layoutY="230.0" promptText="etat" />
+            <Button layoutX="120.0" layoutY="277.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="62.0" styleClass="Button" stylesheets="@style.css" text="Ajouter" />
+         </children>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
-      </ListView>
-      <Button layoutX="298.0" layoutY="167.0" mnemonicParsing="false" onAction="#Supprimer" styleClass="Button" stylesheets="@css.css" text="Supprimer" />
-      <Button layoutX="173.0" layoutY="273.0" mnemonicParsing="false" onAction="#Modifier" styleClass="Button" stylesheets="@css.css" text="Modifier" />
-      <TextField fx:id="id" layoutX="298.0" layoutY="132.0" prefHeight="26.0" prefWidth="116.0" promptText="ID" />
-      <Button layoutX="623.0" layoutY="272.0" mnemonicParsing="false" onAction="#Refresh" prefHeight="26.0" prefWidth="71.0" styleClass="Button" stylesheets="@css.css" text="Refresh" textFill="#100e0e" />
-      <Button layoutX="641.0" layoutY="624.0" mnemonicParsing="false" onAction="#Evenement" styleClass="Button" text="Evenement" />
-      <ImageView fx:id="image" fitHeight="118.0" fitWidth="189.0" layoutX="3.0" layoutY="-31.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@logo.jpg" />
-         </image>
-      </ImageView>
+      </AnchorPane>
    </children>
-   <opaqueInsets>
-      <Insets />
-   </opaqueInsets>
 </AnchorPane>

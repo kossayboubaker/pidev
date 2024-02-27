@@ -4,7 +4,11 @@ public class cinema {
     private int id, nb_salle;
     private String place, etat, nom ;
 
-    public cinema() {}
+    public cinema() {
+
+    }
+
+
     public cinema(int nb_salle, String place, String etat, String nom) {
         this.nb_salle = nb_salle;
         this.place = place;

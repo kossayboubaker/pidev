@@ -1,12 +1,16 @@
 package models;
 
+import java.util.Date;
+
 public class evenement {
 
     int id, id_cinema;
-    String nom_ev,description,date,periode;
+    String nom_ev,description;
+    Date date;
+    String periode;
 
     public evenement() {}
-    public evenement(int id_cinema, String nom_ev, String description, String date, String periode) {
+    public evenement(int id_cinema, String nom_ev, String description, Date date, String periode) {
         this.id_cinema = id_cinema;
         this.nom_ev = nom_ev;
         this.description = description;
@@ -14,7 +18,7 @@ public class evenement {
         this.periode = periode;
     }
 
-    public evenement(int id, int id_cinema, String nom_ev, String description, String date, String periode) {
+    public evenement(int id, int id_cinema, String nom_ev, String description, Date date, String periode) {
         this.id = id;
         this.id_cinema = id_cinema;
         this.nom_ev = nom_ev;
@@ -22,6 +26,7 @@ public class evenement {
         this.date = date;
         this.periode = periode;
     }
+
 
     public int getId() {
         return id;
@@ -55,11 +60,11 @@ public class evenement {
         this.description = description;
     }
 
-    public String getDate() {
-        return date;
+    public java.sql.Date getDate() {
+        return (java.sql.Date) date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
