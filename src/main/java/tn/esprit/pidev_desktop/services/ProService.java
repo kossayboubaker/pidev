@@ -14,6 +14,12 @@ public interface ProService <T> {
     List<T> recupererByNom(String nom) throws SQLException;
     List<T> recupererByPrix(float prix) throws SQLException;
 
+    List<T> trie_par_nom() throws SQLException;
 
+    List<T> trie_par_nom2() throws SQLException;
+
+    List<T> recherche() throws SQLException;
+
+    public int countProduits() throws SQLException;
 
 }

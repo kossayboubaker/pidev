@@ -3,16 +3,14 @@ package tn.esprit.pidev_desktop.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.services.ProduitService;
 import tn.esprit.pidev_desktop.test.HelloApplication;
@@ -28,8 +26,10 @@ public class AjouterProduit {
     @FXML
     private ImageView imageview;
 
+
     @FXML
-    private Button import_btn;
+    private Button importe_btn;
+
 
     @FXML
     private AnchorPane main_form;
@@ -49,7 +49,7 @@ public class AjouterProduit {
 
     @FXML
     void afficherProduit(ActionEvent event) {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/tn/esprit/pidev_desktop/AfficherProduit.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/AfficherProduit.fxml"));
         try {
             nomTF.getScene().setRoot(fxmlLoader.load());
         } catch (IOException e) {
@@ -58,6 +58,7 @@ public class AjouterProduit {
 
 
     }
+
 
     @FXML
     void ajouterProduit(ActionEvent event) {
@@ -125,7 +126,7 @@ public class AjouterProduit {
 
     }
 
-    public void importimagebtn() {
+    public void importe_btn() {
         FileChooser openFile = new FileChooser();
         openFile.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.png", "*.jpeg"));
         File file = openFile.showOpenDialog(main_form.getScene().getWindow());
@@ -162,4 +163,23 @@ public class AjouterProduit {
         }
     }
 
+    public void gesmarketplace(MouseEvent mouseEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/tn/esprit/pidev_desktop/AfficherCommande.fxml"));
+        try {
+            descriptionTF.getScene().setRoot(fxmlLoader.load());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void returnpageaffiche(ActionEvent actionEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/AfficherProduit.fxml"));
+        try {
+            descriptionTF.getScene().setRoot(fxmlLoader.load());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
 }

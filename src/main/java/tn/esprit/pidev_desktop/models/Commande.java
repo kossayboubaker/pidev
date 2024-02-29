@@ -57,6 +57,13 @@ public class Commande {
         this.id = id;
     }
 
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
 
     public void setQauntite(int quantite) {
         this.quantite = quantite;

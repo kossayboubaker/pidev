@@ -25,6 +25,8 @@ public class Produit {
         this.image = image;
     }
 
+
+
     // constructeur parametrique sauf id l'insertion
 
     public Produit(String nom, String description, float prix, int stock, String image) {
@@ -34,6 +36,8 @@ public class Produit {
         this.stock = stock;
         this.image = image;
     }
+
+
 
     // getters et setters
 

@@ -2,18 +2,26 @@ package tn.esprit.pidev_desktop.test;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tn.esprit.pidev_desktop.controllers.CardProduct;
+import tn.esprit.pidev_desktop.services.ProduitService;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class HelloApplication extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, SQLException {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/tn/esprit/pidev_desktop/AfficherProduit.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/AfficherProduit.fxml"));
+        Parent root = fxmlLoader.load();
+        //  CardProduct controller = fxmlLoader.getController();
+       // ProduitService ps = new ProduitService();
+       //
+        Scene scene = new Scene(root);
         stage.setTitle("Cinehub");
         stage.setScene(scene);
         stage.show();

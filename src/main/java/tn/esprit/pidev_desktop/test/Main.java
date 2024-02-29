@@ -1,8 +1,10 @@
 package tn.esprit.pidev_desktop.test;
 
 import tn.esprit.pidev_desktop.models.Commande;
+import tn.esprit.pidev_desktop.models.Panier;
 import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.services.CommandeService;
+import tn.esprit.pidev_desktop.services.PanierService;
 import tn.esprit.pidev_desktop.services.ProduitService;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
 
@@ -17,6 +19,16 @@ public class Main {
         System.out.println(db);
 
 /*
+       PanierService ps = new PanierService();
+        try {
+            ps.ajouter(new Panier(8,7,"express",5.0f,"image.jpg","hello everybody"));
+            System.out.println("produit ajouté avec succès");
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+
+*/
+/*
        ProduitService ps = new ProduitService();
         try {
             ps.ajouter(new Produit("express", "express jgkjkjgkjkgkgk", 6.0f, 5, "express.jpg"));
@@ -28,24 +40,24 @@ public class Main {
 /*
         CommandeService cs = new CommandeService();
         try {
-            cs.ajouter(new Commande(9, "", 4, 3, 5.0f, "kossay", "boubaker"));
+           // cs.ajouter(new Commande(6, user_id, 6,3.0f,nom_user,prenom_user));
             System.out.println("commande ajouté avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
 
 */
-/*
-        ProduitService ps = new ProduitService();
+
+        ProduitService rs = new ProduitService();
         try {
-            System.out.println("le liste de produits");
-            System.out.println(ps.recuperer());
+            System.out.println("le liste de panier");
+            System.out.println(rs.recuperer());
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-*/
 
 /*
+
         CommandeService Cs = new CommandeService();
         try {
             System.out.println("le liste de Commande");
@@ -113,6 +125,15 @@ public class Main {
         try {
             ps.supprimer(6);
             System.out.println("produit supprime avec succès");
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+*/
+/*
+        PanierService ps = new PanierService();
+        try {
+            ps.supprimer(4);
+            System.out.println("panier supprime avec succès");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }

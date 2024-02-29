@@ -7,14 +7,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import tn.esprit.pidev_desktop.models.Commande;
-import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.services.CommandeService;
-import tn.esprit.pidev_desktop.services.ProduitService;
 import tn.esprit.pidev_desktop.test.HelloApplication;
 
 import java.io.IOException;
 import java.sql.Date;
-import java.sql.SQLException;
 
 public class ModifierCommande {
 

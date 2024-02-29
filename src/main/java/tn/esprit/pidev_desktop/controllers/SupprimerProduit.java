@@ -1,15 +1,8 @@
 package tn.esprit.pidev_desktop.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import tn.esprit.pidev_desktop.services.ProduitService;
-import tn.esprit.pidev_desktop.test.HelloApplication;
-
-import java.io.IOException;
-import java.sql.SQLException;
 
 public class SupprimerProduit {
     @FXML

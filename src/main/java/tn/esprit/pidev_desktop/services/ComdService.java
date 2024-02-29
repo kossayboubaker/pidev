@@ -7,7 +7,7 @@ public interface ComdService <T>{
 
     void ajouter(T t) throws SQLException;
     void modifier(T t) throws SQLException;
-    void supprimer(int id) throws SQLException;
+    void supprimer(int quantite) throws SQLException;
 
     List<T> recuperer() throws SQLException;
     List<T> joiner() throws SQLException;

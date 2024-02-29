@@ -1,7 +1,6 @@
 package tn.esprit.pidev_desktop.services;
 
 import tn.esprit.pidev_desktop.controllers.Data;
-import tn.esprit.pidev_desktop.models.Commande;
 import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
 
@@ -102,6 +101,26 @@ public class ProduitService implements ProService<Produit> {
             return produits;
         }
 
+    public Produit recupererByIdY(int id) throws SQLException {
+
+        String req = "SELECT * FROM produit where id="+id;
+        Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(req);
+        Produit produit = new Produit();
+
+        while (rs.next()) {
+            produit.setId(rs.getInt("id"));
+            produit.setNom(rs.getString("nom"));
+            produit.setPrix(rs.getFloat("prix"));
+            produit.setDescription(rs.getString("description"));
+            produit.setStock(rs.getInt("stock"));
+            produit.setImage(rs.getString("image"));
+
+
+        }
+        return produit;
+    }
+
     @Override
     public List<Produit> recupererByNom(String nom) throws SQLException {
         List<Produit> produits = new ArrayList<>();
@@ -144,6 +163,92 @@ public class ProduitService implements ProService<Produit> {
         return produits;
     }
 
+    @Override
+    public List<Produit> trie_par_nom() throws SQLException {
+        List<Produit> produits = new ArrayList<>();
+        String req = "SELECT * FROM produit ORDER BY nom";
+        Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(req);
+
+        while (rs.next()) {
+            Produit produit = new Produit();
+            produit.setId(rs.getInt("id"));
+            produit.setNom(rs.getString("nom"));
+            produit.setDescription(rs.getString("description"));
+            produit.setPrix(rs.getFloat("prix"));
+            produit.setStock(rs.getInt("stock"));
+            produit.setImage(rs.getString("image"));
+
+            produits.add(produit);
+        }
+        return produits;
+    }
+
+
+
+    public List<Produit> tri() throws SQLException {
+        List<Produit> produits = new ArrayList<>();
+        String req = "SELECT * FROM produit ORDER BY prix";
+        Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(req);
+
+
+        while (rs.next()) {
+            Produit produit = new Produit();
+            produit.setId(rs.getInt("id"));
+            produit.setNom(rs.getString("nom"));
+            produit.setDescription(rs.getString("description"));
+            produit.setPrix(rs.getFloat("prix"));
+            produit.setStock(rs.getInt("stock"));
+            produit.setImage(rs.getString("image"));
+
+
+        }
+        return produits;
+    }
+
+    @Override
+    public List<Produit> trie_par_nom2() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public List<Produit> recherche() throws SQLException {
+
+        // methode pour la recherche par nom,prix,stock
+
+        List<Produit> produits = new ArrayList<>();
+        String req = "SELECT * FROM produit where nom like ? or prix like ? or stock like ?";
+        Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(req);
+        while (rs.next()) {
+            Produit produit = new Produit();
+            produit.setId(rs.getInt("id"));
+            produit.setNom(rs.getString("nom"));
+            produit.setPrix(rs.getFloat("prix"));
+            produit.setDescription(rs.getString("description"));
+            produit.setStock(rs.getInt("stock"));
+            produit.setImage(rs.getString("image"));
+
+        }
+        return produits;
+
+    }
+
+    @Override
+    public int countProduits() throws SQLException {
+        int count = 0;
+        String req = "SELECT COUNT(*) AS total FROM produit";
+        PreparedStatement pst = connection.prepareStatement(req);
+        ResultSet rs = pst.executeQuery();
+        if (rs.next()) {
+            count = rs.getInt("total");
+        }
+        System.out.println("Nombre de produits : " + count);
+
+        return count;
+    }
+
 
     public boolean checkProductExistence(String string) {
         // check if the product exists in the database
@@ -161,4 +266,5 @@ public class ProduitService implements ProService<Produit> {
             return false;
         }
     }
+
 }

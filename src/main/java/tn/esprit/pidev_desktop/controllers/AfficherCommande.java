@@ -8,14 +8,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import tn.esprit.pidev_desktop.models.Commande;
-import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.services.CommandeService;
-import tn.esprit.pidev_desktop.services.ProduitService;
 import tn.esprit.pidev_desktop.test.HelloApplication;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Comparator;
 import java.util.List;
@@ -24,28 +22,18 @@ public class AfficherCommande {
 
 
     @FXML
-    private ListView<String> listCommande;
+    private ListView<String> listCommand;
 
 
 
 
-    @FXML
-    void pagemodifier(ActionEvent event) {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/tn/esprit/pidev_desktop/ModifierCommande.fxml"));
-        try {
-            listCommande.getScene().setRoot(fxmlLoader.load());
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-            throw new RuntimeException(e);
-        }
 
-    }
 
     @FXML
     void returnToajoute(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/tn/esprit/pidev_desktop/AjouterCommande.fxml"));
         try {
-            listCommande.getScene().setRoot(fxmlLoader.load());
+            listCommand.getScene().setRoot(fxmlLoader.load());
         } catch (IOException e) {
             System.err.println(e.getMessage());
             throw new RuntimeException(e);
@@ -54,64 +42,64 @@ public class AfficherCommande {
 
 
     @FXML
-    private ListView<String> ListProduit;
-    @FXML
     void initialize() {
-        ProduitService produitService = new ProduitService();
+        CommandeService commandeService = new CommandeService();
         try {
-            List<Produit> produits = produitService.recuperer();
+            List<Commande> commandes = commandeService.recuperer();
 
-            // Trier la liste des produits par ID avant de les ajouter à l'ObservableList
-            produits.sort(Comparator.comparingInt(Produit::getId));
+            // Trier la liste des commandes par ID avant de les ajouter à l'ObservableList
+            commandes.sort(Comparator.comparingInt(Commande::getId));
 
-            // Créer une ObservableList pour stocker les données des produits
-            ObservableList<String> produitDataList = FXCollections.observableArrayList();
+            // Créer une ObservableList pour stocker les données des commandes
+            ObservableList<String> CommandeDataList = FXCollections.observableArrayList();
 
             // Ajouter les titres des colonnes
-            String columnTitles = String.format("%-20s %-20s %-40s %-20s %-20s %-20s", "ID", "Nom", "DescriptioN", "Prix", "Stock", "Image");
-            produitDataList.add(columnTitles);
+            String columnTitles = String.format("%-4s %-10s %-20s %-20s %-20s %-20s ", "ID","Quantite", "Date", "Montant Total", "Nom client", "Prenom client");
+            CommandeDataList.add(columnTitles);
 
-            // Itérer à travers la liste des produits et ajouter leurs détails à la produitDataList
-            for (Produit produit: produits) {
-                String produitData = String.format("%-20s %-20s %-40s %-20s %-20s %-20s",
-                        produit.getId(),
-                        produit.getNom(),
-                        produit.getDescription(),
-                        produit.getPrix(),
-                        produit.getStock(),
-                        produit.getImage()
-                );
-                produitDataList.add(produitData);
+            // Itérer à travers la liste des commandes et ajouter leurs détails à la CommandeDataList
+            for (Commande commande : commandes) {
+                String commandeData = String.format("%-5s %-12s %-20s %-30s %-20s %-20s ",
+                        commande.getId(),
+                        commande.getQuantite(),
+                        commande.getDate_comd(),
+                        commande.getMontantTotal(),
+                        commande.getNom_user(),
+                        commande.getPrenom_user()
+
+                        );
+                CommandeDataList.add(commandeData);
             }
 
             // Définir les éléments pour la ListView
-            ListProduit.setItems(produitDataList);
+            listCommand.setItems(CommandeDataList);
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
     }
 
-    @FXML
-    public void supprimerProduit(ActionEvent actionEvent) {
-        String selectedCommand = ListProduit.getSelectionModel().getSelectedItem();
+
+
+    public void supprimerCommande(ActionEvent actionEvent) {
+        String selectedCommand = listCommand.getSelectionModel().getSelectedItem();
         if (selectedCommand == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Aucune commande sélectionnée");
-            alert.setContentText("Veuillez sélectionner une commande à supprimer.");
+            alert.setTitle("Aucune produit sélectionnée");
+            alert.setContentText("Veuillez sélectionner une produit à supprimer.");
             alert.showAndWait();
             return; // Sortir de la méthode si aucune commande n'est sélectionnée
         }
 
         // Récupérer l'ID de la commande à partir de la chaîne sélectionnée
         String[] commandParts = selectedCommand.split("\\s+"); // Diviser la chaîne en mots
-        int produitId = Integer.parseInt(commandParts[0]); // Le premier mot est l'ID de la commande
+        int id = Integer.parseInt(commandParts[0]); // Le premier mot est l'ID de la commande
 
         // Demander confirmation à l'utilisateur
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationAlert.setTitle("Confirmer la suppression");
         confirmationAlert.setHeaderText(null);
-        confirmationAlert.setContentText("Êtes-vous sûr de vouloir supprimer cette commande ?");
+        confirmationAlert.setContentText("Êtes-vous sûr de vouloir supprimer cette produit ?");
 
         // Attendre la réponse de l'utilisateur
 
@@ -119,26 +107,57 @@ public class AfficherCommande {
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
             // L'utilisateur a confirmé la suppression, appeler le service pour supprimer la commande
-            ProduitService produitService = new ProduitService();
+            CommandeService commandeService = new CommandeService();
             try {
-                produitService.supprimer(produitId);
+                commandeService.supprimer(id);
 
                 // Rafraîchir la liste des commandes après la suppression
                 initialize();
 
                 // Afficher une confirmation
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Commande supprimée");
-                alert.setContentText("La commande a été supprimée avec succès.");
+                alert.setTitle("produit supprimée");
+                alert.setContentText("La produit a été supprimée avec succès.");
                 alert.showAndWait();
             } catch (SQLException e) {
                 // En cas d'erreur lors de la suppression
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erreur lors de la suppression");
-                alert.setContentText("Une erreur s'est commande lors de la suppression de la repas : " + e.getMessage());
+                alert.setContentText("Une erreur s'est produite lors de la suppression de la repas : " + e.getMessage());
                 alert.showAndWait();
             }
         }
-    }}
+    }
+
+
+    public void gesmarketplace(MouseEvent mouseEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/AfficherProduit.fxml"));
+        try {
+            listCommand.getScene().setRoot(fxmlLoader.load());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void afficherpageproduit(ActionEvent actionEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/AfficherProduit.fxml"));
+        try {
+            listCommand.getScene().setRoot(fxmlLoader.load());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void pagestat(ActionEvent actionEvent) {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/statistique.fxml"));
+        try {
+            listCommand.getScene().setRoot(fxmlLoader.load());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+}
 
 
