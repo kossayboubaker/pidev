@@ -68,10 +68,7 @@ public class SideBarFXMLController {
                 }
         }
 
-        @FXML
-        void handleevenementButtonClick(ActionEvent event) {
-
-        }
+      
 
         @FXML
         void getcinema(MouseEvent event) {
@@ -80,6 +77,8 @@ public class SideBarFXMLController {
         }
 
 
+        public void handleevenementButtonClick(ActionEvent actionEvent) {
+        }
 }
 
 

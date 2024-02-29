@@ -1,6 +1,5 @@
 package services;
 
-import models.cinema;
 import models.evenement;
 
 import java.sql.SQLException;
@@ -14,4 +13,6 @@ public interface Ievenement<E> {
     void supprimer(int id) throws SQLException;
 
     List<evenement> recuperer() throws SQLException;
+
+
 }

@@ -2,11 +2,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import models.evenement;
 import services.evenementservice;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
@@ -156,5 +159,16 @@ public class Afficherevenement {
         } else {
             System.out.println("L'objet affichercinema n'est pas initialisé.");
         }
+    }
+
+    @FXML
+    void stat(ActionEvent event) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/stat.fxml"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        nomev.getScene().setRoot(root);
     }
 }

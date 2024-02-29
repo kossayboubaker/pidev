@@ -7,15 +7,16 @@ public class evenement {
     int id, id_cinema;
     String nom_ev,description;
     Date date;
-    String periode;
+    String periode,image;
 
     public evenement() {}
-    public evenement(int id_cinema, String nom_ev, String description, Date date, String periode) {
+    public evenement(int id_cinema, String nom_ev, String description, Date date, String periode ) {
         this.id_cinema = id_cinema;
         this.nom_ev = nom_ev;
         this.description = description;
         this.date = date;
         this.periode = periode;
+       // this.image = image;
     }
 
     public evenement(int id, int id_cinema, String nom_ev, String description, Date date, String periode) {
@@ -25,6 +26,7 @@ public class evenement {
         this.description = description;
         this.date = date;
         this.periode = periode;
+     //   this.image = image;
     }
 
 
@@ -75,6 +77,13 @@ public class evenement {
     public void setPeriode(String periode) {
         this.periode = periode;
     }
+  /*  public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }   */
 
     @Override
     public String toString() {
@@ -85,6 +94,7 @@ public class evenement {
                 ", description='" + description + '\'' +
                 ", date='" + date + '\'' +
                 ", periode='" + periode + '\'' +
+               // ", image='" + image + '\'' +
                 '}';
     }
 }

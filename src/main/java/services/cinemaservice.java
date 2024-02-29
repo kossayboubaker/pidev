@@ -65,6 +65,7 @@ public class cinemaservice implements Iservice<cinema>{
             p.setNb_salle(rs.getInt("nb_salle"));
             p.setEtat(rs.getString("etat"));
             p.setNom(rs.getString("nom"));
+
             list.add(p);
 
         }

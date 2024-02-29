@@ -40,3 +40,22 @@
 .scroll-pane > .corner {
     -fx-background-color: black;
 }
+
+
+
+
+.addProductCard {
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-background-color: rgba(0, 0, 0, 0.82);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 5, 5);
+}
+
+.userProductCard-btn {
+    -fx-font-size: 17px;
+    -fx-font-weight: 800;
+    -fx-background-color: #ceb903;
+    -fx-background-radius: 1000px;
+    -fx-border-radius: 1000px;
+    -fx-cursor: hand;
+}

@@ -7,7 +7,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="601.0" prefWidth="814.0" styleClass="scroll-pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Afficherevenement">
    <children>
       <ListView fx:id="listevenement" layoutX="81.0" layoutY="102.0" onMouseClicked="#modclicked" prefHeight="296.0" prefWidth="414.0">
@@ -22,5 +21,6 @@
       <TextField fx:id="description" layoutX="579.0" layoutY="177.0" promptText="description" />
       <DatePicker fx:id="date" layoutX="579.0" layoutY="212.0" prefHeight="26.0" prefWidth="150.0" promptText="date" />
       <TextField fx:id="periode" layoutX="580.0" layoutY="246.0" promptText="periode" />
+      <Button layoutX="655.0" layoutY="421.0" mnemonicParsing="false" onAction="#stat" text="Stat" />
    </children>
 </AnchorPane>

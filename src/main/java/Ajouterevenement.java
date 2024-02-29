@@ -39,6 +39,7 @@ public class Ajouterevenement  {
             Date dateEv = valueOf(date.getValue());
             String periodeEv = periode.getText();
 
+
             evenement evenement = new evenement(idCinema, nomEv, descriptionEv, dateEv, periodeEv);
 
             // Boîte de dialogue de confirmation

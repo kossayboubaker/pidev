@@ -8,26 +8,39 @@
       <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Affichecinemafront.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Afficheevenementfront.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Affichercinema.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Afficherevenement.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Ajouterevenement.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Cinema.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Evenement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Front.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Stat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/card.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/controller/Ajoutercinema.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/controller/SideBarFXMLController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/tests/mainFX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/card2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/affichecinemafront.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/afficheevenementfront.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/affichercinema.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/afficherevenement.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/ajoutercinema.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/ajouterevenement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/card.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/card2.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/cinema.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/evenement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/front.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/stat.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/test.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/cinema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/cinema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/evenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/evenement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/Ievenement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/Ievenement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/cinemaservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/cinemaservice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/evenementservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/evenementservice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tests/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tests/main.java" afterDir="false" />
@@ -46,8 +59,8 @@
         <option value="Interface" />
         <option value="JavaFXApplication" />
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -65,43 +78,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.mainFX.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.gestion_cinema [javafx:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.gestion_cinema [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.gestion_cinema [org.openjfx:javafx-maven-plugin:0.0.1:run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;gestion-cinema&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/Marwan/Desktop/gestion_cinema/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Marwan/Desktop/projet Pidev cinehub&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Marwan/Desktop/gestion_cinema/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.4229885&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.main.executor": "Run",
+    "Application.mainFX.executor": "Run",
+    "Application.mainFX2.executor": "Run",
+    "Maven.gestion_cinema [javafx:run].executor": "Run",
+    "Maven.gestion_cinema [org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean].executor": "Run",
+    "Maven.gestion_cinema [org.openjfx:javafx-maven-plugin:0.0.1:run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "gestion-cinema",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/Marwan/Desktop/gestion_cinema/src/main/java",
+    "last_opened_file_path": "C:/Users/Marwan/Desktop/PIDEV_3a2-Art_Managment",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Marwan/Desktop/gestion_cinema/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.4229885",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;PLAIN_TEXT&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="controller" />
+      <recent name="utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Marwan\Desktop\gestion_cinema\.idea\libraries" />
       <recent name="C:\Users\Marwan\Desktop\gestion_cinema\src\main\resources" />
       <recent name="C:\Users\Marwan\Desktop\gestion_cinema\src\main\java\tests" />
     </key>
@@ -111,7 +130,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.mainFX">
-    <configuration name="mainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="mainFX" type="Application" factoryName="Application" temporary="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/JAVA/jdk-21.0.2" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="tests.mainFX" />
@@ -203,6 +222,8 @@
       <workItem from="1708905350738" duration="551000" />
       <workItem from="1708971717073" duration="19796000" />
       <workItem from="1709034960303" duration="1276000" />
+      <workItem from="1709069286292" duration="6985000" />
+      <workItem from="1709128827201" duration="29056000" />
     </task>
     <servers />
   </component>
@@ -212,5 +233,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gestion_cinema$mainFX2.ic" NAME="mainFX2 Coverage Results" MODIFIED="1709070601953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>tests.*</FILTER>
+    </SUITE>
   </component>
 </project>

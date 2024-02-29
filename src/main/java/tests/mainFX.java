@@ -11,6 +11,12 @@ import java.io.IOException;
 
 public class mainFX extends Application {
 
+
+    public  static class data {
+
+       public static int id =0;
+    }
+
     public static void main(String[] args) {launch(args);}
 
     @Override
