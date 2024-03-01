@@ -4,50 +4,86 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<?import java.net.URL?>
-<AnchorPane prefHeight="534.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.AjouterReservation">
+<AnchorPane prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: 4C4C4C;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.AjouterReservation">
 
    <children>
-      <TextField fx:id="nomfilmTF" layoutX="450.0" layoutY="209.0" promptText="Nom film" />
-      <TextField fx:id="HeureReservationTF" layoutX="448.0" layoutY="320.0" prefHeight="18.0" prefWidth="150.0" promptText="Heure Réservation" />
-      <TextField fx:id="NombrePlacesReserveesTF" layoutX="448.0" layoutY="374.0" promptText="nbre place reservée" />
-      <DatePicker fx:id="DateReservationTF" layoutX="436.0" layoutY="265.0" promptText="Date réservation" />
-      <Button layoutX="381.0" layoutY="511.0" mnemonicParsing="false" onAction="#naviguer" text="Afficher les reservatons">
+      <TextField fx:id="nomfilmTF" layoutX="230.0" layoutY="117.0" prefHeight="0.0" prefWidth="97.0" promptText="Nom film" />
+      <TextField fx:id="HeureReservationTF" layoutX="229.0" layoutY="205.0" prefHeight="9.0" prefWidth="130.0" promptText="Heure Réservation" />
+      <TextField fx:id="NombrePlacesReserveesTF" layoutX="229.0" layoutY="244.0" prefHeight="26.0" prefWidth="128.0" promptText="nbre place dispo" />
+      <DatePicker fx:id="DateReservationTF" layoutX="229.0" layoutY="161.0" prefHeight="15.0" prefWidth="150.0" promptText="Date réservation" />
+      <Button layoutX="205.0" layoutY="296.0" mnemonicParsing="false" onAction="#AjouterR" style="-fx-background-color: #CCAF2E;" text="Ajouter Reservation">
          <font>
-            <Font name="Century" size="14.0" />
+            <Font name="Century" size="12.0" />
          </font></Button>
-      <Button layoutX="397.0" layoutY="446.0" mnemonicParsing="false" onAction="#AjouterR" prefHeight="26.0" prefWidth="140.0" text="Ajouter">
+      <Label layoutX="111.0" layoutY="122.0" text="Nom Film :" textFill="WHITE">
          <font>
-            <Font name="Century" size="14.0" />
-         </font></Button>
-      <TextField fx:id="IDUtilisateurTF" layoutX="450.0" layoutY="153.0" promptText="IDUtilisateur" />
-      <Label layoutX="290.0" layoutY="156.0" text="Id Utilisateur :">
-         <font>
-            <Font name="Century" size="16.0" />
+            <Font name="Century" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="313.0" layoutY="212.0" text="Id Film :">
+      <Label layoutX="50.0" layoutY="164.0" text="Date de Réservation :" textFill="WHITE">
          <font>
-            <Font name="Century" size="16.0" />
+            <Font name="Century" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="266.0" layoutY="268.0" text="Date de Réservation :">
+      <Label layoutX="44.0" layoutY="210.0" text="Heure de Réservation :" textFill="WHITE">
          <font>
-            <Font name="Century" size="16.0" />
+            <Font name="Century" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="323.0" text="Heure de Réservation :">
+      <Label layoutX="38.0" layoutY="249.0" text="Nombre de palce Disponible:" textFill="WHITE">
          <font>
-            <Font name="Century" size="16.0" />
+            <Font name="Century" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="290.0" layoutY="377.0" text="Nbre de palce :">
+      <Line endX="-42.999969482421875" endY="-75.60000610351562" layoutX="481.0" layoutY="170.0" startX="-42.999969482421875" startY="194.80001831054688" stroke="WHITE" />
+      <Label layoutX="466.0" layoutY="117.0" text="Reservation id" textFill="WHITE">
          <font>
-            <Font name="Century" size="16.0" />
+            <Font name="Century" size="12.0" />
          </font>
       </Label>
+      <TextField fx:id="reservationID" layoutX="614.0" layoutY="112.0" prefHeight="15.0" prefWidth="98.0" promptText="ReservationID " />
+      <TextField fx:id="numeroSiege" layoutX="615.0" layoutY="169.0" prefHeight="20.0" prefWidth="117.0" promptText="Numero de siege " />
+      <TextField fx:id="statut" layoutX="616.0" layoutY="225.0" prefHeight="15.0" prefWidth="58.0" promptText="statut" />
+      <Label layoutX="465.0" layoutY="172.0" text="Numero de siege :" textFill="WHITE">
+         <font>
+            <Font name="Century" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="496.0" layoutY="228.0" text="statut :" textFill="WHITE">
+         <font>
+            <Font name="Century" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="577.0" layoutY="294.0" mnemonicParsing="false" onAction="#AjoutS" prefHeight="15.0" prefWidth="98.0" style="-fx-background-color: #CCAF2E;" text="Ajouter Siége">
+         <font>
+            <Font name="Century" size="12.0" />
+         </font>
+      </Button>
+      <Line endX="175.19998168945312" layoutX="231.0" layoutY="282.0" startX="-100.0" stroke="WHITE" />
+      <Line endX="175.19998168945312" layoutX="221.0" layoutY="333.0" startX="-88.80001068115234" stroke="WHITE" />
+      <Line endX="175.19998168945312" layoutX="588.0" layoutY="282.0" startX="-100.0" stroke="WHITE" />
+      <Line endX="175.19998168945312" layoutX="588.0" layoutY="333.0" startX="-100.0" stroke="WHITE" />
+      <Text fill="WHITE" layoutX="291.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion Reservations" wrappingWidth="490.9366455078125">
+         <font>
+            <Font name="Bodoni MT Italic" size="24.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="569.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/reservation.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="198.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ecran-de-cinema.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

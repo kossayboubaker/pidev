@@ -57,7 +57,7 @@
       </Label>
       <ImageView fx:id="logo" fitHeight="103.0" fitWidth="141.0" layoutX="38.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/421947287_1439131520343583_3170634837329943514_n.png" />
+            <Image url="@../java/com/example/ges_reservation/image/421947287_1439131520343583_3170634837329943514_n.png" />
          </image>
       </ImageView>
    </children>

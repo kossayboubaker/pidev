@@ -31,7 +31,7 @@ public class Main {
             Time sqlTime = new Time(utilTime.getTime());
 
             // Create a new Reservations object with the parsed date and time values
-            rs.ajouter(new Reservations(1,1,Datevoy, sqlTime, 5));
+            rs.ajouterResBack(new Reservations(1,Datevoy, sqlTime,0, 5));
             System.out.println("la reservation est ajouter avec succée : !");
 
         } catch (ParseException | SQLException e) {
@@ -49,7 +49,7 @@ public class Main {
             Time sqlTime = new Time(utilTime.getTime());
 
             // Create a new Reservations object with the parsed date and time values
-            rs.modifier(new Reservations(2,1,Datevoy, sqlTime, 8));
+            rs.modifier(new Reservations(1,Datevoy, sqlTime,0 ,8));
 
         } catch (ParseException | SQLException e) {
             throw new RuntimeException(e);

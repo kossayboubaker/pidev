@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -17,39 +16,39 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-       // FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterReservation.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/test.fxml"));
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-
 
         try {
-            Parent root =loader.load() ;
-            Scene scene=new Scene(root);
-            // Load the CSS stylesheet
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/front.fxml"));
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterFrontRes.fxml"));
 
-            primaryStage.setTitle("reservation");
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+
+           // scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+
             primaryStage.setScene(scene);
+            primaryStage.setTitle("CineHub");
+
             primaryStage.show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+
         Stage seatStage = new Stage();
-        FXMLLoader seatLoader = new FXMLLoader(getClass().getResource("/AjouterSiege.fxml"));
 
         try {
+            FXMLLoader seatLoader = new FXMLLoader(getClass().getResource("/back.fxml"));
             Parent seatRoot = seatLoader.load();
             Scene seatScene = new Scene(seatRoot);
-        //  seatScene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
 
-            seatStage.setTitle("Ajouter un siège");
+            seatScene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+
             seatStage.setScene(seatScene);
+            seatStage.setTitle("CineHub");
+            seatStage.show();
         } catch (IOException e) {
-            throw new RuntimeException("Erreur lors du chargement de l'interface utilisateur pour l'ajout de siège", e);
+            e.printStackTrace();
         }
-
-
-
-        // Affichez la fenêtre d'ajout de siège
-        seatStage.show();
     }
 }

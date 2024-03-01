@@ -10,7 +10,7 @@ public class Reservations {
     private Date dateReservation;
     private Time heureReservation;
     private int nombrePlacesReservees;
-
+    private int  NombrePlacesDisponibles;
 
   /*  public Reservations(int reservationID, int utilisateurID, int filmID, Date dateReservation, Time heureReservation, int nombrePlacesReservees) {
         this.reservationID = reservationID;
@@ -23,13 +23,14 @@ public class Reservations {
    */
 
 
-    public Reservations(int utilisateurID, int filmID, Date dateReservation, Time heureReservation, int nombrePlacesReservees) {
-        this.utilisateurID = utilisateurID;
+    public Reservations(int filmID, Date dateReservation, Time heureReservation, int nombrePlacesReservees, int nombrePlacesDisponibles) {
         this.filmID = filmID;
         this.dateReservation = dateReservation;
         this.heureReservation = heureReservation;
         this.nombrePlacesReservees = nombrePlacesReservees;
+        this.NombrePlacesDisponibles = nombrePlacesDisponibles;
     }
+    public Reservations(int filmID, Date dateReservation, Time heureReservation, int nombrePlacesReservees){}
 
     public Reservations() {
 
@@ -85,6 +86,7 @@ public class Reservations {
         this.nombrePlacesReservees = nombrePlacesReservees;
     }
 
+
     @Override
     public String toString() {
         return "Reservations{" +
@@ -94,10 +96,16 @@ public class Reservations {
                 ", dateReservation=" + dateReservation +
                 ", heureReservation=" + heureReservation +
                 ", nombrePlacesReservees=" + nombrePlacesReservees +
+                ", NombrePlacesDisponibles=" + NombrePlacesDisponibles +
                 '}';
     }
 
+    public int getNombrePlacesDisponibles() {
+        return NombrePlacesDisponibles;
+    }
 
-
+    public void setNombrePlacesDisponibles(int nombrePlacesDisponibles) {
+        this.NombrePlacesDisponibles = nombrePlacesDisponibles;
+    }
 }
 
