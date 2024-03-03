@@ -131,7 +131,7 @@ public class AfficherCommande {
 
 
     public void gesmarketplace(MouseEvent mouseEvent) {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/AfficherProduit.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/test (1).fxml"));
         try {
             listCommand.getScene().setRoot(fxmlLoader.load());
         } catch (IOException e) {

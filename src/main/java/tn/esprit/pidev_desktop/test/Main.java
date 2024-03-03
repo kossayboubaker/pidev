@@ -47,7 +47,7 @@ public class Main {
         }
 
 */
-
+/*
         ProduitService rs = new ProduitService();
         try {
             System.out.println("le liste de panier");
@@ -55,7 +55,7 @@ public class Main {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
-
+*/
 /*
 
         CommandeService Cs = new CommandeService();

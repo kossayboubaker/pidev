@@ -70,6 +70,48 @@ public class AfficherProduit {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
+
+
+    }
+// methode pour selectionner un produit
+@FXML
+public void selectionnerProduit(MouseEvent event) {
+    ListProduit.setOnMouseClicked(event1 -> {
+        if (event1.getClickCount() == 2) {
+            String selectedProduit = ListProduit.getSelectionModel().getSelectedItem();
+            if (selectedProduit == null) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Aucun produit sélectionné");
+                alert.setContentText("Veuillez sélectionner un produit.");
+                alert.showAndWait();
+                return;
+            }
+
+            // Passer la valeur sélectionnée au contrôleur de navigation
+            navigateToModifierProduit(selectedProduit);
+        }
+    });
+}
+
+    // Méthode pour naviguer vers la page "modifierProduit"
+    private void navigateToModifierProduit(String selectedProduit) {
+        // Code pour naviguer vers la page "modifierProduit" et passer la valeur sélectionnée
+FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifyProduit.fxml"));
+try {
+    Parent root = loader.load();
+    ModifierProduit controller = loader.getController();
+    controller.setProduitId(selectedProduit); // Passer la valeur sélectionnée au contrôleur de la page de modification
+    Scene scene = new Scene(root);
+    Stage stage = (Stage) ListProduit.getScene().getWindow();
+    stage.setScene(scene);
+    stage.show();
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
+
+
+        // à travers le contrôleur de navigation ou un autre mécanisme de gestion de la navigation.
     }
 
     @FXML
@@ -137,29 +179,54 @@ public class AfficherProduit {
 
 
     public void pagemodifier(ActionEvent actionEvent) {
-        String selectedItem = ListProduit.getSelectionModel().getSelectedItem();
-        if (selectedItem != null && !selectedItem.trim().isEmpty() && !selectedItem.startsWith("ID")) {
-            int produitId = Integer.parseInt(selectedItem.split("\\s+")[0]);
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierProduit.fxml"));
-            Parent root = null;
-            try {
-                root = loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+
+
+            if (ListProduit.getSelectionModel().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Aucun produit sélectionné");
+                alert.setContentText("Veuillez sélectionner un produit à modifier.");
+                alert.showAndWait();
+                return;
             }
-            ModifierProduit controller = loader.getController();
-           // controller.initData(produitId);
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } else {
+        String selectedProduit = ListProduit.getSelectionModel().getSelectedItem();
+
+        if (selectedProduit == null || selectedProduit.trim().isEmpty() || selectedProduit.startsWith("ID")) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Aucun utilisateur sélectionné");
-            alert.setContentText("Veuillez sélectionner un utilisateur à modifier.");
+            alert.setTitle("Sélection invalide");
+            alert.setContentText("Veuillez sélectionner un produit valide à modifier.");
             alert.showAndWait();
+            return;
         }
-    }
+
+        int produitId = Integer.parseInt(selectedProduit.trim().split("\\s+")[0]);
+
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Confirmer la modification");
+        confirmationAlert.setHeaderText(null);
+        confirmationAlert.setContentText("Êtes-vous sûr de vouloir modifier ce produit ?");
+
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifyProduit.fxml"));
+
+            try {
+                Parent root = loader.load();
+                ModifierProduit controller = loader.getController();
+                controller.initData(produitId);
+
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+
+            }
+            }
+
+        }
+
+
 
 
     public void gesmarketplace(MouseEvent mouseEvent) {

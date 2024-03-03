@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.TextField?>
+<AnchorPane prefHeight="100.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.pidev_desktop.controllers.PanierItemComponentController">
+    <ImageView fx:id="productImage" fitHeight="80.0" fitWidth="80.0" layoutX="20.0" layoutY="10.0" preserveRatio="true" />
+    <Text fx:id="productName" layoutX="120.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name" />
+    <Text fx:id="productPrice" layoutX="120.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Price" />
+
+    <TextField fx:id="quantityTextField" layoutX="120.0" layoutY="60.0" prefWidth="60.0" promptText="Quantity" />
+    <Button layoutX="200.0" layoutY="60.0" mnemonicParsing="false" text="Update Quantity" onAction="#updateQuantityButtonClicked" />
+
+    <Button layoutX="290.0" layoutY="60.0" mnemonicParsing="false" text="Delete" onAction="#deleteItem" />
+</AnchorPane>

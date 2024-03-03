@@ -17,7 +17,11 @@ import tn.esprit.pidev_desktop.test.HelloApplication;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.util.Base64;
 
 public class AjouterProduit {
     @FXML
@@ -69,9 +73,19 @@ public class AjouterProduit {
         String description = descriptionTF.getText().trim();
         String prixText = prixTF.getText().trim();
         String stockText = stockTF.getText().trim();
-        String image = imageview.getImage().toString();
 
 
+// decode une image en base64
+        String base64Image = null;
+        try {
+            Path path = Paths.get(Data.path);
+            byte[] imageData = Files.readAllBytes(path);
+            base64Image = Base64.getEncoder().encodeToString(imageData);
+            String image = base64Image;
+        } catch (IOException e) {
+            System.err.println("Erreur lors de la lecture de l'image: " + e.getMessage());
+
+        }
 
         if (nom.isEmpty() || description.isEmpty() || prixText.isEmpty() || stockText.isEmpty() || Data.path == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -96,7 +110,7 @@ public class AjouterProduit {
             produit.setDescription(description);
             produit.setPrix(prix);
             produit.setStock(Integer.parseInt(stockText));
-            produit.setImage(Data.path);
+            produit.setImage(base64Image);
 
             ps.ajouter(produit);
 
@@ -121,9 +135,17 @@ public class AjouterProduit {
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
-        // controle de saisir pour le stock
+        // controle de saisir pour l'image s'il importe ou non
+        if (!verifyImageType(Data.path) || Data.path == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
 
+            alert.setTitle("Erreur");
+            alert.setContentText("Le fichier sélectionné n'est pas une image valide (.jpg, .png, .jpeg)");
+            alert.showAndWait();
+            return; // Sortir de la méthode si l'image n'est pas du bon format
+        }
 
+// controle de saisir pour l'importation de l'image si elle existe ou non dans le champs
     }
 
     public void importe_btn() {
@@ -134,8 +156,12 @@ public class AjouterProduit {
             Data.path = file.getAbsolutePath();
             image = new Image(file.toURI().toString(), 120, 127, false, true);
             imageview.setImage(image);
+
+
+
              }
 
+// controle de saisir pour le champs de l'image et l'encliquer de importe_btn pour l'importation de l'image
 
     }
 

@@ -30,6 +30,9 @@ import java.util.Optional;
 public class ModifierProduit {
 
     @FXML
+    private ListView<String> ListProduitN;
+
+    @FXML
     private ListView<String> ListProduit;
     @FXML
     private TextField DescriptionN;
@@ -53,6 +56,10 @@ public class ModifierProduit {
 
 
     public void getid(String id){
+        IdN.setText(id);
+    }
+
+    public void setProduitId(String id){
         IdN.setText(id);
     }
     public void getnom(String nom){
@@ -86,68 +93,10 @@ public class ModifierProduit {
 
 
 
-    @FXML
 
 
-    public void modifie(ActionEvent actionEvent) {
-
-        if (ListProduit.getSelectionModel().isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Aucun régime sélectionné");
-            alert.setContentText("Veuillez sélectionner un régime à modifier.");
-            alert.showAndWait();
-            return;
-        }
-
-        // Récupérer la chaîne sélectionnée dans la ListView
-        String selectedProduit = ListProduit.getSelectionModel().getSelectedItem();
-
-        // Vérifier si la chaîne sélectionnée est vide ou si elle contient les titres des colonnes
-        if (selectedProduit== null || selectedProduit.trim().isEmpty() || selectedProduit.startsWith("ID")) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Sélection invalide");
-            alert.setContentText("Veuillez sélectionner un régime valide à modifier.");
-            alert.showAndWait();
-            return;
-        }
-
-        // Extraire l'ID du régime à partir de la chaîne sélectionnée
-        int produitId = Integer.parseInt(selectedProduit.trim().split("\\s+")[0]);
-
-        // Demander confirmation à l'utilisateur
-        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmationAlert.setTitle("Confirmer la modification");
-        confirmationAlert.setHeaderText(null);
-        confirmationAlert.setContentText("Êtes-vous sûr de vouloir modifier ce régime ?");
-
-        // Attendre la réponse de l'utilisateur
-        Optional<ButtonType> result = confirmationAlert.showAndWait();
-
-        if (result.isPresent() && result.get() == ButtonType.OK) {
-            // L'utilisateur a confirmé la modification, ouvrir la fenêtre de modification
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierProduit.fxml"));
-            try {
-
-                Parent root = loader.load();
-
-                // Passer l'ID du régime à modifier au contrôleur de la fenêtre de modification
-                ModifierProduit controller = loader.getController();
 
 
-                // Créer une nouvelle scène pour la fenêtre de modification
-                Scene scene = new Scene(root);
-
-                // Récupérer la scène actuelle à partir de l'événement source
-                Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-
-                // Afficher la scène de modification dans la fenêtre principale
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
     @FXML
     void initialize() {
         ProduitService produitService = new ProduitService();
@@ -208,4 +157,73 @@ public class ModifierProduit {
 
     public void gesmarketplace(MouseEvent mouseEvent) {
     }
-}
+
+    public void modifierproduitN(ActionEvent actionEvent) {
+
+
+            if (ListProduit.getSelectionModel().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Aucun régime sélectionné");
+                alert.setContentText("Veuillez sélectionner un produit à modifier.");
+                alert.showAndWait();
+                return;
+            }
+
+            // Récupérer la chaîne sélectionnée dans la ListView
+            String selectedProduit = ListProduit.getSelectionModel().getSelectedItem();
+
+            // Vérifier si la chaîne sélectionnée est vide ou si elle contient les titres des colonnes
+            if (selectedProduit== null || selectedProduit.trim().isEmpty() || selectedProduit.startsWith("ID")) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Sélection invalide");
+                alert.setContentText("Veuillez sélectionner un produit valide à modifier.");
+                alert.showAndWait();
+                return;
+            }
+
+            // Extraire l'ID du régime à partir de la chaîne sélectionnée
+            int produitId = Integer.parseInt(selectedProduit.trim().split("\\s+")[0]);
+
+            // Demander confirmation à l'utilisateur
+            Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmationAlert.setTitle("Confirmer la modification");
+            confirmationAlert.setHeaderText(null);
+            confirmationAlert.setContentText("Êtes-vous sûr de vouloir modifier ce produit ?");
+
+            // Attendre la réponse de l'utilisateur
+            Optional<ButtonType> result = confirmationAlert.showAndWait();
+
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                // L'utilisateur a confirmé la modification, ouvrir la fenêtre de modification
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifyProduit.fxml"));
+                try {
+
+                    Parent root = loader.load();
+
+                    // Passer l'ID du régime à modifier au contrôleur de la fenêtre de modification
+                    ModifierProduit controller = loader.getController();
+
+
+                    // Créer une nouvelle scène pour la fenêtre de modification
+                    Scene scene = new Scene(root);
+
+                    // Récupérer la scène actuelle à partir de l'événement source
+                    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+                    // Afficher la scène de modification dans la fenêtre principale
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    private int produitId;
+    public void initData(int produitId) {
+        this.produitId = produitId;
+        // Utilisez cet ID pour afficher les informations du produit dans votre fenêtre de modification
+        // Par exemple, vous pouvez remplir les champs de texte avec les détails du produit à modifier
+    }
+    }
+
+

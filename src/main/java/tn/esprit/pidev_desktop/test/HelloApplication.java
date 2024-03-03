@@ -5,8 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import tn.esprit.pidev_desktop.controllers.CardProduct;
-import tn.esprit.pidev_desktop.services.ProduitService;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,7 +14,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException, SQLException {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/AfficherProduit.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/test (1).fxml"));
         Parent root = fxmlLoader.load();
         //  CardProduct controller = fxmlLoader.getController();
        // ProduitService ps = new ProduitService();

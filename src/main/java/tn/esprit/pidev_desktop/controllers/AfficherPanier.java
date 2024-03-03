@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class AfficherPanier {
 
-    ObservableList<Panier> list = FXCollections.observableArrayList();
+    ObservableList<ListProduits> list = FXCollections.observableArrayList();
     private final PanierService ps = new PanierService();
     private PanierService css = new PanierService();
     @FXML
@@ -72,7 +72,7 @@ public void setStockp(int stockp) {
 }
 
 public void SetValue(MouseEvent mouseEvent) throws SQLException, ClassNotFoundException {
-    Panier selected = (Panier) listview.getSelectionModel().getSelectedItem();
+    ListProduits selected = (ListProduits) listview.getSelectionModel().getSelectedItem();
 
     if (selected != null) {
 
@@ -83,7 +83,7 @@ public void SetValue(MouseEvent mouseEvent) throws SQLException, ClassNotFoundEx
         int stock = Integer.parseInt(stockNN.getText());
         int prixx = Integer.parseInt(prixNN.getText());
 
-        Panier p = new Panier();
+        ListProduits p = new ListProduits();
     }
 
     public void supppanier(ActionEvent actionEvent) {

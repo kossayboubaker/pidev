@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -137,7 +138,18 @@ public class Statistique implements Initializable {
     }
 
     public void afficherproduitN(ActionEvent actionEvent) {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/AfficherProduit.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/test (1).fxml"));
+        try {
+            ListChart.getScene().setRoot(fxmlLoader.load());
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void retoure(ActionEvent actionEvent) {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/test (1).fxml"));
         try {
             ListChart.getScene().setRoot(fxmlLoader.load());
         } catch (IOException e) {

@@ -8,14 +8,18 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import tn.esprit.pidev_desktop.models.PanierItem;
 import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
 
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Base64;
 import java.util.ResourceBundle;
 
 
@@ -67,6 +71,12 @@ public void setData(Produit produitcard) {
    prix_product.setText("DT"+String.valueOf(produitcard.getPrix()));
     description_product.setText(produitcard.getDescription());
      pr= produitcard.getPrix();
+    byte[] decodedBytes = Base64.getDecoder().decode(produitcard.getImage());
+    String decodedString = new String(decodedBytes);
+    InputStream inputstream = new ByteArrayInputStream(decodedBytes);
+    Image image = new Image(inputstream, 173, 86, false, false);
+    product_image.setImage(image);
+
 
      // je veux afficher l'image de produit de la base de donne
 
@@ -90,33 +100,11 @@ public void setData(Produit produitcard) {
     private float pr;
 
     public void add(ActionEvent actionEvent) {
-    stk = stock_productspinner.getValue();
-
-if (stk==0) {
-    String req = "INSERT INTO panier (prod_id,stockp,nomp,prixp,imagep,descriptionp) VALUES(?,?,?,?,?,?)";
-
-    try {
-        PreparedStatement preparedStatement = connection.prepareStatement(req);
-        preparedStatement.setString(1, String.valueOf(produitt_id));
-        preparedStatement.setString(2,String.valueOf(stk));
-        preparedStatement.setString(3,product_name.getText());
-        total=(stk*pr);
-        preparedStatement.setString(4, String.valueOf(total));
-        preparedStatement.setString(5, "product_image.getAccessibleHelp()");
-        preparedStatement.setString(6, description_product.getText());
-        preparedStatement.executeUpdate();
-        alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText("Produit ajouté au panier!");
-        alert.showAndWait();
-    } catch (SQLException e) {
-        throw new RuntimeException(e);
+        PanierItem panierItem = new PanierItem();
+        panierItem.setProduit(produitcard);
+        panierItem.setQuantite(stock_productspinner.getValue());
     }
 
-}
-
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setStock();

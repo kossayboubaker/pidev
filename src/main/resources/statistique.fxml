@@ -23,5 +23,6 @@
          </styleClass>
       </PieChart>
       <Button layoutX="574.0" layoutY="526.0" mnemonicParsing="false" onAction="#afficherproduitN" text="Afficher produit" />
+      <Button layoutX="497.0" layoutY="526.0" mnemonicParsing="false" onAction="#retoure" text="Retour" />
    </children>
 </AnchorPane>

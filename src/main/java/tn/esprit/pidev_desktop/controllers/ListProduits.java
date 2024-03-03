@@ -14,7 +14,7 @@ import tn.esprit.pidev_desktop.models.Produit;
 import tn.esprit.pidev_desktop.services.ProduitService;
 import tn.esprit.pidev_desktop.utils.MyDatabase;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
+
 import java.io.IOException;
 import java.sql.*;
 import java.net.URL;
@@ -24,7 +24,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Panier implements Initializable {
+public class ListProduits implements Initializable {
 
 
     @FXML
@@ -44,14 +44,14 @@ public class Panier implements Initializable {
     @FXML
     private Label menutotal;
     @FXML
-    private ListView<Panier> menulistview;
+    private ListView<ListProduits> menulistview;
 
 private ObservableList<Produit> po = FXCollections.observableArrayList();
 private Connection connection;
-public Panier() {
+public ListProduits() {
     connection = MyDatabase.getInstance().getConnection();
 }
-private ObservableList<Panier> menuorder;
+private ObservableList<ListProduits> menuorder;
 
 public ObservableList<Produit> menugetdata() {
 
