@@ -21,7 +21,7 @@ public class mainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/test.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Front.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         try {
             Parent root = fxmlLoader.load();

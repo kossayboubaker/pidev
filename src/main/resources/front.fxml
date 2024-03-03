@@ -27,29 +27,29 @@
          </image>
       </ImageView>
       <!-- Menu Buttons -->
-      <MenuButton fx:id="cataClient" layoutX="239.0" layoutY="27.0" prefHeight="26.0" prefWidth="156.0" stylesheets="@style.css" text="Catégorie &amp;Films">
+      <MenuButton fx:id="cataClient" layoutX="239.0" layoutY="27.0" prefHeight="26.0" prefWidth="156.0" styleClass="sous-button" stylesheets="@style.css" text="Catégorie &amp;Films">
          <items>
             <MenuItem styleClass="menu-item" text="Option 1" />
             <MenuItem styleClass="menu-item" text="Option 2" />
          </items>
       </MenuButton>
-      <MenuButton fx:id="evenementbutton" layoutX="405.0" layoutY="26.0" prefHeight="26.0" prefWidth="110.0" styleClass="custom-split-menu-button" stylesheets="@style.css" text="Événement">
+      <MenuButton fx:id="evenementbutton" layoutX="405.0" layoutY="26.0" prefHeight="26.0" prefWidth="110.0" styleClass="sous-button" stylesheets="@style.css" text="Événement">
          <items>
-            <MenuItem onAction="#ButtonClickCinema" styleClass="menu-item" text="Cinema" />
+            <MenuItem onAction="#ButtonClickCinema" styleClass="sous-button2" text="Cinema" />
          </items>
       </MenuButton>
-      <MenuButton fx:id="reservationFrontbuttonmenu" layoutX="525.0" layoutY="26.0" prefHeight="26.0" prefWidth="119.0" styleClass="custom-split-menu-button" stylesheets="@style.css" text="Réservation">
+      <MenuButton fx:id="reservationFrontbuttonmenu" layoutX="525.0" layoutY="26.0" prefHeight="26.0" prefWidth="119.0" styleClass="sous-button" stylesheets="@style.css" text="Réservation">
          <items>
             <MenuItem styleClass="menu-item" text="Option 1" />
             <MenuItem styleClass="menu-item" text="Option 2" />
          </items>
       </MenuButton>
-      <MenuButton fx:id="MarketClient" layoutX="653.0" layoutY="25.0" prefHeight="26.0" prefWidth="149.0" styleClass="custom-split-menu-button" stylesheets="@style.css" text="MarketPlace">
+      <MenuButton fx:id="MarketClient" layoutX="653.0" layoutY="25.0" prefHeight="26.0" prefWidth="149.0" styleClass="sous-button" stylesheets="@style.css" text="MarketPlace">
          <items>
             <MenuItem onAction="#ReserverClient" styleClass="menu-item" text=" Réservation maintenant " />
          </items>
       </MenuButton>
-      <MenuButton layoutX="887.0" layoutY="21.0" prefHeight="39.0" prefWidth="58.0" styleClass="custom-split-menu-button" stylesheets="@style.css">
+      <MenuButton layoutX="887.0" layoutY="21.0" prefHeight="39.0" prefWidth="58.0" styleClass="sous-button" stylesheets="@style.css">
          <graphic>
             <ImageView fitHeight="16" fitWidth="16">
                <image>

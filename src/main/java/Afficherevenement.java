@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import models.evenement;
 import services.evenementservice;
@@ -12,13 +13,18 @@ import services.evenementservice;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static java.sql.Date.valueOf;
 
 public class Afficherevenement {
+
     evenementservice cs = new evenementservice();
+    ObservableList <evenement> observableList;
+    @FXML
+    private TextField search;
     @FXML
     private DatePicker date;
 
@@ -36,7 +42,7 @@ public class Afficherevenement {
 
     @FXML
     private TextField periode;
-    private evenement evenement;
+
     public void initialize() {
         try {
             List<evenement> cinemas = cs.recuperer();
@@ -171,4 +177,36 @@ public class Afficherevenement {
         }
         nomev.getScene().setRoot(root);
     }
+
+
+    @FXML
+    void search(KeyEvent event) throws SQLException {
+        String searchText = search.getText();
+        if(searchText.isEmpty())
+        {
+
+            listevenement.setItems(observableList);
+
+
+        }else
+        {
+            List<evenement> searchResults = search(searchText);
+            listevenement.setItems(FXCollections.observableList(searchResults));
+            cs.recuperer();
+
+        }
+    }
+
+    private List<evenement> search(String searchText) {
+
+        List<evenement> searchResults = new ArrayList<>();
+        try {
+            searchResults = cs.search(searchText);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return searchResults;
+    }
+
 }

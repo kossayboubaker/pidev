@@ -144,4 +144,33 @@ public class evenementservice implements Ievenement<evenement> {
 
         return evenementCount;
     }
+
+    public List<evenement> search(String search) {
+        List<evenement> evenementList = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM evenement WHERE nom_ev LIKE ? OR description LIKE ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, "%" + search + "%");
+            preparedStatement.setString(2, "%" + search + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Parcours du résultat de la requête
+            while (resultSet.next()) {
+                evenement evenement = new evenement();
+                evenement.setId(resultSet.getInt("id"));
+                evenement.setId_cinema(resultSet.getInt("id_cinema"));
+                evenement.setNom_ev(resultSet.getString("nom_ev"));
+                evenement.setDescription(resultSet.getString("description"));
+                evenement.setDate(resultSet.getDate("date"));
+                evenement.setPeriode(resultSet.getString("periode"));
+
+                evenementList.add(evenement);
+            }
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return evenementList;
+    }
 }

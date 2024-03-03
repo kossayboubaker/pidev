@@ -13,7 +13,7 @@
             <TextField fx:id="place" layoutX="84.0" layoutY="167.0" promptText="place" />
             <TextField fx:id="nbsalle" layoutX="84.0" layoutY="200.0" promptText="nombre de salle " />
             <TextField fx:id="etat" layoutX="84.0" layoutY="230.0" promptText="etat" />
-            <Button layoutX="120.0" layoutY="277.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="62.0" styleClass="Button" stylesheets="@style.css" text="Ajouter" />
+            <Button layoutX="80.0" layoutY="277.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="150.0" styleClass="userProductCard-btn" stylesheets="@style.css" text="Ajouter" />
          </children>
          <opaqueInsets>
             <Insets />

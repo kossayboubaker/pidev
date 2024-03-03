@@ -13,11 +13,11 @@
             <Insets />
          </opaqueInsets>
       </ListView>
-      <Button layoutX="366.0" layoutY="410.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="26.0" prefWidth="118.0" styleClass="Button" stylesheets="@style.css" text="Supprimer" />
+      <Button layoutX="334.0" layoutY="410.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="38.0" prefWidth="150.0" styleClass="userProductCard-btn" stylesheets="@style.css" text="Supprimer" />
       <TextField fx:id="nom" layoutX="569.0" layoutY="92.0" prefWidth="150.0" promptText="nom" stylesheets="@style.css" />
       <TextField fx:id="place" layoutX="570.0" layoutY="122.0" promptText="place" />
       <TextField fx:id="nbsalle" layoutX="570.0" layoutY="152.0" promptText="nombre de salle " />
       <TextField fx:id="etat" layoutX="570.0" layoutY="182.0" promptText="etat" />
-      <Button layoutX="657.0" layoutY="219.0" mnemonicParsing="false" onAction="#Modifier" styleClass="Button" stylesheets="@style.css" text="Modifier" />
+      <Button layoutX="569.0" layoutY="219.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="26.0" prefWidth="150.0" styleClass="userProductCard-btn" stylesheets="@style.css" text="Modifier" />
    </children>
 </AnchorPane>

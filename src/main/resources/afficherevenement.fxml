@@ -14,13 +14,14 @@
             <Insets />
          </opaqueInsets>
       </ListView>
-      <Button layoutX="376.0" layoutY="420.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="26.0" prefWidth="118.0" styleClass="Button" stylesheets="@style.css" text="Supprimer" />
-      <Button layoutX="668.0" layoutY="284.0" mnemonicParsing="false" onAction="#Modifier" styleClass="Button" stylesheets="@style.css" text="Modifier" />
+      <Button layoutX="344.0" layoutY="420.0" mnemonicParsing="false" onAction="#Supprimer" prefHeight="26.0" prefWidth="150.0" styleClass="userProductCard-btn" stylesheets="@style.css" text="Supprimer" />
+      <Button layoutX="580.0" layoutY="284.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="26.0" prefWidth="150.0" styleClass="userProductCard-btn" stylesheets="@style.css" text="Modifier" />
       <TextField fx:id="nomev" layoutX="580.0" layoutY="102.0" promptText="nom evenement" />
       <TextField fx:id="idcinema" layoutX="579.0" layoutY="139.0" promptText="id cinema" />
       <TextField fx:id="description" layoutX="579.0" layoutY="177.0" promptText="description" />
       <DatePicker fx:id="date" layoutX="579.0" layoutY="212.0" prefHeight="26.0" prefWidth="150.0" promptText="date" />
       <TextField fx:id="periode" layoutX="580.0" layoutY="246.0" promptText="periode" />
-      <Button layoutX="655.0" layoutY="421.0" mnemonicParsing="false" onAction="#stat" text="Stat" />
+      <Button layoutX="580.0" layoutY="379.0" mnemonicParsing="false" onAction="#stat" prefHeight="26.0" prefWidth="150.0" styleClass="userProductCard-btn" text="Stat" />
+      <TextField fx:id="search" layoutX="81.0" layoutY="68.0" onKeyTyped="#search" promptText="recherche" />
    </children>
 </AnchorPane>

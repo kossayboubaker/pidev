@@ -59,3 +59,12 @@
     -fx-border-radius: 1000px;
     -fx-cursor: hand;
 }
+.sous-button {
+
+    -fx-background-color: #b7b405;
+    -fx-text-fill : #e7e5e5;
+
+}
+
+
+
