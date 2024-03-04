@@ -37,12 +37,12 @@ public class SiegeService implements IsiegeServ<Sieges> {
 
     @Override
     public void modifier(Sieges sieges) throws SQLException {
-        String req = "UPDATE sieges SET ReservationID=?, NumeroSiege=?, Statut=? WHERE ReservationID=?";
+        String req = "UPDATE sieges SET ReservationID=?, NumeroSiege=?, Statut=? WHERE SiegeID=?";
         try (PreparedStatement ps = connexion.prepareStatement(req)) {
             ps.setInt(1, sieges.getReservationID());
             ps.setString(2, sieges.getNumeroSiege());
             ps.setString(3, sieges.getStatut());
-            ps.setInt(4, sieges.getReservationID());
+            ps.setInt(4, sieges.getSiegeID());
 
             ps.executeUpdate();
         }

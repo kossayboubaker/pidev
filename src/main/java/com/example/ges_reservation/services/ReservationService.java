@@ -27,12 +27,13 @@ public class ReservationService implements IService<Reservations> {
 
     @Override
     public void ajouterResBack(Reservations reservations) throws SQLException {
-        String req = "INSERT INTO reservations (FilmID,DateReservation,HeureReservation,NombrePlacesDisponibles) VALUES(?,?,?,?)";
+        String req = "INSERT INTO reservations (FilmID,DateReservation,HeureReservation,NombrePlacesReservees,NombrePlacesDisponibles) VALUES(?,?,?,?,?)";
         PreparedStatement st = connexion.prepareStatement(req);
         st.setInt(1, reservations.getFilmID());
         st.setDate(2, reservations.getDateReservation());
         st.setTime(3, reservations.getHeureReservation());
-        st.setInt(4, reservations.getNombrePlacesDisponibles());
+        st.setInt(4, reservations.getNombrePlacesReservees());
+        st.setInt(5, reservations.getNombrePlacesDisponibles());
         st.executeUpdate();
     }
 
@@ -211,5 +212,71 @@ public class ReservationService implements IService<Reservations> {
             statement.setString(2, numeroSiege);
             statement.executeUpdate();
         }
+    }
+
+    public List<String> getSiegeNumbersForFilmDateAndTime(int filmID, String date, String heure) throws SQLException {
+        List<String> siegeNumbers = new ArrayList<>();
+        String query = "SELECT s.NumeroSiege " +
+                "FROM sieges s " +
+                "JOIN reservations r ON s.ReservationID = r.ReservationID " +
+                "WHERE r.FilmID = ? AND r.DateReservation = ? AND r.HeureReservation = ?";
+        try (PreparedStatement statement = connexion.prepareStatement(query)) {
+            statement.setInt(1, filmID);
+            statement.setString(2, date);
+            statement.setString(3, heure);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                String siegeNumber = resultSet.getString("NumeroSiege");
+                siegeNumbers.add(siegeNumber);
+            }
+        }
+        return siegeNumbers;
+    }
+
+
+    public void marquerSiegeIndisponible(String siegeNumber) throws SQLException {
+        // Construire la requête SQL pour mettre à jour le statut du siège
+        String query = "UPDATE sieges SET Statut = 'indisponible' WHERE NumeroSiege = ?";
+
+        try (PreparedStatement statement = connexion.prepareStatement(query)) {
+            // Définir le paramètre dans la requête SQL
+            statement.setString(1, siegeNumber);
+
+            // Exécuter la requête SQL pour mettre à jour le statut du siège
+            statement.executeUpdate();
+        }
+    }
+
+    public boolean isSiegeIndisponible(int filmID, String date, String heure, String siegeNumber) throws SQLException {
+        String query = "SELECT COUNT(*) AS count FROM sieges INNER JOIN reservations ON sieges.ReservationID = reservations.ReservationID WHERE reservations.FilmID = ? AND reservations.DateReservation = ? AND reservations.HeureReservation = ? AND sieges.NumeroSiege = ? AND sieges.Statut = 'indisponible'";
+        try (PreparedStatement statement = connexion.prepareStatement(query)) {
+            statement.setInt(1, filmID);
+            statement.setString(2, date);
+            statement.setString(3, heure);
+            statement.setString(4, siegeNumber);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt("count");
+                    return count > 0;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    public int getNombrePlacessDisponibles(int idReservation) throws SQLException {
+        String sql = "SELECT NombrePlacesDisponibles FROM reservations  WHERE ReservationID = ?";
+
+        try (PreparedStatement statement = connexion.prepareStatement(sql)) {
+            statement.setInt(1, idReservation);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt("NombrePlacesDisponibles"); // Correction ici
+
+                }
+            }
+        }
+        return 0; // Valeur par défaut si aucune donnée n'est trouvée
     }
 }

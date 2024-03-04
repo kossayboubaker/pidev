@@ -2,40 +2,48 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.stage.Stage?>
+<?import javafx.scene.Scene?>
 
 <AnchorPane prefHeight="505.0" prefWidth="1008.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.AjouterFrontRes">
    <children>
-      <ComboBox fx:id="nomFilmCombo" layoutX="311.0" layoutY="88.0" prefWidth="150.0" />
-      <ComboBox fx:id="dateresf" layoutX="311.0" layoutY="148.0" prefWidth="150.0" />
-      <ComboBox fx:id="heureResf" layoutX="311.0" layoutY="208.0" prefWidth="150.0" stylesheets="@styles.css" />
-      <Text fill="WHITE" layoutX="187.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom de film">
+      <ComboBox fx:id="nomFilmCombo" layoutX="296.0" layoutY="48.0" prefWidth="150.0" />
+      <ComboBox fx:id="dateresf" layoutX="296.0" layoutY="108.0" prefWidth="150.0" />
+      <ComboBox fx:id="heureResf" layoutX="296.0" layoutY="168.0" prefWidth="150.0" stylesheets="@styles.css" />
+      <Text fill="WHITE" layoutX="172.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom de film">
          <font>
             <Font name="Lato Black" size="18.0" />
-         </font></Text>
-      <Text fill="WHITE" layoutX="96.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de film disponible: :">
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="81.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de film disponible: :">
          <font>
             <Font name="Lato Black" size="18.0" />
-         </font></Text>
-      <Text fill="WHITE" layoutX="141.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heure de film">
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="126.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Heure de film">
          <font>
             <Font name="Lato Black" size="18.0" />
-         </font></Text>
-      <Text fill="WHITE" layoutX="153.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de Place:">
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="138.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de Place:">
          <font>
             <Font name="Lato Black" size="18.0" />
-         </font></Text>
-      <TextField fx:id="nbreplacef" layoutX="315.0" layoutY="265.0" stylesheets="@styles.css" />
-      <Button fx:id="validerButton" layoutX="215.0" layoutY="358.0" mnemonicParsing="false" onAction="#valider" style="-fx-background-color: #CCAF2E;" text="valider la reservation" textFill="WHITE">
+         </font>
+      </Text>
+      <TextField fx:id="nbreplacef" layoutX="300.0" layoutY="225.0" stylesheets="@styles.css" />
+      <Button fx:id="validerButton" layoutX="215.0" layoutY="463.0" mnemonicParsing="false" onAction="#valider" style="-fx-background-color: #CCAF2E;" text="valider la reservation" textFill="WHITE">
          <font>
             <Font name="Lato-LightItalic" size="14.0" />
-         </font></Button>
-      <Text fill="WHITE" layoutX="65.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Réserver Maintenant">
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="31.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Réserver Maintenant">
          <font>
             <Font name="Haettenschweiler" size="36.0" />
          </font>
@@ -43,6 +51,17 @@
       <ImageView fitHeight="274.0" fitWidth="528.0" layoutX="504.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/1200-L-les-salles-spciales-kids-des-sances-de-cinma-pas-comme-les-autres.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="29.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="choisir le(s) siége(s) ">
+         <font>
+            <Font name="Haettenschweiler" size="30.0" />
+         </font>
+      </Text>
+      <ListView fx:id="NumsSieges" layoutX="296.0" layoutY="268.0" prefHeight="178.0" prefWidth="150.0" />
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="237.0" layoutY="325.0" onMouseClicked="#afficherImage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/soutien.png" />
          </image>
       </ImageView>
    </children>

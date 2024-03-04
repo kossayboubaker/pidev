@@ -1,24 +1,15 @@
 package com.example.ges_reservation.controllers;
 
-import com.example.ges_reservation.models.Reservations;
 import com.example.ges_reservation.models.Sieges;
-import com.example.ges_reservation.services.ReservationService;
 import com.example.ges_reservation.services.SiegeService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class AjouterSiege {
-    @FXML
-    private TextField numeroSiege;
 
     @FXML
     private TextField reservationID;
@@ -26,76 +17,70 @@ public class AjouterSiege {
     @FXML
     private TextField statut;
 
-    private final SiegeService ps = new SiegeService();
+    private final SiegeService siegeService = new SiegeService();
 
     @FXML
-    void AjoutS(ActionEvent event) {
+    void ajouterSieges(ActionEvent event) {
         // Récupérer les valeurs des champs de texte
-        String numero = numeroSiege.getText();
         String idReservation = reservationID.getText();
         String status = statut.getText();
 
-        // Vérifier si les champs sont vides
-        if (numero.isEmpty() || idReservation.isEmpty() || status.isEmpty()) {
+        if (idReservation.isEmpty() || status.isEmpty()) {
             // Afficher une alerte pour informer l'utilisateur que tous les champs doivent être remplis
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Champs vides");
-            alert.setHeaderText(null);
-            alert.setContentText("Veuillez remplir tous les champs.");
-            alert.showAndWait();
+            afficherAlerte("Champs vides", "Veuillez remplir tous les champs.", Alert.AlertType.WARNING);
         } else {
-            // Vérifier si le statut est valide ("disponible" ou "non disponible")
-            if (status.matches("(disponible|non disponible)")) {
-                try {
-                    // Ajouter le siège en utilisant le service SiegeService
-                    ps.ajouter(new Sieges(4, Integer.parseInt(idReservation), numero, status));
+            try {
+                int nombrePlacesDisponibles = Integer.parseInt(idReservation); // Modifier pour obtenir NombrePlacesDisponibles
 
-                    // Réinitialiser les champs de texte
-                    numeroSiege.clear();
-                    reservationID.clear();
-                    statut.clear();
-
-                    // Afficher une confirmation que le siège a été ajouté avec succès
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Siège ajouté");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Le siège a été ajouté avec succès.");
-                    alert.showAndWait();
-                } catch (NumberFormatException e) {
-                    // Afficher une alerte si les valeurs saisies ne sont pas valides
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Erreur");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Veuillez saisir des valeurs valides pour le numéro de siège et l'identifiant de réservation.");
-                    alert.showAndWait();
-                } catch (SQLException e) {
-                    // Afficher une alerte en cas d'erreur lors de l'ajout du siège
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Erreur");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Une erreur s'est produite lors de l'ajout du siège : " + e.getMessage());
-                    alert.showAndWait();
+                // Vérifier si le nombre de places disponibles est divisible par 10
+                if (nombrePlacesDisponibles % 10 != 0) {
+                    afficherAlerte("Erreur", "Le nombre total de places doit être divisible par 10 pour créer des rangées complètes de sièges.", Alert.AlertType.ERROR);
+                    return;
                 }
-            } else {
-                // Afficher une alerte si le statut n'est pas valide
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setTitle("Statut invalide");
-                alert.setHeaderText(null);
-                alert.setContentText("Le statut du siège doit être 'disponible' ou 'non disponible'.");
-                alert.showAndWait();
+
+                // Calculer le nombre de rangées (10 sièges par rangée)
+                int nombreDeRangees = nombrePlacesDisponibles / 10;
+
+                // Définir les lettres de siège à utiliser
+                String[] lettresSiege = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+
+                // Générer et ajouter les sièges en fonction des lettres de siège définies
+                for (int i = 0; i < nombreDeRangees; i++) {
+                    // Récupérer la lettre de la rangée
+                    String lettreRangee = lettresSiege[i];
+
+                    // Générer les numéros de siège correspondants pour chaque lettre (de 1 à 10)
+                    for (int j = 1; j <= 10; j++) {
+                        // Construire le numéro de siège (par exemple, "A1", "A2", ..., "B1", "B2", ...)
+                        String numeroSiege = lettreRangee + j;
+
+                        // Ajouter le siège en utilisant le service SiegeService
+                        siegeService.ajouter(new Sieges(4, Integer.parseInt(idReservation), numeroSiege, status));
+                    }
+                }
+
+                // Réinitialiser les champs de texte
+                reservationID.clear();
+                statut.clear();
+
+                // Afficher une confirmation que les sièges ont été ajoutés avec succès
+                afficherAlerte("Sièges ajoutés", "Les sièges ont été ajoutés avec succès.", Alert.AlertType.INFORMATION);
+            } catch (NumberFormatException e) {
+                // Afficher une alerte si l'identifiant de réservation n'est pas valide
+                afficherAlerte("Erreur", "Veuillez saisir un nombre valide pour NombrePlacesDisponibles.", Alert.AlertType.ERROR);
+            } catch (SQLException e) {
+                // Afficher une alerte en cas d'erreur lors de l'ajout des sièges
+                afficherAlerte("Erreur", "Une erreur s'est produite lors de l'ajout des sièges : " + e.getMessage(), Alert.AlertType.ERROR);
             }
         }
     }
 
-    @FXML
-    void afficheS(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/AfficherSiege.fxml"));
-            Stage window = (Stage) numeroSiege.getScene().getWindow();
-
-            window.setScene(new Scene(root));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    // Méthode pour afficher une alerte
+    private void afficherAlerte(String titre, String contenu, Alert.AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle(titre);
+        alert.setHeaderText(null);
+        alert.setContentText(contenu);
+        alert.showAndWait();
     }
 }
