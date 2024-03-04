@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.PageUser">
+   <children>
+      <Label fx:id="labelNom" layoutX="214.0" layoutY="33.0" prefHeight="42.0" prefWidth="174.0" />
+      <Label fx:id="labelPrenom" layoutX="214.0" layoutY="75.0" prefHeight="42.0" prefWidth="174.0" />
+      <Label layoutX="111.0" layoutY="48.0" prefHeight="27.0" prefWidth="122.0" text="Bienvenue">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="770.0" layoutY="519.0" onAction="#ToLogin" text="Sign Out" />
+      <Hyperlink layoutX="774.0" layoutY="552.0" onAction="#Quitter" text="Quitter" />
+   </children>
+</AnchorPane>

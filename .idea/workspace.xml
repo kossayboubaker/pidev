@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1b667f2-3654-4112-926d-588f3e2807e0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ProService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ProService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ProduitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/services/ProduitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/pidev_desktop/test/Main.java" afterDir="false" />
+    <list default="true" id="f041abac-1f7f-4ec5-ae77-f4c49388772a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Crud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pidev" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/codeblocks-13.12mingw-setup.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/flex-2.5.4a-1.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,23 +19,25 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2cCToaJznX7J6pIjZa6oiaJTpsG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2cBiAtbOy3IZQoD3HCu2GYQlwe8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,22 +47,39 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "kossayboubaker",
+    "git-widget-placeholder": "azerbenamor",
+    "last_opened_file_path": "C:/Users/K/IdeaProjects/Crud/src/main/java/tn/esprit/crud/controllers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="tn.esprit.crud.controllers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\K\IdeaProjects\Crud\src\main\java\tn\esprit\crud\controllers" />
+      <recent name="C:\Users\K\IdeaProjects\Crud\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\K\IdeaProjects\Crud\src\main\resources" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tn.esprit.pidev_desktop.test.Main" />
-      <module name="pidev_desktop" />
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tn.esprit.crud.test.HelloApplication" />
+      <module name="crud" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tn.esprit.pidev_desktop.test.*" />
+          <option name="PATTERN" value="tn.esprit.crud.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -67,24 +87,85 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Crud" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Crud" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e1b667f2-3654-4112-926d-588f3e2807e0" name="Changes" comment="" />
-      <created>1707614740462</created>
+      <changelist id="f041abac-1f7f-4ec5-ae77-f4c49388772a" name="Changes" comment="" />
+      <created>1707591235566</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1707614740462</updated>
-      <workItem from="1707614741488" duration="3687000" />
-      <workItem from="1707652247003" duration="10888000" />
-      <workItem from="1707678163697" duration="6893000" />
-      <workItem from="1707773223200" duration="9593000" />
+      <updated>1707591235566</updated>
+      <workItem from="1707591236478" duration="7791000" />
+      <workItem from="1707617393085" duration="12000" />
+      <workItem from="1707663266544" duration="1470000" />
+      <workItem from="1707671903633" duration="8741000" />
+      <workItem from="1707686200893" duration="741000" />
+      <workItem from="1707687114578" duration="78000" />
+      <workItem from="1707691232501" duration="63000" />
+      <workItem from="1707691365616" duration="3096000" />
+      <workItem from="1707728391583" duration="9000" />
+      <workItem from="1707729992544" duration="30000" />
+      <workItem from="1707738904855" duration="405000" />
+      <workItem from="1707771747845" duration="28000" />
+      <workItem from="1707851582892" duration="4412000" />
+      <workItem from="1707856091260" duration="144000" />
+      <workItem from="1707856256721" duration="256000" />
+      <workItem from="1707856539378" duration="1523000" />
+      <workItem from="1707930064066" duration="10838000" />
+      <workItem from="1707940938523" duration="12001000" />
+      <workItem from="1707956774626" duration="11776000" />
+      <workItem from="1708013199478" duration="120000" />
+      <workItem from="1708182949900" duration="6192000" />
+      <workItem from="1708190075104" duration="12581000" />
+      <workItem from="1708222229853" duration="6389000" />
+      <workItem from="1708267779492" duration="24243000" />
+      <workItem from="1708315915161" duration="618000" />
+      <workItem from="1708330310494" duration="91000" />
+      <workItem from="1708330413480" duration="10621000" />
+      <workItem from="1708456242626" duration="10357000" />
+      <workItem from="1708523630619" duration="8183000" />
+      <workItem from="1708542599085" duration="44870000" />
+      <workItem from="1708730537210" duration="13235000" />
+      <workItem from="1708787163940" duration="8577000" />
+      <workItem from="1708799174619" duration="10822000" />
+      <workItem from="1708845574325" duration="430000" />
+      <workItem from="1708884921357" duration="40023000" />
+      <workItem from="1708957848891" duration="7345000" />
+      <workItem from="1708977200683" duration="4989000" />
+      <workItem from="1709003668218" duration="14367000" />
+      <workItem from="1709081008684" duration="5607000" />
+      <workItem from="1709130291497" duration="5284000" />
+      <workItem from="1709139274219" duration="4821000" />
+      <workItem from="1709147911663" duration="109000" />
+      <workItem from="1709150879835" duration="1119000" />
+      <workItem from="1709166399010" duration="9042000" />
+      <workItem from="1709203372224" duration="10690000" />
+      <workItem from="1709258186853" duration="792000" />
+      <workItem from="1709299548954" duration="1323000" />
+      <workItem from="1709489909204" duration="10000" />
+      <workItem from="1709490201210" duration="1634000" />
+      <workItem from="1709499426472" duration="3189000" />
+      <workItem from="1709561498559" duration="52000" />
+      <workItem from="1709562370208" duration="7891000" />
     </task>
     <servers />
   </component>
@@ -99,23 +180,7 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="kossayboubaker" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/main" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="*" />
+                  <option value="azerbenamor" />
                 </option>
               </RecentGroup>
             </list>
@@ -133,7 +198,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="azerbenamor" />
                       </list>
                     </value>
                   </entry>
@@ -144,5 +209,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

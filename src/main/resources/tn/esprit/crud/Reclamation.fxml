@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.Reclamation">
+   <children>
+      <TextArea fx:id="bodyTextField" layoutX="287.0" layoutY="252.0" prefHeight="219.0" prefWidth="369.0" />
+      <Button layoutX="657.0" layoutY="502.0" mnemonicParsing="false" onAction="#sendButton" prefHeight="39.0" prefWidth="76.0" style="-fx-background-color: #6e1216;" text="Envoyer" textFill="WHITE" />
+      <ChoiceBox fx:id="choixSujet" layoutX="291.0" layoutY="150.0" prefHeight="26.0" prefWidth="226.0" />
+      <Hyperlink layoutX="442.0" layoutY="528.0" onAction="#BackToLogin" text="Back To Login" />
+      <VBox prefHeight="600.0" prefWidth="82.0" style="-fx-background-color: #F7C729;">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="79.0" />
+         </children>
+      </VBox>
+      <Label layoutX="287.0" layoutY="110.0" text="Sujet De Votre Reclamation :" textFill="#f2eb1f">
+         <font>
+            <Font name="Constantia" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="287.0" layoutY="214.0" text="Decrivez votre probleme : " textFill="#f2eb1f">
+         <font>
+            <Font name="Constantia" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="404.0" layoutY="31.0" prefHeight="40.0" prefWidth="195.0" text="Reclamation : " textFill="#f2eb1f" underline="true">
+         <font>
+            <Font name="Sitka Banner" size="35.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="333.0" fitWidth="242.0" layoutX="625.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/dca4d16de7.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

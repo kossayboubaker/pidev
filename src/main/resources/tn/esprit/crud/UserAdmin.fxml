@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #D5DDE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.UserAdmin">
+   <children>
+      <Label layoutX="474.0" layoutY="58.0" prefHeight="46.0" prefWidth="138.0" text="Gestion des Users">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Button layoutX="339.0" layoutY="323.0" mnemonicParsing="false" onAction="#VersAjouterAdmin" prefHeight="35.0" prefWidth="109.0" text="Ajouter" />
+      <Button layoutX="755.0" layoutY="470.0" mnemonicParsing="false" onAction="#BackToAdmin" text="Return" />
+      <Button fx:id="id" layoutX="640.0" layoutY="323.0" mnemonicParsing="false" onAction="#VersAfficherAdmin" prefHeight="35.0" prefWidth="110.0" text="Afficher" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="295.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../tl-_6_.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="614.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../tl-_5_.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="-1.0" layoutY="54.0" prefHeight="547.0" prefWidth="170.0" style="-fx-background-color: #212B35;">
+         <children>
+            <HBox prefHeight="49.0" prefWidth="170.0">
+               <children>
+                  <Button fx:id="dash" mnemonicParsing="false" onAction="#ToDashboard" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="43.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="USER" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="50.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#ToCodeAdmin" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="CODE PROMO" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="46.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="170.0" style="-fx-background-color: #212B35;" text="KOSSAY" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="39.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="NESSIM" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="45.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="AMIR" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="46.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="MARWAN" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="43.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#BackToLogin" prefHeight="90.0" prefWidth="170.0" style="-fx-background-color: #212B35;" text="LOG OUT" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="170.0" />
+         </children>
+      </VBox>
+      <HBox layoutX="-1.0" prefHeight="53.0" prefWidth="900.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="58.0" prefWidth="169.0" text="Cine Hub">
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+            </Label>
+            <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="47.0" prefWidth="0.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
