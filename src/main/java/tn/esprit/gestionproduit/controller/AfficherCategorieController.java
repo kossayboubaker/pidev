@@ -13,16 +13,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import tn.esprit.gestionproduit.entity.Categorie;
+import tn.esprit.gestionproduit.entity.Commande;
 import tn.esprit.gestionproduit.service.CategorieService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLDataException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -33,11 +33,9 @@ import java.util.logging.Logger;
 public class AfficherCategorieController implements Initializable {
 
     @FXML
-    private TableView<Categorie> table;
-    @FXML
-    private TableColumn<Categorie, String> des;
-    
-    
+    private ListView<Categorie> listcategorie;
+
+
     private ObservableList<Categorie> UserData = FXCollections.observableArrayList();
     
     CategorieService cs = new CategorieService();
@@ -50,25 +48,42 @@ public class AfficherCategorieController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
+        Commande commandeService = new Commande();
         try {
-            List<Categorie> listb= new ArrayList<Categorie>();
-            
-            listb = cs.getAllCategories();
-     
-            UserData.clear();
-            UserData.addAll(listb);
-            table.setItems(UserData);
-            
-            des.setCellValueFactory
-                      (
-                              new PropertyValueFactory<>("description")
-                      );
-        } catch (SQLDataException ex) {
-            Logger.getLogger(AfficherCategorieController.class.getName()).log(Level.SEVERE, null, ex);
+            ObservableList<Categorie> commandes = cs.getAllCategories();
+
+            // Trier la liste des commandes par ID avant de les ajouter à l'ObservableList
+            //  commandes.sort(Comparator.comparingInt(Commande::getEtat));
+
+            // Créer une ObservableList pour stocker les données des commandes
+            ObservableList<String> CommandeDataList = FXCollections.observableArrayList();
+
+            // Ajouter les titres des colonnes
+            String columnTitles = String.format("%-35s %-22s  ", "ID","Description");
+            CommandeDataList.add(columnTitles);
+
+            // Itérer à travers la liste des commandes et ajouter leurs détails à la CommandeDataList
+            for (Categorie categorie : commandes) {
+                String commandeData = String.format("%-30s %-20s %-20s ",
+                        categorie.getId_categori(),
+                        categorie.getDescription()
+
+                );
+                CommandeDataList.add(commandeData);
+            }
+
+            // Définir les éléments pour la ListView
+
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
         }
-        
-    }    
+
+
+    }
+
+
 
     @FXML
     private void Ajouter(ActionEvent event) {
@@ -76,7 +91,7 @@ public class AfficherCategorieController implements Initializable {
             Parent root;
                try {
               root = FXMLLoader.load(getClass().getResource("/AddCategorie.fxml"));
-               Stage myWindow = (Stage) table.getScene().getWindow();
+               Stage myWindow = (Stage) listcategorie.getScene().getWindow();
                Scene sc = new Scene(root);
                myWindow.setScene(sc);
                myWindow.setTitle("page name");
@@ -92,12 +107,12 @@ public class AfficherCategorieController implements Initializable {
 
     @FXML
     private void Modif(ActionEvent event) {
-        
-              id =  table.getSelectionModel().getSelectedItem().getId_categori();     
+
+              id =  listcategorie.getSelectionModel().getSelectedItem().getId_categori();
               Parent root;
                try {
               root = FXMLLoader.load(getClass().getResource("/ModefierCategorie.fxml"));
-               Stage myWindow = (Stage) table.getScene().getWindow();
+               Stage myWindow = (Stage) listcategorie.getScene().getWindow();
                Scene sc = new Scene(root);
                myWindow.setScene(sc);
                myWindow.setTitle("page name");
@@ -112,8 +127,8 @@ public class AfficherCategorieController implements Initializable {
 
     @FXML
     private void Delete(ActionEvent event) throws SQLDataException {
-        
-        int id =  table.getSelectionModel().getSelectedItem().getId_categori();     
+
+        int id =  listcategorie.getSelectionModel().getSelectedItem().getId_categori();
         cs.deleteCategori(id);
         resetTableData();
         
@@ -126,7 +141,7 @@ public class AfficherCategorieController implements Initializable {
         List<Categorie> lisre = new ArrayList<>();
         lisre = cs.getAllCategories();
         ObservableList<Categorie> data = FXCollections.observableArrayList(lisre);
-        table.setItems(data);
+        listcategorie.setItems(data);
     }
     
     

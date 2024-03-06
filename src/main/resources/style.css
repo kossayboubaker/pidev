@@ -17,7 +17,7 @@
 
 
 .gradient{
-    -fx-background-color: linear-gradient(to bottom right, #bb7b9a, #e1a95e, #9371d5);
+    -fx-background-color: linear-gradient(to bottom right, #a89679, #413c3c);
 }
 
 /* Stylisation des boutons */

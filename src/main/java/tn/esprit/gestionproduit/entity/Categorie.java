@@ -23,6 +23,13 @@ public class Categorie {
     }
     
     
-    
+    // methode toString
+    @Override
+    public String toString() {
+        return "Categorie{" +
+
+                ", description='" + description + '\'' +
+                '}';
+    }
     
 }

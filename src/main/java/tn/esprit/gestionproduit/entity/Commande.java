@@ -52,4 +52,25 @@ public class Commande {
     public void setEtat(String etat) {
         this.etat = etat;
     }
-}
+
+
+
+
+// methode toString
+@Override
+public String toString() {
+    return "Commande{" +
+
+            ", type='" + type + '\'' +
+            ", prix=" + prix +
+            ", etat='" + etat + '\'' +
+            '}';
+} }
+
+
+
+
+
+
+
+

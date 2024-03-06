@@ -7,38 +7,23 @@ package tn.esprit.gestionproduit.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
+import javafx.scene.control.ListView;
 import tn.esprit.gestionproduit.entity.Commande;
 import tn.esprit.gestionproduit.service.Service;
 
-import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLDataException;
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 
 public class ListeCommandeController implements Initializable {
 
     @FXML
-    private TableView<Commande> table;
-    @FXML
-    private TableColumn<Commande, Integer> ref;
-    @FXML
-    private TableColumn<Commande, Float> prix;
+    private ListView<String> listcmd;
     
     private ObservableList<Commande> UserData = FXCollections.observableArrayList();
     
@@ -55,7 +40,7 @@ public class ListeCommandeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        /*
                 try {
             List<Commande> listb= new ArrayList<Commande>();
             
@@ -64,43 +49,49 @@ public class ListeCommandeController implements Initializable {
             System.out.println("hello"+listb);
             UserData.clear();
             UserData.addAll(listb);
-            table.setItems(UserData);
+            listcmd.setItems(UserData);
             
-            ref.setCellValueFactory
-                      (
-                              new PropertyValueFactory<>("id_commande")
-                      );
-            prix.setCellValueFactory
-                      (
-                              new PropertyValueFactory<>("prix")
-                      );
-            
+
         } catch (SQLDataException ex) {
             Logger.getLogger(ListeCommandeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+*/
 
+        Commande commandeService = new Commande();
+        try {
+            List<Commande> commandes = s.getAllCommande();
+
+            // Trier la liste des commandes par ID avant de les ajouter à l'ObservableList
+          //  commandes.sort(Comparator.comparingInt(Commande::getEtat));
+
+            // Créer une ObservableList pour stocker les données des commandes
+            ObservableList<String> CommandeDataList = FXCollections.observableArrayList();
+
+            // Ajouter les titres des colonnes
+            String columnTitles = String.format("%-35s %-22s %-22s ", "etat", "prix", "type");
+            CommandeDataList.add(columnTitles);
+
+            // Itérer à travers la liste des commandes et ajouter leurs détails à la CommandeDataList
+            for (Commande commande : commandes) {
+                String commandeData = String.format("%-30s %-20s %-20s ",
+                        commande.getEtat(),
+                        commande.getPrix(),
+                        commande.getType()
+
+                );
+                CommandeDataList.add(commandeData);
+            }
+
+            // Définir les éléments pour la ListView
+            listcmd.setItems(CommandeDataList);
+
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
         
         
     }    
 
-    @FXML
-    private void consulter(ActionEvent event) {
-        
-                      ide =  table.getSelectionModel().getSelectedItem().getId_commande();     
 
-             Parent root;
-           try {
-              root = FXMLLoader.load(getClass().getResource("/ShowCommande.fxml"));
-               Stage myWindow = (Stage) table.getScene().getWindow();
-               Scene sc = new Scene(root);
-               myWindow.setScene(sc);
-               myWindow.setTitle("page name");
-                            //myWindow.setFullScreen(true);
-               myWindow.show();
-               } catch (IOException ex) {
-               Logger.getLogger(ShowProduitController.class.getName()).log(Level.SEVERE, null, ex);
-               }
-        
-    }
-    
+
 }

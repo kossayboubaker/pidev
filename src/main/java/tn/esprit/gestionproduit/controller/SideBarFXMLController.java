@@ -77,17 +77,7 @@ public class SideBarFXMLController {
 
 
     public void getgategorie(ActionEvent actionEvent) {
-        try {
-            // Charger la vue AjouterReservation depuis son fichier FXML
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherCategorie.fxml"));
-            Parent AddProduitView = loader.load();
 
-
-            mainStackPane.getChildren().clear();
-            mainStackPane.getChildren().add(AddProduitView);
-        } catch (IOException e) {
-            e.printStackTrace(); // Gérer les erreurs de chargement de la vue
-        }
     }
 
     public void ajouterCategorie(ActionEvent actionEvent) {

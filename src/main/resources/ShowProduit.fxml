@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="881.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.gestionproduit.controller.ShowProduitController">
    <children>
-      <ListView fx:id="listView" layoutX="23.0" layoutY="151.0" prefHeight="402.0" prefWidth="773.0" />
+      <ListView fx:id="listView" layoutX="23.0" layoutY="151.0" prefHeight="402.0" prefWidth="621.0" />
       <Label layoutX="207.0" layoutY="55.0" text="Produits">
          <font>
             <Font name="System Bold" size="37.0" />

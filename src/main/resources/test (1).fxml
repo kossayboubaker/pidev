@@ -70,7 +70,6 @@
                   <MenuItem onAction="#ajouterproduit" styleClass="menu-item" text="Ajouter Produit" />
                   <MenuItem onAction="#getproduit" styleClass="menu-item" text="Afficher Produit" />
                   <MenuItem mnemonicParsing="false" onAction="#getcommande" text="Afficher Commande" />
-                  <MenuItem mnemonicParsing="false" onAction="#getgategorie" text="Afficher gategorie" />
                   <MenuItem mnemonicParsing="false" onAction="#ajouterCategorie" text="Ajouter Categorie" />
                </items>
                <styleClass>
