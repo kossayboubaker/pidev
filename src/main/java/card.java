@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import models.cinema;
 import models.evenement;
 import services.evenementservice;
@@ -32,9 +33,6 @@ public class card {
     @FXML
     private Text place;
 
-    public HBox getConsultez() {
-        return consultez;
-    }
 
     public void setProductData(cinema cinema) {
         id.setText("" + cinema.getId());
@@ -44,24 +42,23 @@ public class card {
         etat.setText("" + cinema.getEtat());
 
         consultez.setOnMouseClicked(event -> {
-            System.out.println("loooool" + cinema.getId());
+
 
             evenementservice evenementservice = new evenementservice();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/afficheevenementfront.fxml"));
-
             try {
 
                 evenement evenement = evenementservice.recuperere(cinema.getId());
                 mainFX.data.id = cinema.getId();
-                System.out.println(""+evenement.getId());
-
-
+                System.out.println("CINEMA" +mainFX.data.id);
+                //System.out.println(""+evenement.getId());
                 Parent root = fxmlLoader.load();
                 Stage stage = new Stage();
                 stage.setScene(new Scene(root));
+                stage.initStyle(StageStyle.UTILITY);
                 stage.show();
             } catch (IOException | SQLException e) {
-                e.printStackTrace(); // Handle your exception properly
+                e.printStackTrace();
             }
         });
     }

@@ -1,7 +1,7 @@
 package services;
 
-import models.cinema;
 import models.evenement;
+import models.Review;
 import utils.mydb;
 
 import java.sql.*;
@@ -15,7 +15,6 @@ public class evenementservice implements Ievenement<evenement> {
     public evenementservice(){
         connection = mydb.getInstance().getConnection();
     }
-    cinema cs = new cinema();
 
     @Override
     public void ajouter(evenement evenement) throws SQLException {
@@ -72,6 +71,28 @@ public class evenementservice implements Ievenement<evenement> {
         String sql = "select * from evenement where id_cinema=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setInt(1,id_cinema);
+        ResultSet rs = preparedStatement.executeQuery();
+
+        while (rs.next()){
+
+            p.setId(rs.getInt("id"));
+            p.setId_cinema(rs.getInt("id_cinema"));
+            p.setNom_ev(rs.getString("nom_ev"));
+            p.setDescription(rs.getString("description"));
+            p.setDate(rs.getDate("date"));
+            p.setPeriode(rs.getString("periode"));
+
+
+        }
+        preparedStatement.close();
+        return p;
+    }
+
+    public evenement getEvenementByID(int id) throws SQLException {
+        evenement p = new evenement();
+        String sql = "select * from evenement where id=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1,id);
         ResultSet rs = preparedStatement.executeQuery();
 
         while (rs.next()){
@@ -172,5 +193,91 @@ public class evenementservice implements Ievenement<evenement> {
             e.printStackTrace();
         }
         return evenementList;
+    }
+
+    public int getTotalEventsReviews(int id_evenement) {
+        int total = 0;
+        try {
+            // Ensure you have a valid and open database connection (the 'connection' variable)
+            if (connection != null && !connection.isClosed()) {
+                String query = "SELECT count(*) FROM review WHERE id_evenement = ?";
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                    preparedStatement.setInt(1, id_evenement);
+                    try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                        if (resultSet.next()) {
+                            total = resultSet.getInt(1);
+                        }
+                    }
+                }
+            } else {
+                // Handle the case when the database connection is not valid or closed
+                System.err.println("Database connection is not valid or closed.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return total;
+    }
+
+    public int getTotalEventsReviewsByStar(int id_evenement, int value) {
+        int total = 0;
+        try {
+            String query = "SELECT count(*) FROM review WHERE id_evenement = ? and value = ? ";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id_evenement);
+            preparedStatement.setInt(2, value);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                total = resultSet.getInt(1);
+            }
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return total;
+    }
+
+    public List<Review> getAllComments(int id_evenement) {
+        List<Review> reviewList = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM review WHERE id_evenement = ? ORDER BY id_review DESC ";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id_evenement);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Parcours du résultat de la requête
+            while (resultSet.next()) {
+                Review review = new Review();
+                review.setId_review(resultSet.getInt("id_review"));
+                review.setTitle(resultSet.getString("title"));
+                review.setComments(resultSet.getString("comment"));
+                review.setValue(resultSet.getInt("value"));
+                review.setId_evenement(resultSet.getInt("id_evenement"));
+                reviewList.add(review);
+            }
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return reviewList;
+    }
+
+    public void addReview(Review review) {
+        try {
+            String req = "INSERT INTO review(title, comment,value, id_evenement) VALUES (?,?,?,?)";
+            PreparedStatement ps = connection.prepareStatement(req);
+            ps.setString(1, review.getTitle());
+            ps.setString(2, review.getComments());
+            ps.setInt(3, review.getValue());
+            ps.setInt(4, review.getId_evenement());
+            ps.executeUpdate();
+            System.out.println("reviews added successfully");
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println("Une erreur s'est produite lors de la récupération du review : " + e.getMessage());
+        }
     }
 }

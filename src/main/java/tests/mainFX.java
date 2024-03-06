@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import models.Review;
 
 import java.io.IOException;
 
@@ -15,6 +16,9 @@ public class mainFX extends Application {
     public  static class data {
 
        public static int id =0;
+       public static int id_evenement =0;
+
+       public static Review review ;
     }
 
     public static void main(String[] args) {launch(args);}
@@ -22,13 +26,13 @@ public class mainFX extends Application {
     @Override
     public void start(Stage primaryStage) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Front.fxml"));
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.initStyle(StageStyle.UTILITY);
         try {
             Parent root = fxmlLoader.load();
             Scene scene = new Scene(root);
-            primaryStage.setTitle("test");
             primaryStage.setScene(scene);
             primaryStage.show();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

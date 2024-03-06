@@ -26,6 +26,8 @@ public class Afficheevenementfront implements Initializable {
     private GridPane grid2;
 
 
+
+
     @FXML
     private ImageView qrCodeImg;
 
@@ -39,6 +41,9 @@ public class Afficheevenementfront implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         afficherProduitsDansGridPane2();
         qrCodeImgModel.setVisible(false);
+
+
+
     }
 
     private void afficherProduitsDansGridPane2() {
@@ -71,10 +76,8 @@ public class Afficheevenementfront implements Initializable {
     @FXML
     void qrCodeImgModel(MouseEvent event) {
         qrCodeImgModel.setVisible(false);
-
     }
 
-
-    }
+}
 
 

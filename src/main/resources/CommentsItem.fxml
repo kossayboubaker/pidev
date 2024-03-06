@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<HBox fx:id="hboxComment" minWidth="730.0" prefHeight="111.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CommentsController">
+   <children>
+      <HBox prefHeight="111.0" prefWidth="504.0">
+         <children>
+            <VBox minHeight="90.0" minWidth="520.0" prefHeight="90.0" prefWidth="450.0">
+               <children>
+                  <Text fx:id="titlee" fill="#43882b" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Title " wrappingWidth="150.0">
+                     <font>
+                        <Font name="Fira Sans Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="comment" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="productDetails__descText" text="Cool environment-friendly bag Cool environment-friendly bag Cool environment-friendly bag Cool environment-friendly bag Cool environment-friendly bag Cool environment-friendly bag " wrappingWidth="508.0">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <HBox maxWidth="200.0" minWidth="40.0" prefHeight="111.0" prefWidth="40.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Rating fx:id="valueStars" maxHeight="34.0" prefHeight="34.0" prefWidth="176.0">
+         <HBox.margin>
+            <Insets top="10.0" />
+         </HBox.margin>
+      </Rating>
+      <Text fx:id="datecreation" fill="#5ba890" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="comment_dateAjout" text="10-03-2023" wrappingWidth="75.34765625">
+         <HBox.margin>
+            <Insets left="-100.0" top="80.0" />
+         </HBox.margin>
+      </Text>
+   </children>
+</HBox>

@@ -2,18 +2,25 @@ package utils;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import javafx.embed.swing.SwingFXUtils;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import models.evenement;
+import tests.mainFX;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 
 public class card2 {
@@ -26,6 +33,12 @@ public class card2 {
     @FXML
     private Text id;
 
+
+    @FXML
+    private Button btn_consulter;
+
+    @FXML
+    private Button btn_rev;
     @FXML
     private Text id_cinema;
 
@@ -37,11 +50,14 @@ public class card2 {
     @FXML
     private HBox qrCode;
 
+    public Button getBtn_consulter() {
+        return btn_consulter;
+    }
+
     public void setProductData2(evenement evenement) {
         // Instantiate the produitService
 
-        id.setText(" " + evenement.getId());
-        id_cinema.setText(" " + evenement.getId_cinema());
+
         nom_ev.setText(" " + evenement.getNom_ev());
         description.setText(" " + evenement.getDescription());
         date.setText(" " + evenement.getDate());
@@ -78,7 +94,38 @@ public class card2 {
             } catch (WriterException e) {
                 e.printStackTrace();
             }
+        });
+        btn_rev.setOnAction(actionEvent ->
+        {
+            mainFX.data.id_evenement = evenement.getId();
+            System.out.println("EVENEMENT " + mainFX.data.id_evenement);
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FormAvis.fxml"));
+            try {
+                Parent root = fxmlLoader.load();
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.showAndWait();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
+        btn_consulter.setOnAction(actionEvent ->
+        {
+            mainFX.data.id_evenement = evenement.getId();
+            System.out.println("EVENEMENT " + mainFX.data.id_evenement);
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ListReview.fxml"));
+                Parent root = fxmlLoader.load();
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.showAndWait();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
     }
 }
