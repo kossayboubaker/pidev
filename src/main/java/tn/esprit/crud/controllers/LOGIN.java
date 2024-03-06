@@ -2,11 +2,15 @@ package tn.esprit.crud.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import tn.esprit.crud.models.User;
 import tn.esprit.crud.services.UserService;
@@ -23,7 +27,6 @@ public class LOGIN {
 
     @FXML
     private PasswordField LogInMdp;
-
 
     @FXML
     void verspageadus(ActionEvent event) throws SQLException {
@@ -45,8 +48,8 @@ public class LOGIN {
             try {
                 User user = userService.authentifier(email, mdp);
                 if (user != null) {
-                    // Naviguer vers la page utilisateur (PageUser.fxml) en passant les informations de l'utilisateur
-                    navigateToPageUser("/tn/esprit/crud/PageUser.fxml", event, user);
+                    // Naviguer vers la page utilisateur (GererCompte.fxml) en passant les informations de l'utilisateur
+                    navigateToPageUser("/tn/esprit/crud/GererCompte.fxml", event, user, mdp);
                 } else {
                     afficherErreur("Erreur", "Email ou mot de passe incorrect.");
                 }
@@ -57,13 +60,13 @@ public class LOGIN {
         }
     }
 
-    private void navigateToPageUser(String pagePath, ActionEvent event, User user) {
+    private void navigateToPageUser(String pagePath, ActionEvent event, User user, String mdp) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(pagePath));
             Parent root = loader.load();
-            PageUser controller = loader.getController();
-            controller.setNom(user.getNom());
-            controller.setPrenom(user.getPrenom());
+            GererCompte controller = loader.getController();
+            controller.setUser(user); // Utiliser la méthode setUser pour définir l'utilisateur
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
@@ -71,7 +74,6 @@ public class LOGIN {
             e.printStackTrace();
         }
     }
-
 
     private void navigateToPage(String pagePath, ActionEvent event) {
         try {
@@ -115,6 +117,7 @@ public class LOGIN {
         }
 
     }
+
     @FXML
     void ToReclamation(ActionEvent event) {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/tn/esprit/crud/Reclamation.fxml"));
@@ -125,6 +128,7 @@ public class LOGIN {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
     void quitter(ActionEvent event) {
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -139,5 +143,4 @@ public class LOGIN {
             stage.close();
         }
     }
-
 }

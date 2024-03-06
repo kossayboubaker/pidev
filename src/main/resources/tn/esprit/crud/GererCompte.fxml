@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.GererCompte">
+   <children>
+      <Label layoutX="389.0" layoutY="25.0" text="Gerer Mon compte" />
+      <Label layoutX="116.0" layoutY="112.0" text="Nom : ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="148.0" text="Prenom :">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="191.0" text="Adresse : ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="236.0" text="Email : ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="NomUser" layoutX="202.0" layoutY="112.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="PrenomUser" layoutX="202.0" layoutY="148.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="AdresseUser" layoutX="202.0" layoutY="191.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="EmailUser" layoutX="202.0" layoutY="236.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="mdpUtilisateur" layoutX="620.0" layoutY="486.0" promptText="Entrez votre mot de passe" />
+
+      <TextField fx:id="NouveauNom" layoutX="620.0" layoutY="161.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="NouveauPrenom" layoutX="620.0" layoutY="197.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="NouveauAdresse" layoutX="620.0" layoutY="240.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="Email" layoutX="620.0" layoutY="104.0">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </TextField>
+      <Label layoutX="441.0" layoutY="167.0" text="Modifier le Nom :">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="441.0" layoutY="203.0" text="Modifier le Prenom :">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="432.0" layoutY="246.0" text="Modifier votre adresse :">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="459.0" layoutY="110.0" text="Votre Email : ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="662.0" layoutY="300.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="26.0" prefWidth="125.0" text="Modifier">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="631.0" layoutY="431.0" mnemonicParsing="false" onAction="#SupprimerCompte" prefHeight="38.0" prefWidth="126.0" text="Supprimer compte" />
+   </children>
+</AnchorPane>

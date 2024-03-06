@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f041abac-1f7f-4ec5-ae77-f4c49388772a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/controllers/GererCompte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/GererCompte.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Crud" beforeDir="false" />
@@ -16,6 +18,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/controllers/ModifierCodeAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/controllers/ModifierCodeAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/controllers/ModifierUserAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/controllers/ModifierUserAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/controllers/MotDePasseOublier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/controllers/MotDePasseOublier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/controllers/PageUser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/services/PromoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/services/PromoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/crud/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/images/codeblocks-13.12mingw-setup.exe" beforeDir="false" />
@@ -29,6 +32,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/ModifierCodeAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/ModifierCodeAdmin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/ModifierUserAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/ModifierUserAdmin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/MotDePasseOublier.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/MotDePasseOublier.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/PageUser.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/Reclamation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/Reclamation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/SIGNUP.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tn/esprit/crud/SIGNUP.fxml" afterDir="false" />
     </list>
@@ -191,7 +195,7 @@
       <workItem from="1709597229742" duration="1667000" />
       <workItem from="1709649159563" duration="117000" />
       <workItem from="1709677654371" duration="12879000" />
-      <workItem from="1709719504451" duration="425000" />
+      <workItem from="1709719504451" duration="31115000" />
     </task>
     <servers />
   </component>

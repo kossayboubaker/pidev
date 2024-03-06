@@ -417,6 +417,33 @@ public class UserService implements IServices<User> {
         }
         return users;
     }
+    public void modifierInformationsUtilisateur(String userEmail, String nouveauNom, String nouveauPrenom, String nouvelleAdresse, String nouveauEmail) throws SQLException {
+        // Construire la requête SQL pour mettre à jour les informations de l'utilisateur avec l'e-mail donné
+        String query = "UPDATE user SET nom = ?, prenom = ?, adresse = ?, email = ? WHERE email = ?";
+        // Préparer la requête SQL
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            // Remplacer les paramètres de la requête par les nouvelles valeurs
+            statement.setString(1, nouveauNom);
+            statement.setString(2, nouveauPrenom);
+            statement.setString(3, nouvelleAdresse);
+            statement.setString(4, nouveauEmail);
+            statement.setString(5, userEmail);
+            // Exécuter la requête SQL
+            statement.executeUpdate();
+        }
+    }
+
+
+    public void supprimerCompte(String userEmail) throws SQLException {
+        String query = "DELETE FROM user WHERE email = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, userEmail);
+            statement.executeUpdate();
+        }
+    }
+
+
+
 
 
     public void sendEmail(String recipientEmail, String subject, String body) {
