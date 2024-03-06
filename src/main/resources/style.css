@@ -1,0 +1,113 @@
+.body{
+    -fx-background-color: #000000;
+}
+
+.vbox{
+    -fx-background-color:  #dee12b;
+}
+
+.label{
+    -fx-text-fill: #fff;
+}
+
+.textfield{
+    -fx-background-color: #fff;
+}
+
+
+
+.gradient{
+    -fx-background-color: linear-gradient(to bottom right, #bb7b9a, #e1a95e, #9371d5);
+}
+
+/* Stylisation des boutons */
+.button, .custom-split-menu-button, .split-menu-button {
+    -fx-background-color: #05071F;
+    -fx-text-fill: #e7e5e5;
+}
+
+.button:hover, .custom-split-menu-button:hover, .split-menu-button:hover {
+    -fx-background-color: #10165F;
+}
+
+.button:pressed, .custom-split-menu-button:pressed, .split-menu-button:pressed {
+    -fx-background-color: #1620A1;
+}
+
+/* Stylisation des MenuItems */
+.menu-item {
+    -fx-font-size: 14px;
+    -fx-padding: 8px 20px; /* Ajustement du padding */
+    -fx-text-fill: #ffffff; /* Couleur du texte */
+    -fx-background-color: #05071F; /* Couleur de fond par défaut */
+    -fx-alignment: center-left; /* Alignement vertical du texte */
+}
+
+.menu-item:hover {
+    -fx-background-color: #10165F; /* Couleur de fond au survol */
+}
+
+.menu-item:pressed {
+    -fx-background-color: #1620A1; /* Couleur de fond lorsque cliqué */
+}
+
+/* Stylisation des autres éléments */
+.scroll-pane {
+    -fx-background-color: #02030A;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: #05071F;
+    -fx-text-fill: #e7e5e5;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track, .scroll-bar:vertical .track {
+    -fx-background-color: #05071F;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb {
+    -fx-background-color: #10165F;
+    -fx-background-radius: 5em;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: black;
+}
+
+.mainStackPane {
+    -fx-background-color: #e40914;
+}
+
+.custom-split-menu-button .arrow-button {
+    -fx-background-color: #05071F;
+    -fx-background-insets: 0;
+    -fx-padding: 5;
+    -fx-shape: "M0,0 h10 l-5,7z";
+}
+
+.custom-split-menu-button .arrow-button:hover {
+    -fx-background-color: #10165F;
+}
+
+.custom-split-menu-button .arrow-button:pressed {
+    -fx-background-color: #1620A1;
+}
+
+.custom-split-menu-button .split-menu-button:hover .arrow-button {
+    -fx-background-color: #10165F;
+}
+
+.custom-split-menu-button .split-menu-button:pressed .arrow-button {
+    -fx-background-color: #1620A1;
+}
+
+.menu-button .label {
+    -fx-text-fill: white;
+}
+
+.sp {
+    -fx-background-color: linear-gradient(to bottom right, #a89679, #413c3c);
+
+}
