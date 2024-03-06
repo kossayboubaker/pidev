@@ -64,7 +64,7 @@ public class MotDePasseOublier {
         // Vérifier si l'email existe dans la base de données
         if (!userService.emailExiste(email)) {
             // Afficher une alerte indiquant que l'email n'existe pas
-            afficherAlerte("Erreur", "L'email saisi n'existe pas dans la base de données.");
+            afficherAlerte("Erreur", "Veuillez entrer une adresse email valide");
             return; // Sortir de la méthode sans envoyer de code de récupération
         }
 

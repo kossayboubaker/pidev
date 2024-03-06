@@ -2,16 +2,14 @@ package tn.esprit.crud.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import tn.esprit.crud.models.User;
@@ -67,15 +65,34 @@ public class AfficherUserAdmin {
             ListChart.setData(pieChartData);
 
             listdesusers.getItems().clear();
-            listdesusers.getItems().add(String.format("%-5s %-20s %-20s %-30s %s", "ID", "Nom", "Prenom", "Adresse", "Email"));
+            listdesusers.getItems().add(String.format("%-12s | %-30s | %-30s | %-40s | %s", "ID", "Nom", "Prenom", "Adresse", "Email"));
             for (User utilisateur : utilisateurs) {
-                listdesusers.getItems().add(String.format("%-5s %-20s %-20s %-30s %s",
+                listdesusers.getItems().add(String.format("%-12s | %-30s | %-30s | %-40s | %s",
                         utilisateur.getId(),
                         utilisateur.getNom(),
                         utilisateur.getPrenom(),
                         utilisateur.getAdresse(),
                         utilisateur.getEmail()));
             }
+
+            // Appliquer le style CSS à chaque élément de la ListView
+            listdesusers.setCellFactory(param -> new ListCell<>() {
+                @Override
+                protected void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty || item == null) {
+                        setText(null);
+                        setStyle("-fx-background-color: transparent;");
+                    } else {
+                        setText(item);
+                        setStyle("-fx-background-color: " + (getIndex() % 2 == 0 ? "#f0f0f0;" : "#e0e0e0;") + // Couleur de fond alternée
+                                "-fx-padding: 10px;" +
+                                "-fx-font-family: Constantia;" + // Police Constantia
+                                "-fx-font-weight: bold;" + // Texte en gras
+                                "-fx-font-size: 14px;"); // Taille de police
+                    }
+                }
+            });
         } catch (SQLException e) {
             e.printStackTrace();
             // Gérer l'exception de récupération des utilisateurs depuis la base de données
@@ -186,6 +203,43 @@ public class AfficherUserAdmin {
             alert.setTitle("Aucun utilisateur sélectionné");
             alert.setContentText("Veuillez sélectionner un utilisateur à supprimer.");
             alert.showAndWait();
+        }
+    }
+
+    @FXML
+    void Search(ActionEvent event) {
+        String searchText = searchTextField.getText().toLowerCase(); // Récupérer le texte de recherche et le mettre en minuscules
+
+        ObservableList<String> items = listdesusers.getItems(); // Récupérer la liste des éléments actuels
+        ObservableList<String> filteredItems = FXCollections.observableArrayList(); // Créer une nouvelle liste pour stocker les éléments filtrés
+
+        for (String item : items) {
+            if (item.toLowerCase().contains(searchText)) { // Vérifier si l'élément contient le texte de recherche
+                filteredItems.add(item); // Ajouter l'élément filtré à la nouvelle liste
+            }
+        }
+
+        listdesusers.setItems(filteredItems); // Mettre à jour la liste avec les éléments filtrés
+    }
+    public void TrierListe(ActionEvent actionEvent) {
+        try {
+            List<User> utilisateurs = userService.recuppererUtilisateursTriesParNom();
+            ObservableList<String> userList = FXCollections.observableArrayList();
+
+            userList.add(String.format("%-12s | %-30s | %-30s | %-40s | %s", "ID", "Nom", "Prenom", "Adresse", "Email"));
+            for (User utilisateur : utilisateurs) {
+                userList.add(String.format("%-12s | %-30s | %-30s | %-40s | %s",
+                        utilisateur.getId(),
+                        utilisateur.getNom(),
+                        utilisateur.getPrenom(),
+                        utilisateur.getAdresse(),
+                        utilisateur.getEmail()));
+            }
+
+            listdesusers.setItems(userList);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Gérer l'exception lors du tri des utilisateurs
         }
     }
 

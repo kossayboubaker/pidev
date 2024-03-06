@@ -62,34 +62,33 @@ public class ModifierCodeAdmin {
                 if (empty || codePromo == null) {
                     setText(null);
                 } else {
-                    setText(String.format("ID: %d, Code: %d, Date d'expiration: %s, Utilisé: %d, User ID: %d",
-                            codePromo.getId(), codePromo.getCode(), codePromo.getDate_exp(), codePromo.getUtilise(), codePromo.getUserId()));
+                    String text = String.format("ID = %d%n" +
+                                    "Code = %d%n" +
+                                    "Date d'expiration = %s%n" +
+                                    "Utilisé = %d%n" +
+                                    "User ID = %d%n",
+                            codePromo.getId(), codePromo.getCode(), codePromo.getDate_exp(), codePromo.getUtilise(), codePromo.getUserId());
+                    setText(text);
                 }
             }
         });
 
-        // Charger la liste des codes promos depuis la base de données ou une autre source de données
-        // et l'ajouter à la ListView
         try {
-            List<CodePromo> codesPromo = promoService.recupperer(); // Assurez-vous que promoService est initialisé correctement
+            List<CodePromo> codesPromo = promoService.recupperer();
             ObservableList<CodePromo> observableList = FXCollections.observableArrayList(codesPromo);
             ListeCodes.setItems(observableList);
 
-            // Ajout d'un écouteur sur la sélection de la ListView
             ListeCodes.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue != null) {
-                    // Mettre à jour la variable selectedCode avec le code promo sélectionné
                     selectedCode = newValue;
-                    // Afficher les détails du code promo sélectionné dans les champs de texte
                     afficherDetailsCodePromo(newValue);
                 }
             });
         } catch (SQLException e) {
             e.printStackTrace();
-            // Gérer les erreurs de récupération des codes promos depuis la base de données
-            // Afficher un message d'erreur ou une alerte, par exemple
         }
     }
+
 
     private void afficherDetailsCodePromo(CodePromo codePromo) {
         // Afficher les détails du code promo dans les champs de texte
@@ -231,5 +230,8 @@ public class ModifierCodeAdmin {
             System.err.println(e.getMessage());
             throw new RuntimeException(e);
         }
+    }
+
+    public void initData(int codeId) {
     }
 }

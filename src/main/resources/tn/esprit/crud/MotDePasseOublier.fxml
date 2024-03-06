@@ -6,49 +6,42 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.MotDePasseOublier">
+<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #161616;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.MotDePasseOublier">
    <children>
-      <TextField fx:id="EmailOublier" layoutX="457.0" layoutY="191.0" prefHeight="26.0" prefWidth="219.0" />
-      <TextField fx:id="CodeRecu" layoutX="457.0" layoutY="361.0" />
-      <Button layoutX="600.0" layoutY="415.0" mnemonicParsing="false" onAction="#ToChangeMdp" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #6e1216;" text="Change MotDePasse" textFill="WHITE">
+      <TextField fx:id="EmailOublier" layoutX="635.0" layoutY="150.0" prefHeight="26.0" prefWidth="219.0" />
+      <TextField fx:id="CodeRecu" layoutX="635.0" layoutY="334.0" />
+      <Button layoutX="634.0" layoutY="385.0" mnemonicParsing="false" onAction="#ToChangeMdp" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Change MotDePasse" textFill="WHITE">
          <font>
             <Font name="Constantia Bold" size="13.0" />
          </font></Button>
-      <Button fx:id="envoyerCodeButton" layoutX="571.0" layoutY="239.0" mnemonicParsing="false" onAction="#envoyerCodeAction" prefHeight="39.0" prefWidth="219.0" style="-fx-background-color: #6e1216;" text="Envoyer un code de verification" textFill="WHITE">
+      <Button fx:id="envoyerCodeButton" layoutX="635.0" layoutY="204.0" mnemonicParsing="false" onAction="#envoyerCodeAction" prefHeight="39.0" prefWidth="219.0" style="-fx-background-color: #000000;" text="Envoyer un code de verification" textFill="WHITE">
          <font>
             <Font name="Constantia Bold" size="13.0" />
          </font></Button>
-      <Button layoutX="745.0" layoutY="502.0" mnemonicParsing="false" onAction="#BackLogin" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #6e1216;" text="Return" textFill="WHITE">
+      <Button layoutX="813.0" layoutY="474.0" mnemonicParsing="false" onAction="#BackLogin" prefHeight="39.0" prefWidth="82.0" style="-fx-background-color: #000000;" text="Return" textFill="WHITE">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
-      <VBox prefHeight="600.0" prefWidth="82.0" style="-fx-background-color: #F7C729;">
-         <children>
-            <HBox prefHeight="39.0" prefWidth="79.0" />
-         </children>
-      </VBox>
-      <Label layoutX="260.0" layoutY="194.0" text="Entrez votre adresse email :" textFill="#f2eb1f">
+      <Label layoutX="435.0" layoutY="153.0" text="Entrez votre adresse email :" textFill="WHITE">
          <font>
             <Font name="Constantia" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="279.0" layoutY="364.0" text="Code de verification : " textFill="#f2eb1f">
+      <Label layoutX="471.0" layoutY="337.0" text="Code de verification : " textFill="WHITE">
          <font>
             <Font name="Constantia" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="330.0" layoutY="49.0" prefHeight="40.0" prefWidth="435.0" text="Recupperer Votre Mot De Passe " textFill="#f2eb1f" underline="true">
+      <Label layoutX="532.0" layoutY="60.0" prefHeight="40.0" prefWidth="342.0" text="Recupperer Votre Mot De Passe " textFill="WHITE" underline="true">
          <font>
-            <Font name="Sitka Banner" size="35.0" />
+            <Font name="Sitka Banner" size="27.0" />
          </font>
       </Label>
-      <ImageView fitHeight="139.0" fitWidth="179.0" layoutX="99.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="579.0" fitWidth="476.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/55fe1cf7ab.gif" />
+            <Image url="@../../../images/e9463f48d2baa965ac0aa8eaa13d2d91.jpg" />
          </image>
       </ImageView>
    </children>

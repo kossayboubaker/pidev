@@ -6,43 +6,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.ChangerMotDePasse">
+<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #161616;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.ChangerMotDePasse">
    <children>
-      <Label layoutX="414.0" layoutY="78.0" text="Changer Mot De passe" textFill="#f2eb1f">
-         <font>
-            <Font name="Constantia Bold" size="21.0" />
-         </font></Label>
-      <TextField fx:id="newMdp" layoutX="453.0" layoutY="263.0" prefHeight="26.0" prefWidth="186.0" />
-      <TextField fx:id="confirmenewMdp" layoutX="454.0" layoutY="320.0" prefHeight="26.0" prefWidth="186.0" />
-      <Label layoutX="208.0" layoutY="269.0" text="Nouveau Mot De Passe : " textFill="#f2eb1f">
-         <font>
-            <Font name="Constantia Bold" size="16.0" />
-         </font></Label>
-      <Label layoutX="152.0" layoutY="326.0" text="Confirmer Nouveau Mot De Passe : " textFill="#f2eb1f">
-         <font>
-            <Font name="Constantia Bold" size="16.0" />
-         </font></Label>
-      <Button layoutX="610.0" layoutY="385.0" mnemonicParsing="false" onAction="#ModifierNewMdp" prefHeight="39.0" prefWidth="90.0" style="-fx-background-color: #6e1216;" text="Modifier" textFill="WHITE">
+      <TextField fx:id="newMdp" layoutX="706.0" layoutY="265.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="confirmenewMdp" layoutX="707.0" layoutY="322.0" prefHeight="26.0" prefWidth="186.0" />
+      <Button layoutX="708.0" layoutY="380.0" mnemonicParsing="false" onAction="#ModifierNewMdp" prefHeight="39.0" prefWidth="186.0" style="-fx-background-color: #6e1216;" text="Modifier" textFill="WHITE">
          <font>
             <Font name="Constantia Bold" size="12.0" />
          </font></Button>
-      <TextField fx:id="emailModif" layoutX="455.0" layoutY="200.0" prefHeight="26.0" prefWidth="186.0" />
-      <Label layoutX="218.0" layoutY="206.0" text="Saisiser votre email : " textFill="#f2eb1f">
+      <TextField fx:id="emailModif" layoutX="708.0" layoutY="202.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label layoutX="689.0" layoutY="134.0" prefHeight="28.0" prefWidth="222.0" text="Changer Mot De Passe" textFill="WHITE" underline="true">
          <font>
-            <Font name="Constantia Bold" size="16.0" />
-         </font></Label>
-      <VBox prefHeight="600.0" prefWidth="82.0" style="-fx-background-color: #F7C729;">
-         <children>
-            <HBox prefHeight="39.0" prefWidth="79.0" />
-         </children>
-      </VBox>
-      <ImageView fitHeight="169.0" fitWidth="177.0" layoutX="369.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+            <Font name="Sitka Banner" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="512.0" layoutY="205.0" text="Saissir votre email :" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="493.0" layoutY="268.0" text="Nouveau Mot De Passe : " textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="455.0" layoutY="325.0" text="Confirmer Nouveau Mot De Passe : " textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="440.0" fitWidth="548.0" layoutX="14.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/28a4f58291.gif" />
+            <Image url="@../../../images/5feb51f8d1f4b72e84fcb90dde8f5080.jpg" />
          </image>
       </ImageView>
    </children>

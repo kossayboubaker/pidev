@@ -8,39 +8,33 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.Reclamation">
+<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #161616;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.Reclamation">
    <children>
-      <TextArea fx:id="bodyTextField" layoutX="287.0" layoutY="252.0" prefHeight="219.0" prefWidth="369.0" />
-      <Button layoutX="657.0" layoutY="502.0" mnemonicParsing="false" onAction="#sendButton" prefHeight="39.0" prefWidth="76.0" style="-fx-background-color: #6e1216;" text="Envoyer" textFill="WHITE" />
-      <ChoiceBox fx:id="choixSujet" layoutX="291.0" layoutY="150.0" prefHeight="26.0" prefWidth="226.0" />
-      <Hyperlink layoutX="442.0" layoutY="528.0" onAction="#BackToLogin" text="Back To Login" />
-      <VBox prefHeight="600.0" prefWidth="82.0" style="-fx-background-color: #F7C729;">
-         <children>
-            <HBox prefHeight="39.0" prefWidth="79.0" />
-         </children>
-      </VBox>
-      <Label layoutX="287.0" layoutY="110.0" text="Sujet De Votre Reclamation :" textFill="#f2eb1f">
+      <TextArea fx:id="bodyTextField" layoutX="468.0" layoutY="261.0" prefHeight="219.0" prefWidth="369.0" />
+      <Button layoutX="796.0" layoutY="504.0" mnemonicParsing="false" onAction="#sendButton" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: #000000;" text="Envoyer" textFill="WHITE" />
+      <ChoiceBox fx:id="choixSujet" layoutX="472.0" layoutY="159.0" prefHeight="26.0" prefWidth="226.0" />
+      <Hyperlink layoutX="615.0" layoutY="511.0" onAction="#BackToLogin" text="Back To Login" />
+      <Label layoutX="468.0" layoutY="119.0" text="Sujet De Votre Reclamation :" textFill="WHITE">
          <font>
             <Font name="Constantia" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="287.0" layoutY="214.0" text="Decrivez votre probleme : " textFill="#f2eb1f">
+      <Label layoutX="468.0" layoutY="223.0" text="Decrivez votre probleme : " textFill="WHITE">
          <font>
             <Font name="Constantia" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="404.0" layoutY="31.0" prefHeight="40.0" prefWidth="195.0" text="Reclamation : " textFill="#f2eb1f" underline="true">
+      <Label layoutX="501.0" layoutY="35.0" prefHeight="40.0" prefWidth="195.0" text="Reclamation : " textFill="WHITE" underline="true">
          <font>
             <Font name="Sitka Banner" size="35.0" />
          </font>
       </Label>
-      <ImageView fitHeight="333.0" fitWidth="242.0" layoutX="625.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="576.0" fitWidth="338.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/dca4d16de7.gif" />
+            <Image url="@../../../images/9da02bcaa16521101cfc0963273bb4a6.jpg" />
          </image>
       </ImageView>
    </children>

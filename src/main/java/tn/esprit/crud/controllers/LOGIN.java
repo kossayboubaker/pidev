@@ -1,13 +1,9 @@
 package tn.esprit.crud.controllers;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -26,7 +22,7 @@ public class LOGIN {
     private TextField LogInEmail;
 
     @FXML
-    private TextField LogInMdp;
+    private PasswordField LogInMdp;
 
 
     @FXML
@@ -131,19 +127,17 @@ public class LOGIN {
     }
     @FXML
     void quitter(ActionEvent event) {
-            Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
-            confirmationAlert.setTitle("Confirmation");
-            confirmationAlert.setHeaderText(null);
-            confirmationAlert.setContentText("Êtes-vous sûr de vouloir quitter ?");
+        Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationAlert.setTitle("Confirmation");
+        confirmationAlert.setHeaderText(null);
+        confirmationAlert.setContentText("Êtes-vous sûr de vouloir quitter ?");
 
-            Optional<ButtonType> result = confirmationAlert.showAndWait();
-            if (result.isPresent() && result.get() == ButtonType.OK) {
-                // Fermer l'application
-                Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-                stage.close();
-            }
+        Optional<ButtonType> result = confirmationAlert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            // Fermer l'application
+            Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+            stage.close();
         }
+    }
 
 }
-
-

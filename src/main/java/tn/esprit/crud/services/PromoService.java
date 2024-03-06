@@ -4,9 +4,11 @@ import tn.esprit.crud.models.CodePromo;
 import tn.esprit.crud.utils.MyDatabase;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 
 public class PromoService implements IServices<CodePromo> {
@@ -76,6 +78,22 @@ public void ajouter(CodePromo codePromo) throws SQLException {
         ps.executeUpdate();
     }
 
+    public Map<LocalDate, Integer> nombreCodesAjoutesParJour() throws SQLException {
+        Map<LocalDate, Integer> codesParJour = new HashMap<>();
+        String query = "SELECT DATE(date_creation) AS date, COUNT(*) AS count FROM code_promo GROUP BY DATE(date_creation)";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    LocalDate date = resultSet.getDate("date").toLocalDate();
+                    int count = resultSet.getInt("count");
+                    codesParJour.put(date, count);
+                }
+            }
+        }
+
+        return codesParJour;
+    }
 
 
     @Override

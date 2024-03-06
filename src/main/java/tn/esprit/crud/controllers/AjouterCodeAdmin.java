@@ -1,5 +1,7 @@
 package tn.esprit.crud.controllers;
 
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import tn.esprit.crud.services.UserService;
 
 import javafx.fxml.FXMLLoader;
@@ -49,25 +51,13 @@ public class AjouterCodeAdmin implements Initializable {
 
 
 
-    @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
-            // Initialiser la UserService
-            userService = new UserService();
-
-            // Récupérer la liste des utilisateurs depuis le service UserService
             List<User> utilisateurs = userService.recuppererSansChampsSensibles2();
-
-            // Créer une ObservableList pour stocker les données des utilisateurs
             ObservableList<String> userList = FXCollections.observableArrayList();
 
-            // Ajouter les titres des colonnes
-            String columnTitles = String.format(" %-5s %-20s %-20s %-20s", "ID", "Nom", "Prénom", "Adresse Email");
-            userList.add(columnTitles);
-
-            // Itérer à travers la liste des utilisateurs et ajouter leurs détails à la userList
             for (User utilisateur : utilisateurs) {
-                String userData = String.format(" %-5d %-20s %-20s %-20s",
+                String userData = String.format("id : %-5d\nNom : %-20s\nPrénom : %-20s\nAdresse Email : %-20s",
                         utilisateur.getId(),
                         utilisateur.getNom(),
                         utilisateur.getPrenom(),
@@ -75,8 +65,19 @@ public class AjouterCodeAdmin implements Initializable {
                 userList.add(userData);
             }
 
-            // Définir les éléments pour la ListView
             ListUsers.setItems(userList);
+            ListUsers.setCellFactory(param -> new ListCell<>() {
+                @Override
+                protected void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    if (empty || item == null) {
+                        setText(null);
+                    } else {
+                        setText(item);
+                        setFont(Font.font("System", FontWeight.BOLD, 12));
+                    }
+                }
+            });
 
         } catch (SQLException e) {
             e.printStackTrace();

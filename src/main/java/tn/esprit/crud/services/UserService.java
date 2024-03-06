@@ -9,10 +9,7 @@ import tn.esprit.crud.utils.MyDatabase;
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-import java.util.Random;
+import java.util.*;
 
 
 public class UserService implements IServices<User> {
@@ -402,6 +399,26 @@ public class UserService implements IServices<User> {
             return null;
         }
     }
+    public List<User> recuppererUtilisateursTriesParNom() throws SQLException {
+        List<User> users = new ArrayList<>();
+        String req = "SELECT * FROM user ORDER BY nom";
+        Statement us = connection.createStatement();
+        ResultSet rs = us.executeQuery(req);
+
+        while (rs.next()) {
+            User user = new User();
+            user.setId(rs.getInt("id"));
+            user.setNom(rs.getString("nom"));
+            user.setPrenom(rs.getString("prenom"));
+            user.setAdresse(rs.getString("adresse"));
+            user.setEmail(rs.getString("email"));
+            user.setMdp(rs.getString("mdp"));
+            users.add(user);
+        }
+        return users;
+    }
+
+
     public void sendEmail(String recipientEmail, String subject, String body) {
         // Configuration des propriétés SMTP
         Properties props = new Properties();

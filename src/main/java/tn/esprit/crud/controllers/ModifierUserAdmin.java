@@ -73,12 +73,12 @@ public class ModifierUserAdmin {
             ObservableList<String> userDataList = FXCollections.observableArrayList();
 
             // Ajouter les titres des colonnes
-            String columnTitles = String.format("%-20s %-20s %-20s %-20s %-20s", "Nom", "Prénom", "Email", "Adresse", "Mot de passe");
+            String columnTitles = String.format("%-30s %-30s %-60s %-30s %-70s", "Nom", "Prénom", "Email", "Adresse", "Mot de passe");
             userDataList.add(columnTitles);
 
             // Itérer à travers la liste des utilisateurs et ajouter leurs détails à la userList
             for (User user : users) {
-                String userData = String.format("%-20s %-20s %-20s %-20s %-20s",
+                String userData = String.format("%-30s %-30s %-60s %-30s %-50s",
                         user.getNom(),
                         user.getPrenom(),
                         user.getEmail(),
