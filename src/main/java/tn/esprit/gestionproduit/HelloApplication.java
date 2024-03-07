@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-       // FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/test (1).fxml"));
+       //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/test (1).fxml"));
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Front.fxml"));
         primaryStage.initStyle(StageStyle.UTILITY);
         try {

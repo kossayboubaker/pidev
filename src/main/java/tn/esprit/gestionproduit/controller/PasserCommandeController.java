@@ -112,7 +112,7 @@ public class PasserCommandeController implements Initializable {
             } catch (StripeException e) {
                 throw new RuntimeException(e);
             }
-            sendSMS("+21650393158",somme.longValue());
+            sendSMS("+21698587612",somme.longValue());
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Paiement Avec succès", ButtonType.OK);
             alert.showAndWait();
 
@@ -150,8 +150,8 @@ public class PasserCommandeController implements Initializable {
     }
 
     void sendSMS(String recipientNumber,long amount) {
-        String ACCOUNT_SID = "AC7ff49d1703dff90b40c663ff5582143b";
-        String AUTH_TOKEN = "1341d5547cb377602f680438de95b7d8";
+        String ACCOUNT_SID = "AC40562760bb9354a4ebb28ae3082a0291";
+        String AUTH_TOKEN = "4a7bf5da9aa4c70f9fea39ac9d41c935";
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         // recipientNumber = "+21629082917";
         String message = "Votre Paiement du montant "+amount+" a été effectué avec succès";
@@ -159,7 +159,7 @@ public class PasserCommandeController implements Initializable {
         // Send the SMS message
         Message twilioMessage = Message.creator(
                 new PhoneNumber(recipientNumber),
-                new PhoneNumber("14153199952"),
+                new PhoneNumber("+19717012354"),
                 message).create();
 
         System.out.println("SMS envoyé : " + twilioMessage.getSid());
