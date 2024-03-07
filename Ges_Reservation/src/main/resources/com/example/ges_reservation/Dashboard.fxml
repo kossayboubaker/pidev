@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #D5DDE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.Dashboard">
+   <children>
+      <ListView fx:id="ListChart" layoutX="208.0" layoutY="73.0" prefHeight="244.0" prefWidth="178.0" />
+      <PieChart fx:id="AdresseChart" layoutX="422.0" layoutY="27.0" prefHeight="286.0" prefWidth="318.0" />
+      <Button layoutX="810.0" layoutY="541.0" mnemonicParsing="false" onAction="#backToAdmin" text="Return" />
+      <VBox layoutY="54.0" prefHeight="547.0" prefWidth="170.0" style="-fx-background-color: #212B35;">
+         <children>
+            <HBox prefHeight="49.0" prefWidth="170.0">
+               <children>
+                  <Button fx:id="dash" mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="43.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#ToUserAdmin" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="USER" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="50.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#ToCodeAdmin" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="CODE PROMO" textFill="WHITE">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="46.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="170.0" style="-fx-background-color: #212B35;" text="KOSSAY" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="39.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="NESSIM" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="45.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="AMIR" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="46.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="169.0" style="-fx-background-color: #212B35;" text="MARWAN" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox prefHeight="43.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="90.0" prefWidth="170.0" style="-fx-background-color: #212B35;" text="LOG OUT" textFill="WHITE">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Separator prefWidth="170.0" />
+         </children>
+      </VBox>
+      <HBox prefHeight="53.0" prefWidth="900.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="58.0" prefWidth="169.0" text="Cine Hub">
+               <font>
+                  <Font name="Monospaced Bold" size="24.0" />
+               </font>
+            </Label>
+            <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="47.0" prefWidth="0.0" />
+            <Label prefHeight="50.0" prefWidth="186.0" text="Dashboard">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <PieChart fx:id="CodeChart" layoutX="423.0" layoutY="273.0" prefHeight="302.0" prefWidth="342.0" />
+      <ListView fx:id="ListCode" layoutX="209.0" layoutY="341.0" prefHeight="244.0" prefWidth="178.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.Ajoutercinema">
+   <children>
+      <AnchorPane layoutY="-7.0" prefHeight="587.0" prefWidth="760.0" style="-fx-background-color: #02030A;" styleClass="body" stylesheets="@style.css">
+         <children>
+            <TextField fx:id="nom" layoutX="83.0" layoutY="134.0" prefWidth="150.0" promptText="nom" stylesheets="@style.css" />
+            <TextField fx:id="place" layoutX="84.0" layoutY="167.0" promptText="place" />
+            <TextField fx:id="nbsalle" layoutX="84.0" layoutY="200.0" promptText="nombre de salle " />
+            <TextField fx:id="etat" layoutX="84.0" layoutY="230.0" promptText="etat" />
+            <Button layoutX="80.0" layoutY="277.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="26.0" prefWidth="150.0" styleClass="userProductCard-btn" stylesheets="@style.css" text="Ajouter" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </children>
+</AnchorPane>

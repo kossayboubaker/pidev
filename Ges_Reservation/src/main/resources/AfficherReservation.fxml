@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="534.0" prefWidth="870.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.AfficherReservation">
+   <children>
+      <ListView fx:id="ListRes" layoutX="33.0" layoutY="112.0" prefHeight="330.0" prefWidth="784.0" stylesheets="@style.css" />
+      <Button layoutX="486.0" layoutY="451.0" mnemonicParsing="false" onAction="#supprimerR" style="-fx-background-color: #CCAF2E;" text="supprimer">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="381.0" layoutY="451.0" mnemonicParsing="false" onAction="#modifierR" style="-fx-background-color: #CCAF2E;" text="Modifier">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="21.0" layoutY="35.0" mnemonicParsing="false" onAction="#retourner" style="-fx-background-color: #CCAF2E;" text="Retourner">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="RecherchID" layoutX="530.0" layoutY="70.0" onAction="#chercherID" prefHeight="22.0" prefWidth="106.0" promptText="RecherchID" stylesheets="@style.css" />
+      <Text fill="WHITE" layoutX="325.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gérer Réservation" wrappingWidth="219.65472412109375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

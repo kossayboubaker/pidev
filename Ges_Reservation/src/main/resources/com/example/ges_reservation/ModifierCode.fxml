@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.ModifierCode">
+   <children>
+      <TextField fx:id="idCodeMod" layoutX="394.0" layoutY="159.0" prefHeight="26.0" prefWidth="110.0" promptText="Id du Code" />
+      <Button layoutX="570.0" layoutY="267.0" mnemonicParsing="false" onAction="#Modification" prefHeight="40.0" prefWidth="91.0" style="-fx-background-color: #F7C729;" text="Modifier" />
+      <TextField fx:id="codeNouv" layoutX="394.0" layoutY="219.0" prefHeight="26.0" prefWidth="110.0" promptText="Nouveau Code" />
+      <DatePicker fx:id="dateNouv" layoutX="362.0" layoutY="287.0" promptText="Nouvelle Date" />
+      <TextField fx:id="utiliseNouv" layoutX="414.0" layoutY="349.0" prefHeight="26.0" prefWidth="70.0" promptText="Utilise" />
+      <TextField fx:id="useridNouv" layoutX="374.0" layoutY="411.0" promptText="Nouveau User_id" />
+      <Button layoutX="243.0" mnemonicParsing="false" onAction="#VersAjouter" prefHeight="58.0" prefWidth="160.0" style="-fx-background-color: #000000;" text="Ajouter Code" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="588.0" mnemonicParsing="false" onAction="#VersSupprimer" prefHeight="58.0" prefWidth="144.0" style="-fx-background-color: #000000;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="426.0" mnemonicParsing="false" onAction="#VersAfficher" prefHeight="58.0" prefWidth="144.0" style="-fx-background-color: #000000;" text="Afficher" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Button>
+      <VBox prefHeight="600.0" prefWidth="82.0" style="-fx-background-color: #F7C729;">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="79.0" />
+         </children>
+      </VBox>
+      <Label layoutX="785.0" layoutY="15.0" text="Modifier" textFill="#f7c729">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="196.0" layoutY="349.0" text="Nouveau Utilise :" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="202.0" layoutY="219.0" text="Nouveau Code :" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="216.0" layoutY="159.0" text="ID Du Code :" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="210.0" layoutY="286.0" text="Nouvelle Date" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="189.0" layoutY="410.0" text="Nouveau User_Id :" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

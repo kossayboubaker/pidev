@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.ModifierUserAdmin">
+   <children>
+      <Label layoutX="562.0" layoutY="83.0" text="Modification User" textFill="WHITE" underline="true">
+         <font>
+            <Font name="Constantia" size="24.0" />
+         </font></Label>
+      <TextField fx:id="NouveauNom" layoutX="384.0" layoutY="374.0" />
+      <TextField fx:id="NouveauPrenom" layoutX="550.0" layoutY="374.0" />
+      <TextField fx:id="NouveauAdresse" layoutX="716.0" layoutY="374.0" />
+      <TextField fx:id="NouveauEmail" layoutX="550.0" layoutY="460.0" />
+      <TextField fx:id="NouveauMdp" layoutX="716.0" layoutY="460.0" />
+      <Label layoutX="411.0" layoutY="345.0" text="Nouveau Nom : " textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="14.0" />
+         </font></Label>
+      <Label layoutX="577.0" layoutY="345.0" text="Nouveau Prenom : " textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="14.0" />
+         </font></Label>
+      <Label layoutX="743.0" layoutY="345.0" text="Nouvelle Adresse : " textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="14.0" />
+         </font></Label>
+      <Label layoutX="577.0" layoutY="428.0" text="Nouveau Email : " textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="14.0" />
+         </font></Label>
+      <Label layoutX="727.0" layoutY="428.0" text="Nouveau Mot De Passe : " textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="14.0" />
+         </font></Label>
+      <Button fx:id="bouttonModifier" layoutX="361.0" layoutY="454.0" mnemonicParsing="false" onAction="#ModifierUserAdmin" prefHeight="38.0" prefWidth="162.0" style="-fx-background-color: #161616;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <ListView fx:id="LVcmd" layoutX="375.0" layoutY="136.0" prefHeight="189.0" prefWidth="494.0" />
+      <Button layoutX="789.0" layoutY="514.0" mnemonicParsing="false" onAction="#BackToAffiche" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #161616;" text="Return" textFill="WHITE">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <ImageView fitHeight="588.0" fitWidth="348.0" layoutX="-3.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/c1b942032c762ba3c9b71aef2fcc0e12.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

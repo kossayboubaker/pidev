@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane prefHeight="623.0" prefWidth="856.0" styleClass="scroll-pane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.utils.Evenement">
+   <children>
+      <HBox layoutX="-2.0" prefHeight="109.0" prefWidth="867.0" style="-fx-background-color: #05071F;">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#getajouter" prefHeight="110.0" prefWidth="416.0" stylesheets="@style.css" text="Ajouter" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="decrement-button" />
+                  <String fx:value="button" />
+                  <String fx:value="increment-button" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#getafficher" prefHeight="110.0" prefWidth="330.0" stylesheets="@style.css" text="Afficher">
+               <styleClass>
+                  <String fx:value="decrement-button" />
+                  <String fx:value="button" />
+                  <String fx:value="increment-button" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
+      <StackPane layoutX="-3.0" layoutY="102.0" prefHeight="530.0" prefWidth="867.0">
+         <children>
+            <StackPane fx:id="mainStackPane" prefHeight="503.0" prefWidth="650.0" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.AfficherCode">
+   <children>
+      <ListView fx:id="idCol" layoutX="239.0" layoutY="219.0" prefHeight="200.0" prefWidth="58.0" />
+      <ListView fx:id="codeCol" layoutX="331.0" layoutY="219.0" prefHeight="200.0" prefWidth="98.0" />
+      <ListView fx:id="dateCol" layoutX="467.0" layoutY="219.0" prefHeight="200.0" prefWidth="131.0" />
+      <ListView fx:id="utiliseCol" layoutX="631.0" layoutY="219.0" prefHeight="200.0" prefWidth="98.0" />
+      <ListView fx:id="useridCol" layoutX="768.0" layoutY="219.0" prefHeight="200.0" prefWidth="58.0" />
+      <Button layoutX="240.0" mnemonicParsing="false" onAction="#VersAjouter" prefHeight="58.0" prefWidth="162.0" style="-fx-background-color: #000000;" text="Ajouter Code" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="752.0" layoutY="-1.0" mnemonicParsing="false" onAction="#VersModifier" prefHeight="58.0" prefWidth="162.0" style="-fx-background-color: #000000;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="580.0" layoutY="-1.0" mnemonicParsing="false" onAction="#VersSupprimer" prefHeight="58.0" prefWidth="162.0" style="-fx-background-color: #000000;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Button>
+      <VBox prefHeight="600.0" prefWidth="82.0" style="-fx-background-color: #F7C729;">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="79.0" />
+         </children>
+      </VBox>
+      <Label layoutX="459.0" layoutY="15.0" text="Afficher" textFill="#f7c729">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="351.0" layoutY="181.0" text="Code :" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="646.0" layoutY="181.0" text="Utilise :" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="457.0" layoutY="181.0" text="Date Expiration :" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="761.0" layoutY="181.0" text="User_Id" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="252.0" layoutY="181.0" text="ID :" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
