@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #D5DDE3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.crud.controllers.CodeAdmin">
+   <children>
+      <Label layoutX="407.0" layoutY="93.0" text="Gestion Des Codes Promos">
+         <font>
+            <Font name="Constantia" size="23.0" />
+         </font></Label>
+      <Button fx:id="dash" layoutX="335.0" layoutY="347.0" mnemonicParsing="false" onAction="#VersAjouterCode" prefHeight="26.0" prefWidth="74.0" text="Ajouter" />
+      <Button layoutX="675.0" layoutY="347.0" mnemonicParsing="false" onAction="#VersAfficherCode" prefHeight="26.0" prefWidth="74.0" text="Afficher" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="272.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../tl-_7_-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="611.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../tl-_8_-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

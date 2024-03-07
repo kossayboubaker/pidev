@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="725.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.ListeCommandeController">
+   <children>
+      <Label layoutX="270.0" layoutY="59.0" prefHeight="32.0" prefWidth="157.0" text="Commandes">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      
+      <ListView fx:id="listcmd" layoutX="193.0" layoutY="135.0" prefHeight="234.0" prefWidth="369.0" />
+   </children>
+</AnchorPane>

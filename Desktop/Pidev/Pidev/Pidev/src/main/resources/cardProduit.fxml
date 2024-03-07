@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="testBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#AddPanier" prefHeight="268.0" prefWidth="383.0" spacing="15.0" style="-fx-background-radius: 8; -fx-border-color: #EECC8D; -fx-border-width: 5;" styleClass="boxes" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.CardProduitController">
+   <children>
+      <Label fx:id="nom" text="Nom :">
+         <VBox.margin>
+            <Insets left="20.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="500.0" spacing="10.0">
+         <children>
+            <Label prefHeight="22.0" prefWidth="113.0" text="Prix">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="prix" prefHeight="30.0" prefWidth="96.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ImageView fx:id="imv" fitHeight="83.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="idproduit" text="Label" />
+   </children>
+</VBox>

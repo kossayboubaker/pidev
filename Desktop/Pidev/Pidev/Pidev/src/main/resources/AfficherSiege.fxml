@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="534.0" prefWidth="870.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.AfficherSiege">
+   <children>
+      <ListView fx:id="ListSiege" layoutX="73.0" layoutY="72.0" prefHeight="330.0" prefWidth="678.0" stylesheets="@style.css" />
+      <Button layoutX="255.0" layoutY="428.0" mnemonicParsing="false" onAction="#suppS" style="-fx-background-color: #6D1922FF;" text="Supprimer siége" textFill="#fafafa">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font></Button>
+      <Button layoutX="466.0" layoutY="428.0" mnemonicParsing="false" onAction="#modifS" style="-fx-background-color: #6D1922FF;" text="Modifier Siege" textFill="WHITE">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font></Button>
+      <Button layoutX="53.0" layoutY="495.0" mnemonicParsing="false" onAction="#retourner" style="-fx-background-color: #6D1922FF #6D1922FF;" text="Retourner" textFill="WHITE">
+         <font>
+            <Font name="Century" size="14.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="356.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gérer Siéges" wrappingWidth="219.65472412109375">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

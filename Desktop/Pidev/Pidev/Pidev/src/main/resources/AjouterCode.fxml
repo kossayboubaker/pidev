@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.AjouterCode">
+   <children>
+      <TextField fx:id="codeTF" layoutX="476.0" layoutY="187.0" promptText="code" />
+      <TextField fx:id="utiliseTF" layoutX="476.0" layoutY="234.0" promptText="utilise" />
+      <TextField fx:id="user_idTF" layoutX="476.0" layoutY="284.0" promptText="user_id" />
+      <DatePicker fx:id="date_expTF" layoutX="463.0" layoutY="332.0" promptText="Date_expiration" />
+      <Button layoutX="663.0" layoutY="247.0" mnemonicParsing="false" onAction="#ajouterCode" prefHeight="39.0" prefWidth="83.0" style="-fx-background-color: #F7C729;" text="Ajouter" />
+      <Button layoutX="577.0" mnemonicParsing="false" onAction="#VersSupprimer" prefHeight="55.0" prefWidth="158.0" style="-fx-background-color: #000000;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font></Button>
+      <Button layoutX="747.0" mnemonicParsing="false" onAction="#VersModifier" prefHeight="55.0" prefWidth="158.0" style="-fx-background-color: #000000;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font></Button>
+      <Button layoutX="411.0" mnemonicParsing="false" onAction="#VersAfficher" prefHeight="55.0" prefWidth="160.0" style="-fx-background-color: #000000;" text="Afficher" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font></Button>
+      <VBox prefHeight="600.0" prefWidth="82.0" style="-fx-background-color: #F7C729;">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="79.0" />
+         </children>
+      </VBox>
+      <Label layoutX="252.0" layoutY="14.0" text="Ajouter Code" textFill="#f7c729">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="285.0" layoutY="281.0" text="Le User_Id : " textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="312.0" layoutY="185.0" text="Code : " textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="252.0" layoutY="329.0" text="Date D'expiration : " textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="307.0" layoutY="231.0" text="Utilise : " textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="757.0" layoutY="542.0" mnemonicParsing="false" onAction="#RetourMenu" style="-fx-background-color: #000000;" text="Retour au Menu" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

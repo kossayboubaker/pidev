@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #161616;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.AjouterUserAdmin">
+   <children>
+      <TextField fx:id="nomUserAdmin" layoutX="515.0" layoutY="164.0" />
+      <TextField fx:id="prenomUserAdmin" layoutX="515.0" layoutY="212.0" />
+      <TextField fx:id="adresseUserAdmin" layoutX="515.0" layoutY="264.0" />
+      <TextField fx:id="emailUserAdmin" layoutX="515.0" layoutY="319.0" />
+      <TextField fx:id="mdpUserAdmin" layoutX="515.0" layoutY="375.0" />
+      <Label layoutX="361.0" layoutY="364.0" text="Mot De Passe : " textFill="WHITE">
+         <font>
+            <Font name="Javanese Text" size="17.0" />
+         </font></Label>
+      <Button layoutX="498.0" layoutY="428.0" mnemonicParsing="false" onAction="#AjouterUserAdmin" prefHeight="39.0" prefWidth="183.0" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="677.0" layoutY="498.0" mnemonicParsing="false" onAction="#ReturnToUser" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: #000000;" text="Return" textFill="WHITE">
+         <font>
+            <Font name="Constantia Bold" size="12.0" />
+         </font></Button>
+      <HBox prefHeight="53.0" prefWidth="900.0" />
+      <Label layoutX="361.0" layoutY="308.0" text="Email : " textFill="WHITE">
+         <font>
+            <Font name="Javanese Text" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="362.0" layoutY="253.0" text="Adresse : " textFill="WHITE">
+         <font>
+            <Font name="Javanese Text" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="362.0" layoutY="201.0" text="Prenom : " textFill="WHITE">
+         <font>
+            <Font name="Javanese Text" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="361.0" layoutY="153.0" text="Nom : " textFill="WHITE">
+         <font>
+            <Font name="Javanese Text" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="504.0" layoutY="69.0" text="Ajouter Un User : " textFill="WHITE" underline="true">
+         <font>
+            <Font name="Javanese Text" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="590.0" fitWidth="337.0" layoutX="-7.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/efcd1c222b42d04cc6f6f46a83c0a2d4.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

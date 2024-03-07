@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="328.0" styleClass="addProductCard" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="120.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cinema.png" />
+         </image>
+      </ImageView>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="328.0" stylesheets="@style.css">
+         <children>
+            <Label text="ID :" textFill="WHITE" />
+            <Text fx:id="id" fill="#5ba890" strokeType="OUTSIDE" strokeWidth="0.0" text="Tunis" textAlignment="CENTER" wrappingWidth="100.27493131160736" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="328.0">
+         <children>
+            <Label text="NOM :" textFill="WHITE" />
+            <Text fx:id="nom" fill="#5ba890" strokeType="OUTSIDE" strokeWidth="0.0" text="Tunis" textAlignment="CENTER" wrappingWidth="100.27505493164062" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="328.0">
+         <children>
+            <Label text="NOMBRE DE SALLES :" textFill="WHITE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Text fx:id="nbsalle" fill="#5ba890" strokeType="OUTSIDE" strokeWidth="0.0" text="Tunis" textAlignment="CENTER" wrappingWidth="100.27505493164062" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="328.0">
+         <children>
+            <Label text="PLACE :" textFill="WHITE" />
+            <Text fx:id="place" fill="#5ba890" strokeType="OUTSIDE" strokeWidth="0.0" text="Tunis" textAlignment="CENTER" wrappingWidth="100.27505493164062" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="328.0" stylesheets="@style.css">
+         <children>
+            <Label text="ETAT :" textFill="WHITE" />
+            <Text fx:id="etat" fill="#5ba890" strokeType="OUTSIDE" strokeWidth="0.0" text="Tunis" textAlignment="CENTER" wrappingWidth="100.27505493164062" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="consultez" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="116.0" styleClass="userProductCard-btn" stylesheets="@style.css">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CONSULTEZ" />
+         </children>
+         <VBox.margin>
+            <Insets left="100.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

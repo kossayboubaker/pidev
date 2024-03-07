@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ges_reservation.controllers.SupprimerUser">
+   <children>
+      <TextField fx:id="supprimerTF" layoutX="441.0" layoutY="220.0" prefHeight="26.0" prefWidth="112.0" />
+      <Label layoutX="337.0" layoutY="171.0" prefHeight="30.0" prefWidth="341.0" text="Inserer l'ID du user a supprimer" textFill="WHITE">
+         <font>
+            <Font name="Palatino Linotype" size="22.0" />
+         </font></Label>
+      <Button layoutX="454.0" layoutY="268.0" mnemonicParsing="false" onAction="#supprimerUser" prefHeight="38.0" prefWidth="85.0" style="-fx-background-color: #F7C729;" text="Supprimer" />
+      <Button layoutX="422.0" mnemonicParsing="false" onAction="#ReturnToAfficher" prefHeight="58.0" prefWidth="150.0" style="-fx-background-color: #000000;" text="Afficher" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font></Button>
+      <Button layoutX="756.0" mnemonicParsing="false" onAction="#VersModifier" prefHeight="58.0" prefWidth="144.0" style="-fx-background-color: #000000;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font></Button>
+      <Button layoutX="239.0" mnemonicParsing="false" onAction="#VersAjouter" prefHeight="58.0" prefWidth="163.0" style="-fx-background-color: #000000;" text="Ajouter User" textFill="WHITE">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font></Button>
+      <VBox prefHeight="600.0" prefWidth="82.0" style="-fx-background-color: #F7C729;">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="79.0" />
+         </children>
+      </VBox>
+      <Label layoutX="609.0" layoutY="15.0" prefHeight="27.0" prefWidth="106.0" text="Supprimer" textFill="#f7c729">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="679.0" layoutY="488.0" prefHeight="30.0" prefWidth="196.0" text="Assurer que l'ID a supprimer existe" />
+   </children>
+</AnchorPane>
