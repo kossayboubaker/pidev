@@ -1,0 +1,17 @@
+.custom-alert {
+    -fx-background-color: black;
+}
+
+.custom-alert .dialog-pane {
+    -fx-background-color: black;
+    -fx-text-fill: gold;
+}
+
+.custom-alert .button {
+    -fx-background-color: gold;
+    -fx-text-fill: black;
+}
+
+.custom-alert .button:hover {
+    -fx-background-color: #ffd700; /* Change la couleur au survol */
+}

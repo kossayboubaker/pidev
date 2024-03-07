@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="328.0" style="-fx-background-color: black;" styleClass="addProductCard" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="328.0" stylesheets="@style.css">
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="328.0" stylesheets="@style.css">
+         <children>
+            <Label text="Nom Categorie:" textFill="WHITE" />
+            <Text fx:id="nom" fill="#5ba890" strokeType="OUTSIDE" strokeWidth="0.0" text="Tunis" textAlignment="CENTER" wrappingWidth="100.27493131160736" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="50.0" prefWidth="328.0">
+         <children>
+            <Label text="Description:" textFill="WHITE" />
+            <Text fx:id="desc" fill="#5ba890" strokeType="OUTSIDE" strokeWidth="0.0" text="Tunis" textAlignment="CENTER" wrappingWidth="100.27505493164062" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="consultez" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="116.0" style="-fx-background-color: gold;" styleClass="userProductCard-btn" stylesheets="@style.css">
+         <children>
+            <Text fx:id="consulter" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CONSULTER" />
+         </children>
+         <VBox.margin>
+            <Insets left="100.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+
+      <Text fx:id="id" strokeType="OUTSIDE" strokeWidth="0.0" text="Tunis" textAlignment="CENTER" wrappingWidth="1.0" />
+   </children>
+</VBox>
